@@ -1,0 +1,41 @@
+#ifndef UART_H
+#define UART_H
+
+/**
+ * UART番号
+ */
+enum UARTNumber {
+	UART0,
+	UART1
+};
+/**
+ * UARTモード
+ */
+enum UARTMode {
+	/// 停止1ビット
+		StopBitIs1Bit = 0x00,
+	/// 停止2ビット
+		StopBitIs2Bit = 0x08,
+	/// パリティなし
+		NonParity = 0x00,
+	/// 奇数パリティ
+		OddParity = 0x30
+	/// 偶数パリティ
+		EvenParity = 0x20,
+};
+
+/**
+ * UART動作
+ */
+enum UARTAction {
+	/// 受信完了割り込み
+		ReceiveCompleteInteruptEnable = 0x80,
+	/// 送信完了割り込み
+		TransmitCompleteInteruptEnable = 0x40,
+	/// 受信許可
+		ReceiverEnable = 0x10,
+	/// 送信許可
+		TransmiterEnable = 0x08
+}
+
+#endif //UART_H

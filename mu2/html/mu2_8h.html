@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>mu2: mu2.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">mu2
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 作成： Doxygen 1.7.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>グローバル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">mu2.h</div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br/>
+<code>#include &lt;stdbool.h&gt;</code><br/>
+</div>
+<p><a href="mu2_8h_source.html">ソースコードを見る。</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+関数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mu2_8h.html#a8924570c2c2188a2362d77a36db1f7e1">setMU2PutFunc</a> (void(*f)(void))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mu2_8h.html#ab179cac24e6da05e506adfdc7d036176">setMU2GetFunc</a> (uint8_t(*f)(void))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mu2_8h.html#a2cca36cda359912fefb702bb181505e7">byteToString</a> (uint8_t byte, char *string)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mu2_8h.html#a4a82d476fc1d4c2993f5c1d26aeb6aa7">mu2Command</a> (const char *command, uint8_t *values)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mu2_8h.html#a181245dbcab3d38abbb4f56f38d67d86">mu2CommandToEEPROM</a> (const char *command, uint8_t *values)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mu2_8h.html#aadde1cb579c503860341b5cef7a82a2b">mu2TransmitData</a> (uint8_t *values, uint8_t size)</td></tr>
+</table>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a2cca36cda359912fefb702bb181505e7"></a><!-- doxytag: member="mu2.h::byteToString" ref="a2cca36cda359912fefb702bb181505e7" args="(uint8_t byte, char *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="mu2_8h.html#a2cca36cda359912fefb702bb181505e7">byteToString</a> </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>byte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>1Byte-&gt;16進文字列変換関数 </p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">byte</td><td>{uint8_t} 変換対象データ </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">string</td><td>{char*} 変換後文字列格納先ポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4a82d476fc1d4c2993f5c1d26aeb6aa7"></a><!-- doxytag: member="mu2.h::mu2Command" ref="a4a82d476fc1d4c2993f5c1d26aeb6aa7" args="(const char *command, uint8_t *values)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="mu2_8h.html#a4a82d476fc1d4c2993f5c1d26aeb6aa7">mu2Command</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>MU2にコマンドを送信する関数 </p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">command</td><td>{const char*} MU2に送信するコマンド </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">values</td><td>{uint8_t*} コマンドに付加するデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a181245dbcab3d38abbb4f56f38d67d86"></a><!-- doxytag: member="mu2.h::mu2CommandToEEPROM" ref="a181245dbcab3d38abbb4f56f38d67d86" args="(const char *command, uint8_t *values)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="mu2_8h.html#a181245dbcab3d38abbb4f56f38d67d86">mu2CommandToEEPROM</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>MU2にコマンドを送信し，MU2のEEPROMに書きこむ関数 </p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">command</td><td>{const char*} MU2に送信するコマンド </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">values</td><td>{uint8_t*} コマンドに付加するデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aadde1cb579c503860341b5cef7a82a2b"></a><!-- doxytag: member="mu2.h::mu2TransmitData" ref="aadde1cb579c503860341b5cef7a82a2b" args="(uint8_t *values, uint8_t size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="mu2_8h.html#aadde1cb579c503860341b5cef7a82a2b">mu2TransmitData</a> </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>MU2でデータを送信する関数 </p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">command</td><td>{const char*} MU2に送信するコマンド </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">values</td><td>{uint8_t*} コマンドに付加するデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab179cac24e6da05e506adfdc7d036176"></a><!-- doxytag: member="mu2.h::setMU2GetFunc" ref="ab179cac24e6da05e506adfdc7d036176" args="(uint8_t(*f)(void))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="mu2_8h.html#ab179cac24e6da05e506adfdc7d036176">setMU2GetFunc</a> </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t(*)(void)&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>シリアル受信関数用ポインタセッター関数 </p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>{uint8_t(*)(void)} </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8924570c2c2188a2362d77a36db1f7e1"></a><!-- doxytag: member="mu2.h::setMU2PutFunc" ref="a8924570c2c2188a2362d77a36db1f7e1" args="(void(*f)(void))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="mu2_8h.html#a8924570c2c2188a2362d77a36db1f7e1">setMU2PutFunc</a> </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>シリアル送信関数用ポインタセッター関数 </p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>{void(*)(void)} </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>関数</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+mu2に対してFri Dec 16 2011 18:06:14に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6
+</small></address>
+
+</body>
+</html>

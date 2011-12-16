@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>uart: uart_private.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">uart
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 作成： Doxygen 1.7.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>グローバル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a>  </div>
+  <div class="headertitle">
+<div class="title">uart_private.h</div>  </div>
+</div>
+<div class="contents">
+
+<p><a href="uart__private_8h_source.html">ソースコードを見る。</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__private_8h.html#a1b04ec1cde4d3032f558ed8ad05930a4">FREQ</a>&#160;&#160;&#160;8</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__private_8h.html#a9e2c6dbb5bc819c658978866b7ceec5c">UART0_TRANSMITTING</a>&#160;&#160;&#160;( ! ( UCSR0A &amp; _BV(UDRE0) ) )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__private_8h.html#a69416315b909e1839ef79367919bdf17">UART1_TRANSMITTING</a>&#160;&#160;&#160;( ! ( UCSR1A &amp; _BV(UDRE1) ) )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__private_8h.html#a10e908d160ad7d13988ac4986fcce53a">UART0_RECEIVING</a>&#160;&#160;&#160;( ! ( UCSR0A &amp; _BV(RXC0) ) )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__private_8h.html#a0080c80dfce1f4b49dc8ebebb2ba77a3">UART1_RECEIVING</a>&#160;&#160;&#160;( ! ( UCSR1A &amp; _BV(RXC1) ) )</td></tr>
+<tr><td colspan="2"><h2><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="uart__private_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba2c4bcbc7ecab8c124540394006d15b5a">OneFrameIs5Bit</a> =  0x00, 
+<a class="el" href="uart__private_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa346e69ef40a6705390715d54f0a6235">OneFrameIs6Bit</a> =  0x02, 
+<a class="el" href="uart__private_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba132c9568cd77032d8db8d0571fe6ecba">OneFrameIs7Bit</a> =  0x04, 
+<a class="el" href="uart__private_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba54e95e8c1e812f7643255a001bc6ac5e">OneFrameIs8Bit</a> =  0x06
+ }</td></tr>
+</table>
+<hr/><h2>マクロ定義</h2>
+<a class="anchor" id="a1b04ec1cde4d3032f558ed8ad05930a4"></a><!-- doxytag: member="uart_private.h::FREQ" ref="a1b04ec1cde4d3032f558ed8ad05930a4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="uart__private_8h.html#a1b04ec1cde4d3032f558ed8ad05930a4">FREQ</a>&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>マイコンの動作周波数 </p>
+
+</div>
+</div>
+<a class="anchor" id="a10e908d160ad7d13988ac4986fcce53a"></a><!-- doxytag: member="uart_private.h::UART0_RECEIVING" ref="a10e908d160ad7d13988ac4986fcce53a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="uart__private_8h.html#a10e908d160ad7d13988ac4986fcce53a">UART0_RECEIVING</a>&#160;&#160;&#160;( ! ( UCSR0A &amp; _BV(RXC0) ) )</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>UART0受信中 </p>
+
+</div>
+</div>
+<a class="anchor" id="a9e2c6dbb5bc819c658978866b7ceec5c"></a><!-- doxytag: member="uart_private.h::UART0_TRANSMITTING" ref="a9e2c6dbb5bc819c658978866b7ceec5c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="uart__private_8h.html#a9e2c6dbb5bc819c658978866b7ceec5c">UART0_TRANSMITTING</a>&#160;&#160;&#160;( ! ( UCSR0A &amp; _BV(UDRE0) ) )</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>条件マクロ</p>
+<p>UART0送信中 </p>
+
+</div>
+</div>
+<a class="anchor" id="a0080c80dfce1f4b49dc8ebebb2ba77a3"></a><!-- doxytag: member="uart_private.h::UART1_RECEIVING" ref="a0080c80dfce1f4b49dc8ebebb2ba77a3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="uart__private_8h.html#a0080c80dfce1f4b49dc8ebebb2ba77a3">UART1_RECEIVING</a>&#160;&#160;&#160;( ! ( UCSR1A &amp; _BV(RXC1) ) )</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>UART1受信中 </p>
+
+</div>
+</div>
+<a class="anchor" id="a69416315b909e1839ef79367919bdf17"></a><!-- doxytag: member="uart_private.h::UART1_TRANSMITTING" ref="a69416315b909e1839ef79367919bdf17" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="uart__private_8h.html#a69416315b909e1839ef79367919bdf17">UART1_TRANSMITTING</a>&#160;&#160;&#160;( ! ( UCSR1A &amp; _BV(UDRE1) ) )</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>UART1送信中 </p>
+
+</div>
+</div>
+<hr/><h2>列挙型</h2>
+<a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55b"></a><!-- doxytag: member="uart_private.h::@0" ref="a06fc87d81c62e9abb8790b6e5713c55b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>フレーム長 </p>
+<dl><dt><b>列挙型の値: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55ba2c4bcbc7ecab8c124540394006d15b5a"></a><!-- doxytag: member="OneFrameIs5Bit" ref="a06fc87d81c62e9abb8790b6e5713c55ba2c4bcbc7ecab8c124540394006d15b5a" args="" -->OneFrameIs5Bit</em>&nbsp;</td><td>
+<p>5ビットフレーム </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55baa346e69ef40a6705390715d54f0a6235"></a><!-- doxytag: member="OneFrameIs6Bit" ref="a06fc87d81c62e9abb8790b6e5713c55baa346e69ef40a6705390715d54f0a6235" args="" -->OneFrameIs6Bit</em>&nbsp;</td><td>
+<p>6ビットフレーム </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55ba132c9568cd77032d8db8d0571fe6ecba"></a><!-- doxytag: member="OneFrameIs7Bit" ref="a06fc87d81c62e9abb8790b6e5713c55ba132c9568cd77032d8db8d0571fe6ecba" args="" -->OneFrameIs7Bit</em>&nbsp;</td><td>
+<p>7ビットフレーム </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55ba54e95e8c1e812f7643255a001bc6ac5e"></a><!-- doxytag: member="OneFrameIs8Bit" ref="a06fc87d81c62e9abb8790b6e5713c55ba54e95e8c1e812f7643255a001bc6ac5e" args="" -->OneFrameIs8Bit</em>&nbsp;</td><td>
+<p>8ビットフレーム </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+</div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>列挙型の値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+uartに対してFri Dec 16 2011 18:41:37に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6
+</small></address>
+
+</body>
+</html>

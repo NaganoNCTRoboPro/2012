@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>uart: uart.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">uart
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 作成： Doxygen 1.7.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>グローバル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">列挙型</a>  </div>
+  <div class="headertitle">
+<div class="title">uart.h</div>  </div>
+</div>
+<div class="contents">
+
+<p><a href="uart_8h_source.html">ソースコードを見る。</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart_8h.html#a355b494da6bd13f946078934ffdd3194">UARTNumber</a> { <a class="el" href="uart_8h.html#a355b494da6bd13f946078934ffdd3194a9283de1a2e6eea552574a50ca586df8e">UART0</a>, 
+<a class="el" href="uart_8h.html#a355b494da6bd13f946078934ffdd3194ad78b5dd576e9a3ab80d6c77ff9d1cd27">UART1</a>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart_8h.html#a5e8efe8d2cd58c6c6103928750cedd58">UARTMode</a> { <a class="el" href="uart_8h.html#a5e8efe8d2cd58c6c6103928750cedd58a0d4185c10426cadd971b2130bc8d0c9e">StopBitIs1Bit</a> =  0x00, 
+<a class="el" href="uart_8h.html#a5e8efe8d2cd58c6c6103928750cedd58a2e927432ceed02e174e7001a6980d29d">StopBitIs2Bit</a> =  0x08, 
+<a class="el" href="uart_8h.html#a5e8efe8d2cd58c6c6103928750cedd58a635261d261d27318c39b487211f49446">NonParity</a> =  0x00, 
+<a class="el" href="uart_8h.html#a5e8efe8d2cd58c6c6103928750cedd58a5d46754d6739a61549b0092b2718ff25">OddParity</a>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart_8h.html#a13444082b8feefff269a012c4c2652e8">UARTAction</a> { <a class="el" href="uart_8h.html#a13444082b8feefff269a012c4c2652e8a6f9a1cc8bf0341ff3dfa1faab027f663">ReceiveCompleteInteruptEnable</a> =  0x80, 
+<a class="el" href="uart_8h.html#a13444082b8feefff269a012c4c2652e8ada65c3effd559e446a48239c279a1445">TransmitCompleteInteruptEnable</a> =  0x40, 
+<a class="el" href="uart_8h.html#a13444082b8feefff269a012c4c2652e8a57882c7cd084578ff0521c76dba8c637">ReceiverEnable</a> =  0x10, 
+<a class="el" href="uart_8h.html#a13444082b8feefff269a012c4c2652e8a0640f3d1b8d4aeff4443114c4fa3f44c">TransmiterEnable</a> =  0x08
+ }</td></tr>
+</table>
+<hr/><h2>列挙型</h2>
+<a class="anchor" id="a13444082b8feefff269a012c4c2652e8"></a><!-- doxytag: member="uart.h::UARTAction" ref="a13444082b8feefff269a012c4c2652e8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="uart_8h.html#a13444082b8feefff269a012c4c2652e8">UARTAction</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>UART動作 </p>
+<dl><dt><b>列挙型の値: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a13444082b8feefff269a012c4c2652e8a6f9a1cc8bf0341ff3dfa1faab027f663"></a><!-- doxytag: member="ReceiveCompleteInteruptEnable" ref="a13444082b8feefff269a012c4c2652e8a6f9a1cc8bf0341ff3dfa1faab027f663" args="" -->ReceiveCompleteInteruptEnable</em>&nbsp;</td><td>
+<p>受信完了割り込み </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a13444082b8feefff269a012c4c2652e8ada65c3effd559e446a48239c279a1445"></a><!-- doxytag: member="TransmitCompleteInteruptEnable" ref="a13444082b8feefff269a012c4c2652e8ada65c3effd559e446a48239c279a1445" args="" -->TransmitCompleteInteruptEnable</em>&nbsp;</td><td>
+<p>送信完了割り込み </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a13444082b8feefff269a012c4c2652e8a57882c7cd084578ff0521c76dba8c637"></a><!-- doxytag: member="ReceiverEnable" ref="a13444082b8feefff269a012c4c2652e8a57882c7cd084578ff0521c76dba8c637" args="" -->ReceiverEnable</em>&nbsp;</td><td>
+<p>受信許可 </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a13444082b8feefff269a012c4c2652e8a0640f3d1b8d4aeff4443114c4fa3f44c"></a><!-- doxytag: member="TransmiterEnable" ref="a13444082b8feefff269a012c4c2652e8a0640f3d1b8d4aeff4443114c4fa3f44c" args="" -->TransmiterEnable</em>&nbsp;</td><td>
+<p>送信許可 </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5e8efe8d2cd58c6c6103928750cedd58"></a><!-- doxytag: member="uart.h::UARTMode" ref="a5e8efe8d2cd58c6c6103928750cedd58" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="uart_8h.html#a5e8efe8d2cd58c6c6103928750cedd58">UARTMode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>UARTモード </p>
+<dl><dt><b>列挙型の値: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a5e8efe8d2cd58c6c6103928750cedd58a0d4185c10426cadd971b2130bc8d0c9e"></a><!-- doxytag: member="StopBitIs1Bit" ref="a5e8efe8d2cd58c6c6103928750cedd58a0d4185c10426cadd971b2130bc8d0c9e" args="" -->StopBitIs1Bit</em>&nbsp;</td><td>
+<p>停止1ビット </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5e8efe8d2cd58c6c6103928750cedd58a2e927432ceed02e174e7001a6980d29d"></a><!-- doxytag: member="StopBitIs2Bit" ref="a5e8efe8d2cd58c6c6103928750cedd58a2e927432ceed02e174e7001a6980d29d" args="" -->StopBitIs2Bit</em>&nbsp;</td><td>
+<p>停止2ビット </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5e8efe8d2cd58c6c6103928750cedd58a635261d261d27318c39b487211f49446"></a><!-- doxytag: member="NonParity" ref="a5e8efe8d2cd58c6c6103928750cedd58a635261d261d27318c39b487211f49446" args="" -->NonParity</em>&nbsp;</td><td>
+<p>パリティなし </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5e8efe8d2cd58c6c6103928750cedd58a5d46754d6739a61549b0092b2718ff25"></a><!-- doxytag: member="OddParity" ref="a5e8efe8d2cd58c6c6103928750cedd58a5d46754d6739a61549b0092b2718ff25" args="" -->OddParity</em>&nbsp;</td><td>
+<p>奇数パリティ </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a355b494da6bd13f946078934ffdd3194"></a><!-- doxytag: member="uart.h::UARTNumber" ref="a355b494da6bd13f946078934ffdd3194" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="uart_8h.html#a355b494da6bd13f946078934ffdd3194">UARTNumber</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>UART番号 </p>
+<dl><dt><b>列挙型の値: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a355b494da6bd13f946078934ffdd3194a9283de1a2e6eea552574a50ca586df8e"></a><!-- doxytag: member="UART0" ref="a355b494da6bd13f946078934ffdd3194a9283de1a2e6eea552574a50ca586df8e" args="" -->UART0</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a355b494da6bd13f946078934ffdd3194ad78b5dd576e9a3ab80d6c77ff9d1cd27"></a><!-- doxytag: member="UART1" ref="a355b494da6bd13f946078934ffdd3194ad78b5dd576e9a3ab80d6c77ff9d1cd27" args="" -->UART1</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+</div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>列挙型の値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+uartに対してFri Dec 16 2011 18:41:37に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6
+</small></address>
+
+</body>
+</html>
