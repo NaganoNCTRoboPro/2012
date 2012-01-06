@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <a name="l00017"></a><a class="code" href="i2c_8h.html#a1b04ec1cde4d3032f558ed8ad05930a4">00017</a> <span class="preprocessor">#define FREQ                    20// [MHz]</span>
 <a name="l00018"></a>00018 <span class="preprocessor"></span>
 <a name="l00019"></a><a class="code" href="i2c_8h.html#a2f0837ace4b2f49e0126eb61e842b3f3">00019</a> <span class="preprocessor">#define MASTER_COMPILE          (1)</span>
-<a name="l00020"></a><a class="code" href="i2c_8h.html#a017d3c5ea304c7d77da749f9534435a3">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define SLAVE_COMPILE           (0)</span>
+<a name="l00020"></a><a class="code" href="i2c_8h.html#a017d3c5ea304c7d77da749f9534435a3">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define SLAVE_COMPILE           (1)</span>
 <a name="l00021"></a>00021 <span class="preprocessor"></span>
 <a name="l00025"></a><a class="code" href="structst__i2c__slave.html">00025</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structst__i2c__slave.html">st_i2c_slave</a> {
 <a name="l00027"></a><a class="code" href="structst__i2c__slave.html#af3f726014b044194def151079f1f2d89">00027</a>                 uint8_t <a class="code" href="structst__i2c__slave.html#af3f726014b044194def151079f1f2d89" title="スレーブアドレス">address</a>;
@@ -108,9 +108,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <a name="l00046"></a>00046                 <span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="i2c_8c.html#a96b90c2b093b51d6b16729243fd78524">i2cRead</a>(<a class="code" href="structst__i2c__slave.html">Slave</a>* slave);
 <a name="l00047"></a>00047                 <span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="i2c_8c.html#a7d69e328d532e079a89d5e97cd213174">i2cReadWithCommand</a>(<a class="code" href="structst__i2c__slave.html">Slave</a>* slave);
 <a name="l00048"></a>00048 <span class="preprocessor">#elif SLAVE_COMPILE</span>
-<a name="l00049"></a>00049 <span class="preprocessor"></span>                <span class="keyword">extern</span> <span class="keywordtype">void</span> initI2CSlave(<a class="code" href="structst__i2c__slave.html">Slave</a>* _own);
+<a name="l00049"></a>00049 <span class="preprocessor"></span>                <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="i2c_8c.html#aa2ab55785b7bd04505a0cd40621ba80c">initI2CSlave</a>(<a class="code" href="structst__i2c__slave.html">Slave</a>* _own);
 <a name="l00050"></a>00050                 <span class="keyword">extern</span> <span class="keywordtype">bool</span> isEmergency(<span class="keywordtype">void</span>);
-<a name="l00051"></a>00051                 <span class="keyword">extern</span> <span class="keywordtype">bool</span> isCommunicatingViaI2C(<span class="keywordtype">void</span>);
+<a name="l00051"></a>00051                 <span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code" href="i2c_8c.html#a1d8f8a0cc0237640d03b22c4cc01cfc1">isCommunicatingViaI2C</a>(<span class="keywordtype">void</span>);
 <a name="l00052"></a>00052 <span class="preprocessor">#else</span>
 <a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">    #warning I2C CONFIG IS NOT COMPILE</span>
 <a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#endif // プロトタイプ宣言</span>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 
 
 <hr class="footer"/><address class="footer"><small>
-i2cに対してSat Dec 24 2011 23:00:59に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+i2cに対してSat Jan 7 2012 01:14:06に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6
 </small></address>

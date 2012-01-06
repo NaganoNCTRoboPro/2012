@@ -11,5 +11,9 @@ var searchData=
   ['i2cstatus',['I2CStatus',['../i2c__private_8h.html#a9bec282875cd65e00172e875ef785bec',1,'i2c_private.h']]],
   ['i2cwrite',['i2cWrite',['../i2c_8c.html#aba71858c1860f6187cb917a004c2683f',1,'i2cWrite(Slave *slave):&#160;i2c.c'],['../i2c_8h.html#aba71858c1860f6187cb917a004c2683f',1,'i2cWrite(Slave *slave):&#160;i2c.c']]],
   ['initi2cmaster',['initI2CMaster',['../i2c_8c.html#aee045f20758522bd27afebff5dbab6b4',1,'initI2CMaster(uint16_t speed):&#160;i2c.c'],['../i2c_8h.html#aee045f20758522bd27afebff5dbab6b4',1,'initI2CMaster(uint16_t speed):&#160;i2c.c']]],
-  ['interruptenablei2c',['InterruptEnableI2C',['../i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fabb0a1e09bd9fef7563af0722a9b9f0b1',1,'i2c_private.h']]]
+  ['initi2cslave',['initI2CSlave',['../i2c_8c.html#aa2ab55785b7bd04505a0cd40621ba80c',1,'i2c.c']]],
+  ['interruptenablei2c',['InterruptEnableI2C',['../i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fabb0a1e09bd9fef7563af0722a9b9f0b1',1,'i2c_private.h']]],
+  ['iscommunicatingviai2c',['isCommunicatingViaI2C',['../i2c_8c.html#a1d8f8a0cc0237640d03b22c4cc01cfc1',1,'i2c.c']]],
+  ['isgeneralcalled',['isGeneralCalled',['../i2c_8c.html#a61d423939a0b0a87befdac2d88d61603',1,'i2c.c']]],
+  ['isr',['ISR',['../i2c_8c.html#a474f42eedbdc093683fdb4b88be3c48f',1,'i2c.c']]]
 ];
