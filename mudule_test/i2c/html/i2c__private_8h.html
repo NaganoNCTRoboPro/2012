@@ -97,11 +97,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 列挙型</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7f">I2CControl</a> { <br/>
 &#160;&#160;<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fafa15482eed0cf6d8c9c33900fb64f833">EnableI2C</a> =  _BV(TWEN), 
-<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2">ContinueI2C</a> =  _BV(TWIE) _BV(TWEA) _BV(TWEN) | _BV(TWINT), 
-<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7faa39e53fac0b35b56daaa134a70c5bea2">ContinueAndResponseI2C</a> =  _BV(TWEN) | _BV(TWINT) | _BV(TWEA), 
-<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa5ad94febbf25f6a8862020258e462509">SendStartConditionBit</a> =  _BV(TWEN) | _BV(TWINT) | _BV(TWSTA), 
+<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fabb0a1e09bd9fef7563af0722a9b9f0b1">InterruptEnableI2C</a> =  _BV(TWIE), 
+<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa02a3587f7e6e53f482ea4e4346f87b87">ACKEnableI2C</a> =  _BV(TWEA), 
+<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2">ContinueI2C</a> =  _BV(TWEN) | _BV(TWINT), 
 <br/>
-&#160;&#160;<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7faee35728f5e657837d13a62ce7660acd2">SendStopConditionBit</a> =  _BV(TWEN) | _BV(TWINT) | _BV(TWSTO)
+&#160;&#160;<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7faa39e53fac0b35b56daaa134a70c5bea2">ContinueAndResponseI2C</a> =  _BV(TWEN) | _BV(TWINT) | _BV(TWEA), 
+<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa5ad94febbf25f6a8862020258e462509">SendStartConditionBit</a> =  _BV(TWEN) | _BV(TWINT) | _BV(TWSTA), 
+<a class="el" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7faee35728f5e657837d13a62ce7660acd2">SendStopConditionBit</a> =  _BV(TWEN) | _BV(TWINT) | _BV(TWSTO)
 <br/>
  }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785bec">I2CStatus</a> { <br/>
@@ -110,14 +112,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca4ffef07c51abd08f95afbbf4ac669ecd">SentDataByteAndACKAtMaster</a> =  0x28, 
 <a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca909df609a925d48e37b12008816490f7">SentSlaveAddressWithReadBitAndACK</a> =  0x40, 
 <br/>
-&#160;&#160;<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b">ReceivedGeneralCallRecognitionAndACK</a> =  0x50 0x50 0x70, 
+&#160;&#160;<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca421c069c01c5c826530d33606737b340">ReceivedDataByteAndACKAtMaster</a> =  0x50, 
+<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becab9ebef5d4ebddfb00caf846ce3dd7217">ReceivedDataByteAndNACK</a> =  0x50, 
+<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b">ReceivedGeneralCallRecognitionAndACK</a> =  0x70, 
 <a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becaf107bd2c8488366f86cb221e98e8d3ae">ReceivedOwnAddressWithWriteBitAndACK</a> =  0x60, 
-<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becad73157ae4b7017f79335e3687eac5f8e">ReceivedGeneralCallRecognitionDataByteAndACK</a> =  0x90, 
-<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becaeb784d2701034d82abb06be6e6f8db8b">ReceivedDataByteAndACKAtSlave</a> =  0x80, 
 <br/>
-&#160;&#160;<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca3cc1152962e99e1887d66c8383e9ba86">ReceivedStopConditionBit</a> =  0xA0, 
+&#160;&#160;<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becad73157ae4b7017f79335e3687eac5f8e">ReceivedGeneralCallRecognitionDataByteAndACK</a> =  0x90, 
+<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becaeb784d2701034d82abb06be6e6f8db8b">ReceivedDataByteAndACKAtSlave</a> =  0x80, 
+<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca3cc1152962e99e1887d66c8383e9ba86">ReceivedStopConditionBit</a> =  0xA0, 
 <a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becab78a21a3a83222dca773a1aa0c543c73">ReceivedOwnAddressWithReadBitAndACK</a> =  0xA8, 
-<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca6c4eeee599f3cc5e9a32c81e0068d28b">SentDataByteAndACKAtSlave</a> =  0xB8, 
+<br/>
+&#160;&#160;<a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca6c4eeee599f3cc5e9a32c81e0068d28b">SentDataByteAndACKAtSlave</a> =  0xB8, 
 <a class="el" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca020c2329c090ab3e0fb9c3b47003bea6">SentDataByteAndNACKAtSlave</a> =  0xC0
 <br/>
  }</td></tr>
@@ -209,9 +214,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <tr><td valign="top"><em><a class="anchor" id="aa2210ff665db8870e06610452e2c4d7fafa15482eed0cf6d8c9c33900fb64f833"></a><!-- doxytag: member="EnableI2C" ref="aa2210ff665db8870e06610452e2c4d7fafa15482eed0cf6d8c9c33900fb64f833" args="" -->EnableI2C</em>&nbsp;</td><td>
 <p>I2Cの動作を許可する </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2"></a><!-- doxytag: member="ContinueI2C" ref="aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2" args="" -->ContinueI2C</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="aa2210ff665db8870e06610452e2c4d7fabb0a1e09bd9fef7563af0722a9b9f0b1"></a><!-- doxytag: member="InterruptEnableI2C" ref="aa2210ff665db8870e06610452e2c4d7fabb0a1e09bd9fef7563af0722a9b9f0b1" args="" -->InterruptEnableI2C</em>&nbsp;</td><td>
 <p>I2Cの割り込みを許可する </p>
-<p>ACK応答を許可する I2Cの動作を続ける </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aa2210ff665db8870e06610452e2c4d7fa02a3587f7e6e53f482ea4e4346f87b87"></a><!-- doxytag: member="ACKEnableI2C" ref="aa2210ff665db8870e06610452e2c4d7fa02a3587f7e6e53f482ea4e4346f87b87" args="" -->ACKEnableI2C</em>&nbsp;</td><td>
+<p>ACK応答を許可する </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2"></a><!-- doxytag: member="ContinueI2C" ref="aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2" args="" -->ContinueI2C</em>&nbsp;</td><td>
+<p>I2Cの動作を続ける </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="aa2210ff665db8870e06610452e2c4d7faa39e53fac0b35b56daaa134a70c5bea2"></a><!-- doxytag: member="ContinueAndResponseI2C" ref="aa2210ff665db8870e06610452e2c4d7faa39e53fac0b35b56daaa134a70c5bea2" args="" -->ContinueAndResponseI2C</em>&nbsp;</td><td>
 <p>I2Cの動作を続ける．かつ，応答を返す </p>
@@ -252,9 +262,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <tr><td valign="top"><em><a class="anchor" id="a9bec282875cd65e00172e875ef785beca909df609a925d48e37b12008816490f7"></a><!-- doxytag: member="SentSlaveAddressWithReadBitAndACK" ref="a9bec282875cd65e00172e875ef785beca909df609a925d48e37b12008816490f7" args="" -->SentSlaveAddressWithReadBitAndACK</em>&nbsp;</td><td>
 <p>スレーブアドレス+Rを送信し，ACKを確認した状態 </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b"></a><!-- doxytag: member="ReceivedGeneralCallRecognitionAndACK" ref="a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b" args="" -->ReceivedGeneralCallRecognitionAndACK</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a9bec282875cd65e00172e875ef785beca421c069c01c5c826530d33606737b340"></a><!-- doxytag: member="ReceivedDataByteAndACKAtMaster" ref="a9bec282875cd65e00172e875ef785beca421c069c01c5c826530d33606737b340" args="" -->ReceivedDataByteAndACKAtMaster</em>&nbsp;</td><td>
 <p>マスター動作でデータバイトを受信し，ACKを発行した状態 </p>
-<p>データバイトを受信し，NACKを発行した状態 一斉呼出を受信し，ACKを発行した状態 </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a9bec282875cd65e00172e875ef785becab9ebef5d4ebddfb00caf846ce3dd7217"></a><!-- doxytag: member="ReceivedDataByteAndNACK" ref="a9bec282875cd65e00172e875ef785becab9ebef5d4ebddfb00caf846ce3dd7217" args="" -->ReceivedDataByteAndNACK</em>&nbsp;</td><td>
+<p>データバイトを受信し，NACKを発行した状態 </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b"></a><!-- doxytag: member="ReceivedGeneralCallRecognitionAndACK" ref="a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b" args="" -->ReceivedGeneralCallRecognitionAndACK</em>&nbsp;</td><td>
+<p>一斉呼出を受信し，ACKを発行した状態 </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a9bec282875cd65e00172e875ef785becaf107bd2c8488366f86cb221e98e8d3ae"></a><!-- doxytag: member="ReceivedOwnAddressWithWriteBitAndACK" ref="a9bec282875cd65e00172e875ef785becaf107bd2c8488366f86cb221e98e8d3ae" args="" -->ReceivedOwnAddressWithWriteBitAndACK</em>&nbsp;</td><td>
 <p>自アドレス+Wを受信し，ACKを発行した状態 </p>
@@ -302,7 +317,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 
 
 <hr class="footer"/><address class="footer"><small>
-i2cに対してWed Dec 14 2011 18:22:27に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+i2cに対してSat Dec 24 2011 23:00:59に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6
 </small></address>

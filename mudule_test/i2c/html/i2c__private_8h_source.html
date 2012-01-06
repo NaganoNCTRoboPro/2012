@@ -91,11 +91,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <a name="l00029"></a><a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7f">00029</a> <span class="keyword">enum</span> <a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7f">I2CControl</a> {
 <a name="l00031"></a><a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fafa15482eed0cf6d8c9c33900fb64f833">00031</a>                 <a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fafa15482eed0cf6d8c9c33900fb64f833" title="I2Cの動作を許可する">EnableI2C</a> = _BV(TWEN),
 <a name="l00032"></a>00032     
-<a name="l00034"></a>00034                 InterruptEnableI2C = _BV(TWIE);
+<a name="l00034"></a><a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fabb0a1e09bd9fef7563af0722a9b9f0b1">00034</a>                 <a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fabb0a1e09bd9fef7563af0722a9b9f0b1" title="I2Cの割り込みを許可する">InterruptEnableI2C</a> = _BV(TWIE),
 <a name="l00035"></a>00035     
-<a name="l00037"></a>00037                 ACKEnableI2C = _BV(TWEA);
+<a name="l00037"></a><a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa02a3587f7e6e53f482ea4e4346f87b87">00037</a>                 <a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa02a3587f7e6e53f482ea4e4346f87b87" title="ACK応答を許可する">ACKEnableI2C</a> = _BV(TWEA),
 <a name="l00038"></a>00038     
-<a name="l00040"></a><a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2">00040</a>                 <a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2" title="I2Cの割り込みを許可する">ContinueI2C</a> = _BV(TWEN) | _BV(TWINT),
+<a name="l00040"></a><a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2">00040</a>                 <a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7fa7660063e30d643a276fbbdc6ec4f9cf2" title="I2Cの動作を続ける">ContinueI2C</a> = _BV(TWEN) | _BV(TWINT),
 <a name="l00041"></a>00041     
 <a name="l00043"></a><a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7faa39e53fac0b35b56daaa134a70c5bea2">00043</a>                 <a class="code" href="i2c__private_8h.html#aa2210ff665db8870e06610452e2c4d7faa39e53fac0b35b56daaa134a70c5bea2" title="I2Cの動作を続ける．かつ，応答を返す">ContinueAndResponseI2C</a> = _BV(TWEN) | _BV(TWINT) | _BV(TWEA),
 <a name="l00044"></a>00044     
@@ -113,11 +113,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <a name="l00064"></a>00064     
 <a name="l00066"></a><a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca909df609a925d48e37b12008816490f7">00066</a>                 <a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca909df609a925d48e37b12008816490f7" title="スレーブアドレス+Rを送信し，ACKを確認した状態">SentSlaveAddressWithReadBitAndACK</a> = 0x40,
 <a name="l00067"></a>00067     
-<a name="l00069"></a>00069                 ReceivedDataByteAndACKAtMaster = 0x50;
+<a name="l00069"></a><a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca421c069c01c5c826530d33606737b340">00069</a>                 <a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca421c069c01c5c826530d33606737b340" title="マスター動作でデータバイトを受信し，ACKを発行した状態">ReceivedDataByteAndACKAtMaster</a> = 0x50,
 <a name="l00070"></a>00070     
-<a name="l00072"></a>00072                 ReceivedDataByteAndNACK = 0x50;
+<a name="l00072"></a><a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becab9ebef5d4ebddfb00caf846ce3dd7217">00072</a>                 <a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becab9ebef5d4ebddfb00caf846ce3dd7217" title="データバイトを受信し，NACKを発行した状態">ReceivedDataByteAndNACK</a> = 0x50,
 <a name="l00073"></a>00073     
-<a name="l00075"></a><a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b">00075</a>                 <a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b" title="マスター動作でデータバイトを受信し，ACKを発行した状態">ReceivedGeneralCallRecognitionAndACK</a> = 0x70,
+<a name="l00075"></a><a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b">00075</a>                 <a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b" title="一斉呼出を受信し，ACKを発行した状態">ReceivedGeneralCallRecognitionAndACK</a> = 0x70,
 <a name="l00076"></a>00076     
 <a name="l00078"></a><a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becaf107bd2c8488366f86cb221e98e8d3ae">00078</a>                 <a class="code" href="i2c__private_8h.html#a9bec282875cd65e00172e875ef785becaf107bd2c8488366f86cb221e98e8d3ae" title="自アドレス+Wを受信し，ACKを発行した状態">ReceivedOwnAddressWithWriteBitAndACK</a> = 0x60,
 <a name="l00079"></a>00079     
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 
 
 <hr class="footer"/><address class="footer"><small>
-i2cに対してWed Dec 14 2011 18:22:27に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+i2cに対してSat Dec 24 2011 23:00:59に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6
 </small></address>

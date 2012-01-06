@@ -1,7 +1,9 @@
 var searchData=
 [
   ['read',['read',['../structst__i2c__slave.html#accbe6a1122a71adc9c9de04b6520150d',1,'st_i2c_slave::read()'],['../i2c__private_8h.html#ada74e7db007a68e763f20c17f2985356',1,'READ():&#160;i2c_private.h']]],
+  ['receiveddatabyteandackatmaster',['ReceivedDataByteAndACKAtMaster',['../i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca421c069c01c5c826530d33606737b340',1,'i2c_private.h']]],
   ['receiveddatabyteandackatslave',['ReceivedDataByteAndACKAtSlave',['../i2c__private_8h.html#a9bec282875cd65e00172e875ef785becaeb784d2701034d82abb06be6e6f8db8b',1,'i2c_private.h']]],
+  ['receiveddatabyteandnack',['ReceivedDataByteAndNACK',['../i2c__private_8h.html#a9bec282875cd65e00172e875ef785becab9ebef5d4ebddfb00caf846ce3dd7217',1,'i2c_private.h']]],
   ['receivedgeneralcallrecognitionandack',['ReceivedGeneralCallRecognitionAndACK',['../i2c__private_8h.html#a9bec282875cd65e00172e875ef785beca2583c8e6b1b5533059f639c19737372b',1,'i2c_private.h']]],
   ['receivedgeneralcallrecognitiondatabyteandack',['ReceivedGeneralCallRecognitionDataByteAndACK',['../i2c__private_8h.html#a9bec282875cd65e00172e875ef785becad73157ae4b7017f79335e3687eac5f8e',1,'i2c_private.h']]],
   ['receivedownaddresswithreadbitandack',['ReceivedOwnAddressWithReadBitAndACK',['../i2c__private_8h.html#a9bec282875cd65e00172e875ef785becab78a21a3a83222dca773a1aa0c543c73',1,'i2c_private.h']]],

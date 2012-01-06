@@ -95,15 +95,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structst__i2c__slave.html">st_i2c_slave</a></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 マクロ定義</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a1b04ec1cde4d3032f558ed8ad05930a4">FREQ</a>&#160;&#160;&#160;8</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a1b04ec1cde4d3032f558ed8ad05930a4">FREQ</a>&#160;&#160;&#160;20</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a2f0837ace4b2f49e0126eb61e842b3f3">MASTER_COMPILE</a>&#160;&#160;&#160;(1)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a017d3c5ea304c7d77da749f9534435a3">SLAVE_COMPILE</a>&#160;&#160;&#160;(1)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a017d3c5ea304c7d77da749f9534435a3">SLAVE_COMPILE</a>&#160;&#160;&#160;(0)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 型定義</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structst__i2c__slave.html">st_i2c_slave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 関数</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#adc8d29d570a892f6c4b5f845d160d32f">initI2CMaster</a> (uint8_t speed)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#aee045f20758522bd27afebff5dbab6b4">initI2CMaster</a> (uint16_t speed)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#aba71858c1860f6187cb917a004c2683f">i2cWrite</a> (<a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *slave)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a96b90c2b093b51d6b16729243fd78524">i2cRead</a> (<a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *slave)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a7d69e328d532e079a89d5e97cd213174">i2cReadWithCommand</a> (<a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *slave)</td></tr>
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="i2c_8h.html#a1b04ec1cde4d3032f558ed8ad05930a4">FREQ</a>&#160;&#160;&#160;8</td>
+          <td class="memname">#define <a class="el" href="i2c_8h.html#a1b04ec1cde4d3032f558ed8ad05930a4">FREQ</a>&#160;&#160;&#160;20</td>
         </tr>
       </table>
 </div>
@@ -142,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="i2c_8h.html#a017d3c5ea304c7d77da749f9534435a3">SLAVE_COMPILE</a>&#160;&#160;&#160;(1)</td>
+          <td class="memname">#define <a class="el" href="i2c_8h.html#a017d3c5ea304c7d77da749f9534435a3">SLAVE_COMPILE</a>&#160;&#160;&#160;(0)</td>
         </tr>
       </table>
 </div>
@@ -234,21 +234,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 
 </div>
 </div>
-<a class="anchor" id="adc8d29d570a892f6c4b5f845d160d32f"></a><!-- doxytag: member="i2c.h::initI2CMaster" ref="adc8d29d570a892f6c4b5f845d160d32f" args="(uint8_t speed)" -->
+<a class="anchor" id="aee045f20758522bd27afebff5dbab6b4"></a><!-- doxytag: member="i2c.h::initI2CMaster" ref="aee045f20758522bd27afebff5dbab6b4" args="(uint16_t speed)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="i2c_8h.html#adc8d29d570a892f6c4b5f845d160d32f">initI2CMaster</a> </td>
+          <td class="memname">void <a class="el" href="i2c_8h.html#aee045f20758522bd27afebff5dbab6b4">initI2CMaster</a> </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>speed</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>プロトタイプ宣言 </p>
+<p>プロトタイプ宣言</p>
+<p>TWIをマスターとして初期化する</p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>{uint16_t} I2Cのバススピード </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -271,7 +278,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'検索');
 
 
 <hr class="footer"/><address class="footer"><small>
-i2cに対してWed Dec 14 2011 18:22:27に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+i2cに対してSat Dec 24 2011 23:00:59に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6
 </small></address>
