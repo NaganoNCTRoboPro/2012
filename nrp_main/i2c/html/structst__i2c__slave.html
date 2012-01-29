@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>i2c: 構造体 st_i2c_slave</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">i2c
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 作成： Doxygen 1.7.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>データ構造</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li><a href="examples.html"><span>例</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li><a href="classes.html"><span>データ構造索引</span></a></li>
+      <li><a href="functions.html"><span>データフィールド</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">変数</a>  </div>
+  <div class="headertitle">
+<div class="title">構造体 st_i2c_slave</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="st_i2c_slave" -->
+<p><code>#include &lt;<a class="el" href="i2c_8h_source.html">i2c.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+変数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structst__i2c__slave.html#af3f726014b044194def151079f1f2d89">address</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">スレーブアドレス  <a href="#af3f726014b044194def151079f1f2d89"></a><br/></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;uint8_t *&#160;&#160;&#160;<a class="el" href="structst__i2c__slave.html#a56ed84df35de10bdb65e72b184309497">buffer</a></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structst__i2c__slave.html#ae5dc6ffcd9b7605c7787791e40cc6bb0">size</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structst__i2c__slave.html#a074476e011300478c6723009e9360d2d">write</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">write動作のバッファとそのサイズ  <a href="#a074476e011300478c6723009e9360d2d"></a><br/></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;uint8_t *&#160;&#160;&#160;<a class="el" href="structst__i2c__slave.html#a56ed84df35de10bdb65e72b184309497">buffer</a></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="structst__i2c__slave.html#ae5dc6ffcd9b7605c7787791e40cc6bb0">size</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structst__i2c__slave.html#accbe6a1122a71adc9c9de04b6520150d">read</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">read動作のバッファとそのサイズ  <a href="#accbe6a1122a71adc9c9de04b6520150d"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>スレーブクラスの属性 </p>
+<dl><dt><b>例: </b></dt><dd>
+<p><a class="el" href="i2c_read-example.html#_a0">i2cRead</a>, <a class="el" href="i2c_read_with_command-example.html#_a0">i2cReadWithCommand</a>, <a class="el" href="i2c_write-example.html#_a0">i2cWrite</a>, と <a class="el" href="init_i2_c_slave-example.html#_a0">initI2CSlave</a>.</p>
+</dd>
+</dl></div><hr/><h2>構造体</h2>
+<a class="anchor" id="af3f726014b044194def151079f1f2d89"></a><!-- doxytag: member="st_i2c_slave::address" ref="af3f726014b044194def151079f1f2d89" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="structst__i2c__slave.html#af3f726014b044194def151079f1f2d89">address</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>スレーブアドレス </p>
+<dl><dt><b>例: </b></dt><dd><a class="el" href="i2c_read-example.html#a1">i2cRead</a>, <a class="el" href="i2c_read_with_command-example.html#a1">i2cReadWithCommand</a>, <a class="el" href="i2c_write-example.html#a1">i2cWrite</a>, と <a class="el" href="init_i2_c_slave-example.html#a1">initI2CSlave</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a56ed84df35de10bdb65e72b184309497"></a><!-- doxytag: member="st_i2c_slave::buffer" ref="a56ed84df35de10bdb65e72b184309497" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* <a class="el" href="structst__i2c__slave.html#a56ed84df35de10bdb65e72b184309497">buffer</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="accbe6a1122a71adc9c9de04b6520150d"></a><!-- doxytag: member="st_i2c_slave::read" ref="accbe6a1122a71adc9c9de04b6520150d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="structst__i2c__slave.html#accbe6a1122a71adc9c9de04b6520150d">read</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>read動作のバッファとそのサイズ </p>
+
+</div>
+</div>
+<a class="anchor" id="ae5dc6ffcd9b7605c7787791e40cc6bb0"></a><!-- doxytag: member="st_i2c_slave::size" ref="ae5dc6ffcd9b7605c7787791e40cc6bb0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="structst__i2c__slave.html#ae5dc6ffcd9b7605c7787791e40cc6bb0">size</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a074476e011300478c6723009e9360d2d"></a><!-- doxytag: member="st_i2c_slave::write" ref="a074476e011300478c6723009e9360d2d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="structst__i2c__slave.html#a074476e011300478c6723009e9360d2d">write</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>write動作のバッファとそのサイズ </p>
+
+</div>
+</div>
+<hr/>この構造体の説明は次のファイルから生成されました:<ul>
+<li><a class="el" href="i2c_8h_source.html">i2c.h</a></li>
+</ul>
+</div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙型の値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+i2cに対してSat Jan 7 2012 01:14:06に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6
+</small></address>
+
+</body>
+</html>

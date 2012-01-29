@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>i2c: i2c.c</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">i2c
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 作成： Doxygen 1.7.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>データ構造</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li><a href="examples.html"><span>例</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>グローバル</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">i2c.c</div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br/>
+<code>#include &lt;avr/interrupt.h&gt;</code><br/>
+<code>#include &lt;stdbool.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="i2c_8h_source.html">i2c.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="i2c__private_8h_source.html">i2c_private.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+関数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#aee045f20758522bd27afebff5dbab6b4">initI2CMaster</a> (uint16_t speed)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#aba71858c1860f6187cb917a004c2683f">i2cWrite</a> (<a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *slave)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#a96b90c2b093b51d6b16729243fd78524">i2cRead</a> (<a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *slave)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#a7d69e328d532e079a89d5e97cd213174">i2cReadWithCommand</a> (<a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *slave)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#aa2ab55785b7bd04505a0cd40621ba80c">initI2CSlave</a> (<a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *_own)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#a61d423939a0b0a87befdac2d88d61603">isGeneralCalled</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#a1d8f8a0cc0237640d03b22c4cc01cfc1">isCommunicatingViaI2C</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#a474f42eedbdc093683fdb4b88be3c48f">ISR</a> (TWI_vect)</td></tr>
+</table>
+<hr/><h2>関数</h2>
+<a class="anchor" id="a96b90c2b093b51d6b16729243fd78524"></a><!-- doxytag: member="i2c.c::i2cRead" ref="a96b90c2b093b51d6b16729243fd78524" args="(Slave *slave)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="i2c_8h.html#a96b90c2b093b51d6b16729243fd78524">i2cRead</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *&#160;</td>
+          <td class="paramname"><em>slave</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>マスターがスレーブにreadする</p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>{Slave*} 受信先のスレーブインスタンスのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>{bool} 成否 </dd></dl>
+<dl><dt><b>例: </b></dt><dd><a class="el" href="i2c_read-example.html#a2">i2cRead</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a7d69e328d532e079a89d5e97cd213174"></a><!-- doxytag: member="i2c.c::i2cReadWithCommand" ref="a7d69e328d532e079a89d5e97cd213174" args="(Slave *slave)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="i2c_8h.html#a7d69e328d532e079a89d5e97cd213174">i2cReadWithCommand</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *&#160;</td>
+          <td class="paramname"><em>slave</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>例: </b></dt><dd><a class="el" href="i2c_read_with_command-example.html#a2">i2cReadWithCommand</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aba71858c1860f6187cb917a004c2683f"></a><!-- doxytag: member="i2c.c::i2cWrite" ref="aba71858c1860f6187cb917a004c2683f" args="(Slave *slave)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="i2c_8h.html#aba71858c1860f6187cb917a004c2683f">i2cWrite</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *&#160;</td>
+          <td class="paramname"><em>slave</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>マスターがスレーブにwriteする</p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">slave</td><td>{Slave*} 送信先のスレーブインスタンスのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>{bool} 成否 </dd></dl>
+<dl><dt><b>例: </b></dt><dd><a class="el" href="i2c_write-example.html#a2">i2cWrite</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aee045f20758522bd27afebff5dbab6b4"></a><!-- doxytag: member="i2c.c::initI2CMaster" ref="aee045f20758522bd27afebff5dbab6b4" args="(uint16_t speed)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="i2c_8h.html#aee045f20758522bd27afebff5dbab6b4">initI2CMaster</a> </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>speed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>TWIをマスターとして初期化する</p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>{uint16_t} I2Cのバススピード </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例: </b></dt><dd><a class="el" href="init_i2_c_master-example.html#a0">initI2CMaster</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="aa2ab55785b7bd04505a0cd40621ba80c"></a><!-- doxytag: member="i2c.c::initI2CSlave" ref="aa2ab55785b7bd04505a0cd40621ba80c" args="(Slave *_own)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="i2c_8c.html#aa2ab55785b7bd04505a0cd40621ba80c">initI2CSlave</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="i2c_8h.html#ad1db4d9d3d41176b41158097e4393bc3">Slave</a> *&#160;</td>
+          <td class="paramname"><em>_own</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>TWIをスレーブとして初期化する</p>
+<dl class="params"><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">_own</td><td>{Slave*} 自分自身のスレーブインスタンスのポインタ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例: </b></dt><dd><a class="el" href="init_i2_c_slave-example.html#a2">initI2CSlave</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="a1d8f8a0cc0237640d03b22c4cc01cfc1"></a><!-- doxytag: member="i2c.c::isCommunicatingViaI2C" ref="a1d8f8a0cc0237640d03b22c4cc01cfc1" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="i2c_8c.html#a1d8f8a0cc0237640d03b22c4cc01cfc1">isCommunicatingViaI2C</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>通信中検査関数 </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>{bool} 通信中か否か </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a61d423939a0b0a87befdac2d88d61603"></a><!-- doxytag: member="i2c.c::isGeneralCalled" ref="a61d423939a0b0a87befdac2d88d61603" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="i2c_8c.html#a61d423939a0b0a87befdac2d88d61603">isGeneralCalled</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>一斉呼出検査関数 読みだすとフラグは下がる </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>{bool} 有ったか無かったか </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a474f42eedbdc093683fdb4b88be3c48f"></a><!-- doxytag: member="i2c.c::ISR" ref="a474f42eedbdc093683fdb4b88be3c48f" args="(TWI_vect)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="i2c_8c.html#a474f42eedbdc093683fdb4b88be3c48f">ISR</a> </td>
+          <td>(</td>
+          <td class="paramtype">TWI_vect&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>スレーブ動作の時の割り込み処理 </p>
+
+</div>
+</div>
+</div>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>データ構造</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>型定義</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>列挙型</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>列挙型の値</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>マクロ定義</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+i2cに対してSat Jan 7 2012 01:14:06に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6
+</small></address>
+
+</body>
+</html>
