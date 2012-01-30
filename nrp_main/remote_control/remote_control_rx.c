@@ -39,25 +39,18 @@ static volatile enum RecievePhases phase = SerchHead;
 
 volatile uint8_t ovfCnt = 0;
 
-/*
-inline void initIntervalTimer(void)
+void initIntervalTimer(void)
 {
-	TCCR1A = 0;
-	TCCR1B = 5;
-	TIMSK1 = 1;
-	TCNT1 = 0;
+	wdt_reset();
+	//ウォッチドッグ0.5[s]割り込みリセット無効
+	WDTCSR |= _BV(WDCE)|_BV(WDE);
+	WDTCSR = _BV(WDP2)|_BV(WDP0);
 }
-inline void intervalTimerReset(void)
-{
-	ovfCnt = 0; TCNT1 = 0;	
-}
-*/
 
 void initRCRx(void){
 	ctrlData = defaultCtrlData;
 	phase = SerchHead;
-//	initIntervalTimer();
-//	intervalTimerReset();
+	initIntervalTimer();
 }
 
 union controller_data *ToggleRCRxBuffer(void)
@@ -85,9 +78,8 @@ ISR(USART0_RX_vect)
 			ctrlData = p;
 			ctrlDataSelecter = ( ctrlDataSelecter == CtrlDataSelect0 )? CtrlDataSelect1:CtrlDataSelect0;
 			phase = SerchHead;
-			wdt_reset();
 			LED(0,true);
-//			intervalTimerReset();
+			wdt_reset();
 		}
 		cnt++;
 	} else {
@@ -98,11 +90,8 @@ ISR(USART0_RX_vect)
 	}
 
 }
-/*
-ISR (TIMER1_OVF_vect){
-	ovfCnt++;
-	if(ovfCnt>150){
-		ctrlData = defaultCtrlData;
-	}
+
+ISR (WDT_vect)
+{
+	ctrlData = defaultCtrlData;
 }
-*/

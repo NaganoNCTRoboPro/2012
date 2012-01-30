@@ -3,7 +3,7 @@ Archive member included because of file (symbol)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm1284p.o (exit)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
-                              user_main.o (__do_clear_bss)
+                              mu2.o (__do_clear_bss)
 
 Memory Configuration
 
@@ -29,6 +29,8 @@ LOAD switch.o
 LOAD remote_control_rx.o
 LOAD uart.o
 LOAD wait.o
+LOAD motor.o
+LOAD air_cylinder.o
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
@@ -123,7 +125,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x12b0
+.text           0x00000000     0x1846
  *(.vectors)
  .vectors       0x00000000       0x8c c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm1284p.o
                 0x00000000                __vectors
@@ -205,66 +207,79 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
                 0x000000ca                __vector_9
                 0x000000ca                __vector_2
                 0x000000ca                __vector_15
-                0x000000ca                __vector_8
                 0x000000ca                __vector_26
                 0x000000ca                __vector_14
                 0x000000ca                __vector_10
                 0x000000ca                __vector_16
                 0x000000ca                __vector_18
- .text          0x000000ce       0xce main.o
+ .text          0x000000ce       0xc8 main.o
                 0x000000ce                main
- .text          0x0000019c       0x1e user_main.o
-                0x0000019c                userMain
- .text          0x000001ba      0x400 i2c.o
-                0x000002d8                i2cRead
-                0x000001ba                initI2CMaster
-                0x000001e4                i2cWrite
-                0x0000041a                i2cReadWithCommand
- .text          0x000005ba      0x44a mu2.o
-                0x00000602                byteToString
-                0x000008c2                mu2TransmitData
-                0x000005ba                setMU2PutFunc
-                0x0000065e                mu2Command
-                0x000005de                setMU2GetFunc
-                0x00000784                mu2CommandToEEPROM
- .text          0x00000a04       0x98 led.o
-                0x00000a04                initLED
-                0x00000a2e                LED
- .text          0x00000a9c       0x8a switch.o
-                0x00000b0e                Switch
-                0x00000ac6                isSwitch
-                0x00000a9c                initSwitch
- .text          0x00000b26      0x1a6 remote_control_rx.o
-                0x00000b26                initRCRx
-                0x00000b44                ToggleRCRxBuffer
-                0x00000b5a                __vector_20
- .text          0x00000ccc      0x570 uart.o
-                0x00000e3e                uart1Puts
-                0x00000dc8                uart0Get
-                0x00000de6                uart1Get
-                0x00000d9a                uart1Put
-                0x00000fa0                uart1PutsBuffer
-                0x00000e04                uart0Puts
-                0x00000e78                uartSetBuffer
-                0x00001064                __vector_21
-                0x00001150                __vector_29
-                0x00000ccc                initUART
-                0x00000edc                uart0PutsBuffer
-                0x00000d6c                uart0Put
- .text          0x0000123c       0x70 wait.o
-                0x0000123c                wait_us
-                0x00001268                wait_ms
- .text          0x000012ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
- .text          0x000012ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
-                0x000012ac                . = ALIGN (0x2)
+ .text          0x00000196      0x22a user_main.o
+                0x00000196                userMain
+ .text          0x000003c0      0x400 i2c.o
+                0x000004de                i2cRead
+                0x000003c0                initI2CMaster
+                0x000003ea                i2cWrite
+                0x00000620                i2cReadWithCommand
+ .text          0x000007c0      0x44a mu2.o
+                0x00000808                byteToString
+                0x00000ac8                mu2TransmitData
+                0x000007c0                setMU2PutFunc
+                0x00000864                mu2Command
+                0x000007e4                setMU2GetFunc
+                0x0000098a                mu2CommandToEEPROM
+ .text          0x00000c0a       0x98 led.o
+                0x00000c0a                initLED
+                0x00000c34                LED
+ .text          0x00000ca2       0x8a switch.o
+                0x00000d14                Switch
+                0x00000ccc                isSwitch
+                0x00000ca2                initSwitch
+ .text          0x00000d2c      0x204 remote_control_rx.o
+                0x00000d52                initRCRx
+                0x00000d2c                initIntervalTimer
+                0x00000d74                ToggleRCRxBuffer
+                0x00000efc                __vector_8
+                0x00000d8a                __vector_20
+ .text          0x00000f30      0x570 uart.o
+                0x000010a2                uart1Puts
+                0x0000102c                uart0Get
+                0x0000104a                uart1Get
+                0x00000ffe                uart1Put
+                0x00001204                uart1PutsBuffer
+                0x00001068                uart0Puts
+                0x000010dc                uartSetBuffer
+                0x000012c8                __vector_21
+                0x000013b4                __vector_29
+                0x00000f30                initUART
+                0x00001140                uart0PutsBuffer
+                0x00000fd0                uart0Put
+ .text          0x000014a0       0x70 wait.o
+                0x000014a0                wait_us
+                0x000014cc                wait_ms
+ .text          0x00001510      0x2c0 motor.o
+                0x000015a6                m0
+                0x00001746                m4
+                0x00001676                m2
+                0x000017ae                getMotor
+                0x0000160e                m1
+                0x00001510                speedToDuty
+                0x000016de                m3
+ .text          0x000017d0       0x72 air_cylinder.o
+                0x000017f8                a1
+                0x00001820                getAirCylinder
+                0x000017d0                a0
+ .text          0x00001842        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text          0x00001842        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x00001842                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x000012ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
- .text.libgcc   0x000012ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
-                0x000012ac                . = ALIGN (0x2)
+ .text.libgcc   0x00001842        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text.libgcc   0x00001842        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x00001842                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000012ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
-                0x000012ac                exit
-                0x000012ac                _exit
+ .fini9         0x00001842        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                0x00001842                exit
+                0x00001842                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -283,11 +298,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000012ac        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .fini0         0x00001842        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x000012b0                _etext = .
+                0x00001846                _etext = .
 
-.data           0x00800100       0x94 load address 0x000012b0
+.data           0x00800100      0x264 load address 0x00001846
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm1284p.o
@@ -296,53 +311,59 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
                 0x00800128                DI
                 0x0080013e                GI
                 0x0080010f                EI
- .data          0x0080016d        0x0 user_main.o
- .data          0x0080016d        0x0 i2c.o
- .data          0x0080016d       0x10 mu2.o
- .data          0x0080017d        0x0 led.o
- .data          0x0080017d        0x0 switch.o
- .data          0x0080017d        0xa remote_control_rx.o
- .data          0x00800187        0xc uart.o
- .data          0x00800193        0x0 wait.o
- .data          0x00800193        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
- .data          0x00800193        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ .data          0x0080016d      0x1c2 user_main.o
+ .data          0x0080032f        0x0 i2c.o
+ .data          0x0080032f       0x10 mu2.o
+ .data          0x0080033f        0x0 led.o
+ .data          0x0080033f        0x0 switch.o
+ .data          0x0080033f        0xa remote_control_rx.o
+ .data          0x00800349        0xc uart.o
+ .data          0x00800355        0x0 wait.o
+ .data          0x00800355        0xa motor.o
+                0x00800355                motors
+ .data          0x0080035f        0x4 air_cylinder.o
+                0x0080035f                airCylinders
+ .data          0x00800363        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .data          0x00800363        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x00800194                . = ALIGN (0x2)
- *fill*         0x00800193        0x1 00
-                0x00800194                _edata = .
-                0x00800194                PROVIDE (__data_end, .)
+                0x00800364                . = ALIGN (0x2)
+ *fill*         0x00800363        0x1 00
+                0x00800364                _edata = .
+                0x00800364                PROVIDE (__data_end, .)
 
-.bss            0x00800194       0x25
-                0x00800194                PROVIDE (__bss_start, .)
+.bss            0x00800364       0x22
+                0x00800364                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800194        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm1284p.o
- .bss           0x00800194        0x0 main.o
- .bss           0x00800194        0x3 user_main.o
- .bss           0x00800197        0x0 i2c.o
- .bss           0x00800197        0x4 mu2.o
- .bss           0x0080019b        0x0 led.o
- .bss           0x0080019b        0x0 switch.o
- .bss           0x0080019b       0x1b remote_control_rx.o
-                0x0080019b                ovfCnt
- .bss           0x008001b6        0x2 uart.o
- .bss           0x008001b8        0x1 wait.o
- .bss           0x008001b9        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
- .bss           0x008001b9        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ .bss           0x00800364        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm1284p.o
+ .bss           0x00800364        0x0 main.o
+ .bss           0x00800364        0x0 user_main.o
+ .bss           0x00800364        0x0 i2c.o
+ .bss           0x00800364        0x4 mu2.o
+ .bss           0x00800368        0x0 led.o
+ .bss           0x00800368        0x0 switch.o
+ .bss           0x00800368       0x1b remote_control_rx.o
+                0x00800368                ovfCnt
+ .bss           0x00800383        0x2 uart.o
+ .bss           0x00800385        0x1 wait.o
+ .bss           0x00800386        0x0 motor.o
+ .bss           0x00800386        0x0 air_cylinder.o
+ .bss           0x00800386        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .bss           0x00800386        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
  *(.bss*)
  *(COMMON)
-                0x008001b9                PROVIDE (__bss_end, .)
-                0x000012b0                __data_load_start = LOADADDR (.data)
-                0x00001344                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800386                PROVIDE (__bss_end, .)
+                0x00001846                __data_load_start = LOADADDR (.data)
+                0x00001aaa                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008001b9        0x0
-                0x008001b9                PROVIDE (__noinit_start, .)
+.noinit         0x00800386        0x0
+                0x00800386                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008001b9                PROVIDE (__noinit_end, .)
-                0x008001b9                _end = .
-                0x008001b9                PROVIDE (__heap_start, .)
+                0x00800386                PROVIDE (__noinit_end, .)
+                0x00800386                _end = .
+                0x00800386                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -393,7 +414,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x120
+.debug_aranges  0x00000000      0x160
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 main.o
@@ -413,9 +434,13 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
                 0x000000e0       0x20 uart.o
  .debug_aranges
                 0x00000100       0x20 wait.o
+ .debug_aranges
+                0x00000120       0x20 motor.o
+ .debug_aranges
+                0x00000140       0x20 air_cylinder.o
 
 .debug_pubnames
-                0x00000000      0x2cc
+                0x00000000      0x392
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000       0x37 main.o
@@ -430,50 +455,60 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
  .debug_pubnames
                 0x00000151       0x39 switch.o
  .debug_pubnames
-                0x0000018a       0x4f remote_control_rx.o
+                0x0000018a       0x74 remote_control_rx.o
  .debug_pubnames
-                0x000001d9       0xc9 uart.o
+                0x000001fe       0xc9 uart.o
  .debug_pubnames
-                0x000002a2       0x2a wait.o
+                0x000002c7       0x2a wait.o
+ .debug_pubnames
+                0x000002f1       0x5d motor.o
+ .debug_pubnames
+                0x0000034e       0x44 air_cylinder.o
 
-.debug_info     0x00000000     0x12e4
+.debug_info     0x00000000     0x1abd
  *(.debug_info)
  .debug_info    0x00000000      0x17d main.o
- .debug_info    0x0000017d      0x25d user_main.o
- .debug_info    0x000003da      0x2c3 i2c.o
- .debug_info    0x0000069d      0x29d mu2.o
- .debug_info    0x0000093a       0xcd led.o
- .debug_info    0x00000a07       0xd5 switch.o
- .debug_info    0x00000adc      0x3bc remote_control_rx.o
- .debug_info    0x00000e98      0x38c uart.o
- .debug_info    0x00001224       0xc0 wait.o
+ .debug_info    0x0000017d      0x45e user_main.o
+ .debug_info    0x000005db      0x2c3 i2c.o
+ .debug_info    0x0000089e      0x29d mu2.o
+ .debug_info    0x00000b3b       0xcd led.o
+ .debug_info    0x00000c08       0xd5 switch.o
+ .debug_info    0x00000cdd      0x3e4 remote_control_rx.o
+ .debug_info    0x000010c1      0x38c uart.o
+ .debug_info    0x0000144d       0xc0 wait.o
+ .debug_info    0x0000150d      0x385 motor.o
+ .debug_info    0x00001892      0x22b air_cylinder.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x78d
+.debug_abbrev   0x00000000      0xa94
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0xb3 main.o
- .debug_abbrev  0x000000b3       0xe3 user_main.o
- .debug_abbrev  0x00000196      0x104 i2c.o
- .debug_abbrev  0x0000029a       0xe7 mu2.o
- .debug_abbrev  0x00000381       0x7d led.o
- .debug_abbrev  0x000003fe       0x9a switch.o
- .debug_abbrev  0x00000498      0x154 remote_control_rx.o
- .debug_abbrev  0x000005ec      0x120 uart.o
- .debug_abbrev  0x0000070c       0x81 wait.o
+ .debug_abbrev  0x000000b3      0x146 user_main.o
+ .debug_abbrev  0x000001f9      0x104 i2c.o
+ .debug_abbrev  0x000002fd       0xe7 mu2.o
+ .debug_abbrev  0x000003e4       0x7d led.o
+ .debug_abbrev  0x00000461       0x9a switch.o
+ .debug_abbrev  0x000004fb      0x154 remote_control_rx.o
+ .debug_abbrev  0x0000064f      0x120 uart.o
+ .debug_abbrev  0x0000076f       0x81 wait.o
+ .debug_abbrev  0x000007f0      0x161 motor.o
+ .debug_abbrev  0x00000951      0x143 air_cylinder.o
 
-.debug_line     0x00000000      0xe47
+.debug_line     0x00000000     0x137f
  *(.debug_line)
  .debug_line    0x00000000      0x147 main.o
- .debug_line    0x00000147       0xb3 user_main.o
- .debug_line    0x000001fa      0x301 i2c.o
- .debug_line    0x000004fb      0x28f mu2.o
- .debug_line    0x0000078a       0x9e led.o
- .debug_line    0x00000828       0xf1 switch.o
- .debug_line    0x00000919      0x1a8 remote_control_rx.o
- .debug_line    0x00000ac1      0x2cd uart.o
- .debug_line    0x00000d8e       0xb9 wait.o
+ .debug_line    0x00000147      0x28e user_main.o
+ .debug_line    0x000003d5      0x301 i2c.o
+ .debug_line    0x000006d6      0x28f mu2.o
+ .debug_line    0x00000965       0x9e led.o
+ .debug_line    0x00000a03       0xf1 switch.o
+ .debug_line    0x00000af4      0x1f0 remote_control_rx.o
+ .debug_line    0x00000ce4      0x2cd uart.o
+ .debug_line    0x00000fb1       0xb9 wait.o
+ .debug_line    0x0000106a      0x21c motor.o
+ .debug_line    0x00001286       0xf9 air_cylinder.o
 
-.debug_frame    0x00000000      0x2b0
+.debug_frame    0x00000000      0x390
  *(.debug_frame)
  .debug_frame   0x00000000       0x20 main.o
  .debug_frame   0x00000020       0x20 user_main.o
@@ -481,30 +516,36 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
  .debug_frame   0x00000090       0x70 mu2.o
  .debug_frame   0x00000100       0x30 led.o
  .debug_frame   0x00000130       0x40 switch.o
- .debug_frame   0x00000170       0x40 remote_control_rx.o
- .debug_frame   0x000001b0       0xd0 uart.o
- .debug_frame   0x00000280       0x30 wait.o
+ .debug_frame   0x00000170       0x60 remote_control_rx.o
+ .debug_frame   0x000001d0       0xd0 uart.o
+ .debug_frame   0x000002a0       0x30 wait.o
+ .debug_frame   0x000002d0       0x80 motor.o
+ .debug_frame   0x00000350       0x40 air_cylinder.o
 
-.debug_str      0x00000000      0x7b6
+.debug_str      0x00000000      0x95d
  *(.debug_str)
  .debug_str     0x00000000      0x160 main.o
                                 0x199 (size before relaxing)
- .debug_str     0x00000160       0x80 user_main.o
-                                0x13a (size before relaxing)
- .debug_str     0x000001e0      0x2ad i2c.o
+ .debug_str     0x00000160      0x17c user_main.o
+                                0x257 (size before relaxing)
+ .debug_str     0x000002dc      0x2ad i2c.o
                                 0x378 (size before relaxing)
- .debug_str     0x0000048d       0x92 mu2.o
+ .debug_str     0x00000589       0x92 mu2.o
                                 0x151 (size before relaxing)
- .debug_str     0x0000051f       0x43 led.o
+ .debug_str     0x0000061b       0x43 led.o
                                  0xf0 (size before relaxing)
- .debug_str     0x00000562       0x2b switch.o
+ .debug_str     0x0000065e       0x2b switch.o
                                  0xf5 (size before relaxing)
- .debug_str     0x0000058d       0xf1 remote_control_rx.o
-                                0x208 (size before relaxing)
- .debug_str     0x0000067e      0x113 uart.o
+ .debug_str     0x00000689      0x10e remote_control_rx.o
+                                0x225 (size before relaxing)
+ .debug_str     0x00000797      0x113 uart.o
                                 0x2a8 (size before relaxing)
- .debug_str     0x00000791       0x25 wait.o
+ .debug_str     0x000008aa       0x25 wait.o
                                  0xd5 (size before relaxing)
+ .debug_str     0x000008cf       0x57 motor.o
+                                0x168 (size before relaxing)
+ .debug_str     0x00000926       0x37 air_cylinder.o
+                                0x150 (size before relaxing)
 
 .debug_loc
  *(.debug_loc)

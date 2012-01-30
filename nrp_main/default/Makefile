@@ -15,7 +15,7 @@ COMMON = -mmcu=$(MCU)
 
 ## Compile options common for all C compilation units.
 CFLAGS = $(COMMON)
-CFLAGS += -Wall -gdwarf-2 -std=gnu99   -DF_CPU=20000000UL -O0 -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
+CFLAGS += -Wall -gdwarf-2 -std=gnu99             -DF_CPU=20000000UL -O0 -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 CFLAGS += -MD -MP -MT $(*F).o -MF dep/$(@F).d 
 
 ## Assembly specific flags
@@ -37,10 +37,10 @@ HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 
 
 ## Include Directories
-INCLUDES = -I"C:\Users\iwate\Desktop\github\2012\nrp_main\." -I"C:\Users\iwate\Desktop\github\2012\nrp_main\i2c" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\mu2" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\peripheral" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\remote_control" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\uart" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\wait" 
+INCLUDES = -I"C:\Users\iwate\Desktop\github\2012\nrp_main\." -I"C:\Users\iwate\Desktop\github\2012\nrp_main\i2c" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\mu2" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\peripheral" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\remote_control" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\uart" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\wait" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\actuator" 
 
 ## Objects that must be built in order to link
-OBJECTS = main.o user_main.o i2c.o mu2.o led.o switch.o remote_control_rx.o uart.o wait.o 
+OBJECTS = main.o user_main.o i2c.o mu2.o led.o switch.o remote_control_rx.o uart.o wait.o motor.o air_cylinder.o 
 
 ## Objects explicitly added by the user
 LINKONLYOBJECTS = 
@@ -74,6 +74,12 @@ uart.o: ../uart/uart.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 wait.o: ../wait/wait.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+motor.o: ../actuator/motor.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+air_cylinder.o: ../actuator/air_cylinder.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 ##Link
