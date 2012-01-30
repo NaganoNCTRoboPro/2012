@@ -1,11 +1,11 @@
 ###############################################################################
-# Makefile for the project mudule_test
+# Makefile for the project nrp
 ###############################################################################
 
 ## General Flags
-PROJECT = mudule_test
+PROJECT = nrp
 MCU = atmega1284p
-TARGET = mudule_test.elf
+TARGET = nrp.elf
 CC = avr-gcc
 
 CPP = avr-g++
@@ -15,7 +15,7 @@ COMMON = -mmcu=$(MCU)
 
 ## Compile options common for all C compilation units.
 CFLAGS = $(COMMON)
-CFLAGS += -Wall -gdwarf-2 -std=gnu99     -DF_CPU=20000000UL -O0 -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
+CFLAGS += -Wall -gdwarf-2 -std=gnu99   -DF_CPU=20000000UL -O0 -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 CFLAGS += -MD -MP -MT $(*F).o -MF dep/$(@F).d 
 
 ## Assembly specific flags
@@ -25,7 +25,7 @@ ASMFLAGS += -x assembler-with-cpp -Wa,-gdwarf2
 
 ## Linker flags
 LDFLAGS = $(COMMON)
-LDFLAGS +=  -Wl,-Map=mudule_test.map
+LDFLAGS +=  -Wl,-Map=nrp.map
 
 
 ## Intel Hex file production flags
@@ -37,31 +37,43 @@ HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 
 
 ## Include Directories
-INCLUDES = -I"C:\Users\iwate\Desktop\github\2012\mudule_test\." -I"C:\Users\iwate\Desktop\github\2012\mudule_test\i2c" -I"C:\Users\iwate\Desktop\github\2012\mudule_test\wait" 
+INCLUDES = -I"C:\Users\iwate\Desktop\github\2012\nrp_main\." -I"C:\Users\iwate\Desktop\github\2012\nrp_main\i2c" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\mu2" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\peripheral" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\remote_control" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\uart" -I"C:\Users\iwate\Desktop\github\2012\nrp_main\wait" 
 
 ## Objects that must be built in order to link
-OBJECTS = main.o i2c.o wait.o uart.o mu2.o 
+OBJECTS = main.o user_main.o i2c.o mu2.o led.o switch.o remote_control_rx.o uart.o wait.o 
 
 ## Objects explicitly added by the user
 LINKONLYOBJECTS = 
 
 ## Build
-all: $(TARGET) mudule_test.hex mudule_test.eep mudule_test.lss size
+all: $(TARGET) nrp.hex nrp.eep nrp.lss size
 
 ## Compile
 main.o: ../main.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
+user_main.o: ../user_main.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
 i2c.o: ../i2c/i2c.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
-wait.o: ../wait/wait.c
+mu2.o: ../mu2/mu2.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+led.o: ../peripheral/led.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+switch.o: ../peripheral/switch.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+remote_control_rx.o: ../remote_control/remote_control_rx.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 uart.o: ../uart/uart.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
-mu2.o: ../mu2/mu2.c
+wait.o: ../wait/wait.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 ##Link
@@ -84,7 +96,7 @@ size: ${TARGET}
 ## Clean target
 .PHONY: clean
 clean:
-	-rm -rf $(OBJECTS) mudule_test.elf dep/* mudule_test.hex mudule_test.eep mudule_test.lss mudule_test.map
+	-rm -rf $(OBJECTS) nrp.elf dep/* nrp.hex nrp.eep nrp.lss nrp.map
 
 
 ## Other dependencies

@@ -20,6 +20,6 @@
 #define SHOW_RC_RX_DATA		(0)
 
 extern void initRCRx(void);
-extern union controller_data *Toggle_RC_Rx_Buffer(void);
+extern union controller_data *ToggleRCRxBuffer(void);
 
 #endif

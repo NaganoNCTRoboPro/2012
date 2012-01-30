@@ -1,6 +1,6 @@
-#include <remote_control.h>
-#include <motor.h>
-#include <air_cylinder.h>
+#include <remote_control_rx.h>
+//#include <motor.h>
+//#include <air_cylinder.h>
 #include <led.h>
 #include <wait.h>
 
@@ -22,6 +22,7 @@ void userMain(void)
 	static bool failed = false;
 	
 	while ( true ) {
+		controller = ToggleRCRxBuffer();
 		wait(15);
 	}
 	

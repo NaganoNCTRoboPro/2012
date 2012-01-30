@@ -4,19 +4,19 @@
 #include <i2c.h>
 #include <uart.h>
 #include <mu2.h>
-#include <remote_control.h>
+#include <remote_control_rx.h>
 #include <led.h>
 #include <switch.h>
 #include <user_main.h>
 
-const char * const EI[] = { "01", "03", "07", "0F", "1F" }
-const char * const DI[] = { "80", "C0", "E0", "F0", "F8" }
-const char * const GI[] = { "21", "9A", "44", "80", "12" }
-const char * const CH[] = { "08", "10", "19", "23", "2E" }
+char * const EI[] = { "01", "03", "07", "0F", "1F" };
+char * const DI[] = { "80", "C0", "E0", "F0", "F8" };
+char * const GI[] = { "21", "9A", "44", "80", "12" };
+char * const CH[] = { "08", "10", "19", "23", "2E" };
 
 int main (void)
 {
-	uint8_t no;
+	uint8_t no = 0;
 	wait(10);
 	setMU2PutFunc(uart0Put);
 	setMU2GetFunc(uart0Get);
@@ -33,10 +33,10 @@ int main (void)
 	
 	no = Switch() & 0x03;
 	
-	mu2_command("EI",EI[no]);
-	mu2_command("DI",DI[no]);
-	mu2_command("GI",GI[no]);
-	mu2_command("CH",CH[no]);
+	mu2Command("EI",EI[no]);
+	mu2Command("DI",DI[no]);
+	mu2Command("GI",GI[no]);
+	mu2Command("CH",CH[no]);
 
 	userMain();
 	

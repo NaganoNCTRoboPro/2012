@@ -1,0 +1,2922 @@
+
+nrp.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000094  00800100  000012b0  00001344  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000012b0  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000025  00800194  00800194  000013d8  2**0
+                  ALLOC
+  3 .debug_aranges 00000120  00000000  00000000  000013d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000002cc  00000000  00000000  000014f8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000012e4  00000000  00000000  000017c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000078d  00000000  00000000  00002aa8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000e47  00000000  00000000  00003235  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000002b0  00000000  00000000  0000407c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000007b6  00000000  00000000  0000432c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+       4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+       8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+       c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      50:	0c 94 ad 05 	jmp	0xb5a	; 0xb5a <__vector_20>
+      54:	0c 94 32 08 	jmp	0x1064	; 0x1064 <__vector_21>
+      58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      74:	0c 94 a8 08 	jmp	0x1150	; 0x1150 <__vector_29>
+      78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+      88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+      8c:	11 24       	eor	r1, r1
+      8e:	1f be       	out	0x3f, r1	; 63
+      90:	cf ef       	ldi	r28, 0xFF	; 255
+      92:	d0 e4       	ldi	r29, 0x40	; 64
+      94:	de bf       	out	0x3e, r29	; 62
+      96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+      98:	11 e0       	ldi	r17, 0x01	; 1
+      9a:	a0 e0       	ldi	r26, 0x00	; 0
+      9c:	b1 e0       	ldi	r27, 0x01	; 1
+      9e:	e0 eb       	ldi	r30, 0xB0	; 176
+      a0:	f2 e1       	ldi	r31, 0x12	; 18
+      a2:	00 e0       	ldi	r16, 0x00	; 0
+      a4:	0b bf       	out	0x3b, r16	; 59
+      a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+      a8:	07 90       	elpm	r0, Z+
+      aa:	0d 92       	st	X+, r0
+      ac:	a4 39       	cpi	r26, 0x94	; 148
+      ae:	b1 07       	cpc	r27, r17
+      b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+      b2:	11 e0       	ldi	r17, 0x01	; 1
+      b4:	a4 e9       	ldi	r26, 0x94	; 148
+      b6:	b1 e0       	ldi	r27, 0x01	; 1
+      b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+      ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+      bc:	a9 3b       	cpi	r26, 0xB9	; 185
+      be:	b1 07       	cpc	r27, r17
+      c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+      c2:	0e 94 67 00 	call	0xce	; 0xce <main>
+      c6:	0c 94 56 09 	jmp	0x12ac	; 0x12ac <_exit>
+
+000000ca <__bad_interrupt>:
+      ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <main>:
+char * const DI[] = { "80", "C0", "E0", "F0", "F8" };
+char * const GI[] = { "21", "9A", "44", "80", "12" };
+char * const CH[] = { "08", "10", "19", "23", "2E" };
+
+int main (void)
+{
+      ce:	df 93       	push	r29
+      d0:	cf 93       	push	r28
+      d2:	0f 92       	push	r0
+      d4:	cd b7       	in	r28, 0x3d	; 61
+      d6:	de b7       	in	r29, 0x3e	; 62
+	uint8_t no = 0;
+      d8:	19 82       	std	Y+1, r1	; 0x01
+	wait(10);
+      da:	8a e0       	ldi	r24, 0x0A	; 10
+      dc:	90 e0       	ldi	r25, 0x00	; 0
+      de:	0e 94 34 09 	call	0x1268	; 0x1268 <wait_ms>
+	setMU2PutFunc(uart0Put);
+      e2:	86 eb       	ldi	r24, 0xB6	; 182
+      e4:	96 e0       	ldi	r25, 0x06	; 6
+      e6:	0e 94 dd 02 	call	0x5ba	; 0x5ba <setMU2PutFunc>
+	setMU2GetFunc(uart0Get);
+      ea:	84 ee       	ldi	r24, 0xE4	; 228
+      ec:	96 e0       	ldi	r25, 0x06	; 6
+      ee:	0e 94 ef 02 	call	0x5de	; 0x5de <setMU2GetFunc>
+	initUART(
+      f2:	80 e0       	ldi	r24, 0x00	; 0
+      f4:	60 e0       	ldi	r22, 0x00	; 0
+      f6:	48 e9       	ldi	r20, 0x98	; 152
+      f8:	20 e4       	ldi	r18, 0x40	; 64
+      fa:	30 e0       	ldi	r19, 0x00	; 0
+      fc:	0e 94 66 06 	call	0xccc	; 0xccc <initUART>
+		UART0,
+		StopBitIs1Bit|NonParity,
+		ReceiverEnable|TransmiterEnable|ReceiveCompleteInteruptEnable,
+		UARTBAUD(19200)
+	);
+	initLED();
+     100:	0e 94 02 05 	call	0xa04	; 0xa04 <initLED>
+	initSwitch();
+     104:	0e 94 4e 05 	call	0xa9c	; 0xa9c <initSwitch>
+	
+	initRCRx();
+     108:	0e 94 93 05 	call	0xb26	; 0xb26 <initRCRx>
+	
+	no = Switch() & 0x03;
+     10c:	0e 94 87 05 	call	0xb0e	; 0xb0e <Switch>
+     110:	83 70       	andi	r24, 0x03	; 3
+     112:	89 83       	std	Y+1, r24	; 0x01
+	
+	mu2Command("EI",EI[no]);
+     114:	89 81       	ldd	r24, Y+1	; 0x01
+     116:	88 2f       	mov	r24, r24
+     118:	90 e0       	ldi	r25, 0x00	; 0
+     11a:	88 0f       	add	r24, r24
+     11c:	99 1f       	adc	r25, r25
+     11e:	fc 01       	movw	r30, r24
+     120:	e1 5f       	subi	r30, 0xF1	; 241
+     122:	fe 4f       	sbci	r31, 0xFE	; 254
+     124:	20 81       	ld	r18, Z
+     126:	31 81       	ldd	r19, Z+1	; 0x01
+     128:	81 e6       	ldi	r24, 0x61	; 97
+     12a:	91 e0       	ldi	r25, 0x01	; 1
+     12c:	b9 01       	movw	r22, r18
+     12e:	0e 94 2f 03 	call	0x65e	; 0x65e <mu2Command>
+	mu2Command("DI",DI[no]);
+     132:	89 81       	ldd	r24, Y+1	; 0x01
+     134:	88 2f       	mov	r24, r24
+     136:	90 e0       	ldi	r25, 0x00	; 0
+     138:	88 0f       	add	r24, r24
+     13a:	99 1f       	adc	r25, r25
+     13c:	fc 01       	movw	r30, r24
+     13e:	e8 5d       	subi	r30, 0xD8	; 216
+     140:	fe 4f       	sbci	r31, 0xFE	; 254
+     142:	20 81       	ld	r18, Z
+     144:	31 81       	ldd	r19, Z+1	; 0x01
+     146:	84 e6       	ldi	r24, 0x64	; 100
+     148:	91 e0       	ldi	r25, 0x01	; 1
+     14a:	b9 01       	movw	r22, r18
+     14c:	0e 94 2f 03 	call	0x65e	; 0x65e <mu2Command>
+	mu2Command("GI",GI[no]);
+     150:	89 81       	ldd	r24, Y+1	; 0x01
+     152:	88 2f       	mov	r24, r24
+     154:	90 e0       	ldi	r25, 0x00	; 0
+     156:	88 0f       	add	r24, r24
+     158:	99 1f       	adc	r25, r25
+     15a:	fc 01       	movw	r30, r24
+     15c:	e2 5c       	subi	r30, 0xC2	; 194
+     15e:	fe 4f       	sbci	r31, 0xFE	; 254
+     160:	20 81       	ld	r18, Z
+     162:	31 81       	ldd	r19, Z+1	; 0x01
+     164:	87 e6       	ldi	r24, 0x67	; 103
+     166:	91 e0       	ldi	r25, 0x01	; 1
+     168:	b9 01       	movw	r22, r18
+     16a:	0e 94 2f 03 	call	0x65e	; 0x65e <mu2Command>
+	mu2Command("CH",CH[no]);
+     16e:	89 81       	ldd	r24, Y+1	; 0x01
+     170:	88 2f       	mov	r24, r24
+     172:	90 e0       	ldi	r25, 0x00	; 0
+     174:	88 0f       	add	r24, r24
+     176:	99 1f       	adc	r25, r25
+     178:	fc 01       	movw	r30, r24
+     17a:	e9 5a       	subi	r30, 0xA9	; 169
+     17c:	fe 4f       	sbci	r31, 0xFE	; 254
+     17e:	20 81       	ld	r18, Z
+     180:	31 81       	ldd	r19, Z+1	; 0x01
+     182:	8a e6       	ldi	r24, 0x6A	; 106
+     184:	91 e0       	ldi	r25, 0x01	; 1
+     186:	b9 01       	movw	r22, r18
+     188:	0e 94 2f 03 	call	0x65e	; 0x65e <mu2Command>
+
+	userMain();
+     18c:	0e 94 ce 00 	call	0x19c	; 0x19c <userMain>
+	
+	return 0;
+     190:	80 e0       	ldi	r24, 0x00	; 0
+     192:	90 e0       	ldi	r25, 0x00	; 0
+}
+     194:	0f 90       	pop	r0
+     196:	cf 91       	pop	r28
+     198:	df 91       	pop	r29
+     19a:	08 95       	ret
+
+0000019c <userMain>:
+	#include "rc_classic.h"
+#endif
+
+
+void userMain(void)
+{
+     19c:	df 93       	push	r29
+     19e:	cf 93       	push	r28
+     1a0:	cd b7       	in	r28, 0x3d	; 61
+     1a2:	de b7       	in	r29, 0x3e	; 62
+	static union controller_data *controller;
+	static bool failed = false;
+	
+	while ( true ) {
+		controller = ToggleRCRxBuffer();
+     1a4:	0e 94 a2 05 	call	0xb44	; 0xb44 <ToggleRCRxBuffer>
+     1a8:	90 93 96 01 	sts	0x0196, r25
+     1ac:	80 93 95 01 	sts	0x0195, r24
+		wait(15);
+     1b0:	8f e0       	ldi	r24, 0x0F	; 15
+     1b2:	90 e0       	ldi	r25, 0x00	; 0
+     1b4:	0e 94 34 09 	call	0x1268	; 0x1268 <wait_ms>
+     1b8:	f5 cf       	rjmp	.-22     	; 0x1a4 <userMain+0x8>
+
+000001ba <initI2CMaster>:
+ * @code
+ *     initI2CMaster(100); //100kbpsでマスター動作に初期化
+ * @endcode
+ */
+void initI2CMaster(uint8_t baud) 
+{
+     1ba:	df 93       	push	r29
+     1bc:	cf 93       	push	r28
+     1be:	0f 92       	push	r0
+     1c0:	cd b7       	in	r28, 0x3d	; 61
+     1c2:	de b7       	in	r29, 0x3e	; 62
+     1c4:	89 83       	std	Y+1, r24	; 0x01
+	// ボーレートを設定し，TWI動作を許可する
+		TWBR = baud;
+     1c6:	e8 eb       	ldi	r30, 0xB8	; 184
+     1c8:	f0 e0       	ldi	r31, 0x00	; 0
+     1ca:	89 81       	ldd	r24, Y+1	; 0x01
+     1cc:	80 83       	st	Z, r24
+		TWSR = 0;
+     1ce:	e9 eb       	ldi	r30, 0xB9	; 185
+     1d0:	f0 e0       	ldi	r31, 0x00	; 0
+     1d2:	10 82       	st	Z, r1
+		TWCR = EnableI2C;
+     1d4:	ec eb       	ldi	r30, 0xBC	; 188
+     1d6:	f0 e0       	ldi	r31, 0x00	; 0
+     1d8:	84 e0       	ldi	r24, 0x04	; 4
+     1da:	80 83       	st	Z, r24
+}
+     1dc:	0f 90       	pop	r0
+     1de:	cf 91       	pop	r28
+     1e0:	df 91       	pop	r29
+     1e2:	08 95       	ret
+
+000001e4 <i2cWrite>:
+ *     transBuf = 0xff;
+ *     i2cWrite(&slave);   // アドレスが0x01のスレーブに0xffが書かれる
+ * @endcode
+ */
+bool i2cWrite(Slave* slave)
+{
+     1e4:	df 93       	push	r29
+     1e6:	cf 93       	push	r28
+     1e8:	00 d0       	rcall	.+0      	; 0x1ea <i2cWrite+0x6>
+     1ea:	00 d0       	rcall	.+0      	; 0x1ec <i2cWrite+0x8>
+     1ec:	0f 92       	push	r0
+     1ee:	cd b7       	in	r28, 0x3d	; 61
+     1f0:	de b7       	in	r29, 0x3e	; 62
+     1f2:	9c 83       	std	Y+4, r25	; 0x04
+     1f4:	8b 83       	std	Y+3, r24	; 0x03
+		uint8_t i, size;
+	// 開始条件の生成
+		TWCR = SendStartConditionBit;
+     1f6:	ec eb       	ldi	r30, 0xBC	; 188
+     1f8:	f0 e0       	ldi	r31, 0x00	; 0
+     1fa:	84 ea       	ldi	r24, 0xA4	; 164
+     1fc:	80 83       	st	Z, r24
+		while ( I2C_DOING );
+     1fe:	ec eb       	ldi	r30, 0xBC	; 188
+     200:	f0 e0       	ldi	r31, 0x00	; 0
+     202:	80 81       	ld	r24, Z
+     204:	88 23       	and	r24, r24
+     206:	dc f7       	brge	.-10     	; 0x1fe <i2cWrite+0x1a>
+		if ( I2C_STATUS != SentStartConditionBit ) goto ERROR;
+     208:	e9 eb       	ldi	r30, 0xB9	; 185
+     20a:	f0 e0       	ldi	r31, 0x00	; 0
+     20c:	80 81       	ld	r24, Z
+     20e:	88 2f       	mov	r24, r24
+     210:	90 e0       	ldi	r25, 0x00	; 0
+     212:	88 7f       	andi	r24, 0xF8	; 248
+     214:	90 70       	andi	r25, 0x00	; 0
+     216:	88 30       	cpi	r24, 0x08	; 8
+     218:	91 05       	cpc	r25, r1
+     21a:	09 f0       	breq	.+2      	; 0x21e <i2cWrite+0x3a>
+     21c:	4e c0       	rjmp	.+156    	; 0x2ba <i2cWrite+0xd6>
+		
+	// アドレス転送，ACK確認		
+		TWDR = ( slave->address << 1 ) | WRITE;
+     21e:	ab eb       	ldi	r26, 0xBB	; 187
+     220:	b0 e0       	ldi	r27, 0x00	; 0
+     222:	eb 81       	ldd	r30, Y+3	; 0x03
+     224:	fc 81       	ldd	r31, Y+4	; 0x04
+     226:	80 81       	ld	r24, Z
+     228:	88 0f       	add	r24, r24
+     22a:	8c 93       	st	X, r24
+		TWCR = ContinueI2C;
+     22c:	ec eb       	ldi	r30, 0xBC	; 188
+     22e:	f0 e0       	ldi	r31, 0x00	; 0
+     230:	84 e8       	ldi	r24, 0x84	; 132
+     232:	80 83       	st	Z, r24
+		while ( I2C_DOING );
+     234:	ec eb       	ldi	r30, 0xBC	; 188
+     236:	f0 e0       	ldi	r31, 0x00	; 0
+     238:	80 81       	ld	r24, Z
+     23a:	88 23       	and	r24, r24
+     23c:	dc f7       	brge	.-10     	; 0x234 <i2cWrite+0x50>
+		if ( I2C_STATUS != SentSlaveAddressWithWriteBitAndACK ) goto ERROR;
+     23e:	e9 eb       	ldi	r30, 0xB9	; 185
+     240:	f0 e0       	ldi	r31, 0x00	; 0
+     242:	80 81       	ld	r24, Z
+     244:	88 2f       	mov	r24, r24
+     246:	90 e0       	ldi	r25, 0x00	; 0
+     248:	88 7f       	andi	r24, 0xF8	; 248
+     24a:	90 70       	andi	r25, 0x00	; 0
+     24c:	88 31       	cpi	r24, 0x18	; 24
+     24e:	91 05       	cpc	r25, r1
+     250:	a1 f5       	brne	.+104    	; 0x2ba <i2cWrite+0xd6>
+		
+	// データバイト転送，ACK確認の一連をデータサイズ分行う
+		for ( i = 0, size = slave->write.size; i < size; i++ ) {
+     252:	1a 82       	std	Y+2, r1	; 0x02
+     254:	eb 81       	ldd	r30, Y+3	; 0x03
+     256:	fc 81       	ldd	r31, Y+4	; 0x04
+     258:	83 81       	ldd	r24, Z+3	; 0x03
+     25a:	89 83       	std	Y+1, r24	; 0x01
+     25c:	24 c0       	rjmp	.+72     	; 0x2a6 <i2cWrite+0xc2>
+			TWDR = slave->write.buffer[i];
+     25e:	ab eb       	ldi	r26, 0xBB	; 187
+     260:	b0 e0       	ldi	r27, 0x00	; 0
+     262:	eb 81       	ldd	r30, Y+3	; 0x03
+     264:	fc 81       	ldd	r31, Y+4	; 0x04
+     266:	21 81       	ldd	r18, Z+1	; 0x01
+     268:	32 81       	ldd	r19, Z+2	; 0x02
+     26a:	8a 81       	ldd	r24, Y+2	; 0x02
+     26c:	88 2f       	mov	r24, r24
+     26e:	90 e0       	ldi	r25, 0x00	; 0
+     270:	f9 01       	movw	r30, r18
+     272:	e8 0f       	add	r30, r24
+     274:	f9 1f       	adc	r31, r25
+     276:	80 81       	ld	r24, Z
+     278:	8c 93       	st	X, r24
+			TWCR = ContinueI2C;
+     27a:	ec eb       	ldi	r30, 0xBC	; 188
+     27c:	f0 e0       	ldi	r31, 0x00	; 0
+     27e:	84 e8       	ldi	r24, 0x84	; 132
+     280:	80 83       	st	Z, r24
+			while ( I2C_DOING );
+     282:	ec eb       	ldi	r30, 0xBC	; 188
+     284:	f0 e0       	ldi	r31, 0x00	; 0
+     286:	80 81       	ld	r24, Z
+     288:	88 23       	and	r24, r24
+     28a:	dc f7       	brge	.-10     	; 0x282 <i2cWrite+0x9e>
+			if ( I2C_STATUS != SentDataByteAndACKAtMaster ) goto ERROR;
+     28c:	e9 eb       	ldi	r30, 0xB9	; 185
+     28e:	f0 e0       	ldi	r31, 0x00	; 0
+     290:	80 81       	ld	r24, Z
+     292:	88 2f       	mov	r24, r24
+     294:	90 e0       	ldi	r25, 0x00	; 0
+     296:	88 7f       	andi	r24, 0xF8	; 248
+     298:	90 70       	andi	r25, 0x00	; 0
+     29a:	88 32       	cpi	r24, 0x28	; 40
+     29c:	91 05       	cpc	r25, r1
+     29e:	69 f4       	brne	.+26     	; 0x2ba <i2cWrite+0xd6>
+		TWCR = ContinueI2C;
+		while ( I2C_DOING );
+		if ( I2C_STATUS != SentSlaveAddressWithWriteBitAndACK ) goto ERROR;
+		
+	// データバイト転送，ACK確認の一連をデータサイズ分行う
+		for ( i = 0, size = slave->write.size; i < size; i++ ) {
+     2a0:	8a 81       	ldd	r24, Y+2	; 0x02
+     2a2:	8f 5f       	subi	r24, 0xFF	; 255
+     2a4:	8a 83       	std	Y+2, r24	; 0x02
+     2a6:	9a 81       	ldd	r25, Y+2	; 0x02
+     2a8:	89 81       	ldd	r24, Y+1	; 0x01
+     2aa:	98 17       	cp	r25, r24
+     2ac:	c0 f2       	brcs	.-80     	; 0x25e <i2cWrite+0x7a>
+			while ( I2C_DOING );
+			if ( I2C_STATUS != SentDataByteAndACKAtMaster ) goto ERROR;
+		}
+		
+	// 終了条件の生成
+		TWCR = SendStopConditionBit;
+     2ae:	ec eb       	ldi	r30, 0xBC	; 188
+     2b0:	f0 e0       	ldi	r31, 0x00	; 0
+     2b2:	84 e9       	ldi	r24, 0x94	; 148
+     2b4:	80 83       	st	Z, r24
+		
+	// 正常終了
+		return false;
+     2b6:	1d 82       	std	Y+5, r1	; 0x05
+     2b8:	06 c0       	rjmp	.+12     	; 0x2c6 <i2cWrite+0xe2>
+		
+	// エラーケース
+ERROR:
+		TWCR = SendStopConditionBit;
+     2ba:	ec eb       	ldi	r30, 0xBC	; 188
+     2bc:	f0 e0       	ldi	r31, 0x00	; 0
+     2be:	84 e9       	ldi	r24, 0x94	; 148
+     2c0:	80 83       	st	Z, r24
+		return true;
+     2c2:	81 e0       	ldi	r24, 0x01	; 1
+     2c4:	8d 83       	std	Y+5, r24	; 0x05
+     2c6:	8d 81       	ldd	r24, Y+5	; 0x05
+}
+     2c8:	0f 90       	pop	r0
+     2ca:	0f 90       	pop	r0
+     2cc:	0f 90       	pop	r0
+     2ce:	0f 90       	pop	r0
+     2d0:	0f 90       	pop	r0
+     2d2:	cf 91       	pop	r28
+     2d4:	df 91       	pop	r29
+     2d6:	08 95       	ret
+
+000002d8 <i2cRead>:
+ *     };
+ *     i2cRead(&slave);   // アドレスが0x01のスレーブから値を1byte読む
+ * @endcode
+ */
+bool i2cRead(Slave* slave)
+{
+     2d8:	df 93       	push	r29
+     2da:	cf 93       	push	r28
+     2dc:	00 d0       	rcall	.+0      	; 0x2de <i2cRead+0x6>
+     2de:	00 d0       	rcall	.+0      	; 0x2e0 <i2cRead+0x8>
+     2e0:	0f 92       	push	r0
+     2e2:	cd b7       	in	r28, 0x3d	; 61
+     2e4:	de b7       	in	r29, 0x3e	; 62
+     2e6:	9c 83       	std	Y+4, r25	; 0x04
+     2e8:	8b 83       	std	Y+3, r24	; 0x03
+		uint8_t i, size;
+	// 開始条件の生成
+		TWCR = SendStartConditionBit;
+     2ea:	ec eb       	ldi	r30, 0xBC	; 188
+     2ec:	f0 e0       	ldi	r31, 0x00	; 0
+     2ee:	84 ea       	ldi	r24, 0xA4	; 164
+     2f0:	80 83       	st	Z, r24
+		while ( I2C_DOING );
+     2f2:	ec eb       	ldi	r30, 0xBC	; 188
+     2f4:	f0 e0       	ldi	r31, 0x00	; 0
+     2f6:	80 81       	ld	r24, Z
+     2f8:	88 23       	and	r24, r24
+     2fa:	dc f7       	brge	.-10     	; 0x2f2 <i2cRead+0x1a>
+		if ( I2C_STATUS != SentStartConditionBit ) goto ERROR;
+     2fc:	e9 eb       	ldi	r30, 0xB9	; 185
+     2fe:	f0 e0       	ldi	r31, 0x00	; 0
+     300:	80 81       	ld	r24, Z
+     302:	88 2f       	mov	r24, r24
+     304:	90 e0       	ldi	r25, 0x00	; 0
+     306:	88 7f       	andi	r24, 0xF8	; 248
+     308:	90 70       	andi	r25, 0x00	; 0
+     30a:	88 30       	cpi	r24, 0x08	; 8
+     30c:	91 05       	cpc	r25, r1
+     30e:	09 f0       	breq	.+2      	; 0x312 <i2cRead+0x3a>
+     310:	75 c0       	rjmp	.+234    	; 0x3fc <i2cRead+0x124>
+		
+	// アドレス転送，ACK確認
+		TWDR = ( slave->address << 1 ) | READ;
+     312:	ab eb       	ldi	r26, 0xBB	; 187
+     314:	b0 e0       	ldi	r27, 0x00	; 0
+     316:	eb 81       	ldd	r30, Y+3	; 0x03
+     318:	fc 81       	ldd	r31, Y+4	; 0x04
+     31a:	80 81       	ld	r24, Z
+     31c:	88 2f       	mov	r24, r24
+     31e:	90 e0       	ldi	r25, 0x00	; 0
+     320:	88 0f       	add	r24, r24
+     322:	99 1f       	adc	r25, r25
+     324:	81 60       	ori	r24, 0x01	; 1
+     326:	8c 93       	st	X, r24
+		TWCR = ContinueI2C;
+     328:	ec eb       	ldi	r30, 0xBC	; 188
+     32a:	f0 e0       	ldi	r31, 0x00	; 0
+     32c:	84 e8       	ldi	r24, 0x84	; 132
+     32e:	80 83       	st	Z, r24
+		while ( I2C_DOING );
+     330:	ec eb       	ldi	r30, 0xBC	; 188
+     332:	f0 e0       	ldi	r31, 0x00	; 0
+     334:	80 81       	ld	r24, Z
+     336:	88 23       	and	r24, r24
+     338:	dc f7       	brge	.-10     	; 0x330 <i2cRead+0x58>
+		if ( I2C_STATUS != SentSlaveAddressWithReadBitAndACK ) goto ERROR;
+     33a:	e9 eb       	ldi	r30, 0xB9	; 185
+     33c:	f0 e0       	ldi	r31, 0x00	; 0
+     33e:	80 81       	ld	r24, Z
+     340:	88 2f       	mov	r24, r24
+     342:	90 e0       	ldi	r25, 0x00	; 0
+     344:	88 7f       	andi	r24, 0xF8	; 248
+     346:	90 70       	andi	r25, 0x00	; 0
+     348:	80 34       	cpi	r24, 0x40	; 64
+     34a:	91 05       	cpc	r25, r1
+     34c:	09 f0       	breq	.+2      	; 0x350 <i2cRead+0x78>
+     34e:	56 c0       	rjmp	.+172    	; 0x3fc <i2cRead+0x124>
+		
+	// データ受信，ACK発行
+		for ( i = 0, size = slave->read.size - 1; i < size; i++ ) {
+     350:	1a 82       	std	Y+2, r1	; 0x02
+     352:	eb 81       	ldd	r30, Y+3	; 0x03
+     354:	fc 81       	ldd	r31, Y+4	; 0x04
+     356:	86 81       	ldd	r24, Z+6	; 0x06
+     358:	81 50       	subi	r24, 0x01	; 1
+     35a:	89 83       	std	Y+1, r24	; 0x01
+     35c:	24 c0       	rjmp	.+72     	; 0x3a6 <i2cRead+0xce>
+			TWCR = ContinueAndResponseI2C;
+     35e:	ec eb       	ldi	r30, 0xBC	; 188
+     360:	f0 e0       	ldi	r31, 0x00	; 0
+     362:	84 ec       	ldi	r24, 0xC4	; 196
+     364:	80 83       	st	Z, r24
+			while( I2C_DOING );
+     366:	ec eb       	ldi	r30, 0xBC	; 188
+     368:	f0 e0       	ldi	r31, 0x00	; 0
+     36a:	80 81       	ld	r24, Z
+     36c:	88 23       	and	r24, r24
+     36e:	dc f7       	brge	.-10     	; 0x366 <i2cRead+0x8e>
+			if ( I2C_STATUS != ReceivedDataByteAndACKAtMaster ) goto ERROR;
+     370:	e9 eb       	ldi	r30, 0xB9	; 185
+     372:	f0 e0       	ldi	r31, 0x00	; 0
+     374:	80 81       	ld	r24, Z
+     376:	88 2f       	mov	r24, r24
+     378:	90 e0       	ldi	r25, 0x00	; 0
+     37a:	88 7f       	andi	r24, 0xF8	; 248
+     37c:	90 70       	andi	r25, 0x00	; 0
+     37e:	80 35       	cpi	r24, 0x50	; 80
+     380:	91 05       	cpc	r25, r1
+     382:	e1 f5       	brne	.+120    	; 0x3fc <i2cRead+0x124>
+			slave->read.buffer[i] = TWDR;
+     384:	eb 81       	ldd	r30, Y+3	; 0x03
+     386:	fc 81       	ldd	r31, Y+4	; 0x04
+     388:	24 81       	ldd	r18, Z+4	; 0x04
+     38a:	35 81       	ldd	r19, Z+5	; 0x05
+     38c:	8a 81       	ldd	r24, Y+2	; 0x02
+     38e:	88 2f       	mov	r24, r24
+     390:	90 e0       	ldi	r25, 0x00	; 0
+     392:	d9 01       	movw	r26, r18
+     394:	a8 0f       	add	r26, r24
+     396:	b9 1f       	adc	r27, r25
+     398:	eb eb       	ldi	r30, 0xBB	; 187
+     39a:	f0 e0       	ldi	r31, 0x00	; 0
+     39c:	80 81       	ld	r24, Z
+     39e:	8c 93       	st	X, r24
+		TWCR = ContinueI2C;
+		while ( I2C_DOING );
+		if ( I2C_STATUS != SentSlaveAddressWithReadBitAndACK ) goto ERROR;
+		
+	// データ受信，ACK発行
+		for ( i = 0, size = slave->read.size - 1; i < size; i++ ) {
+     3a0:	8a 81       	ldd	r24, Y+2	; 0x02
+     3a2:	8f 5f       	subi	r24, 0xFF	; 255
+     3a4:	8a 83       	std	Y+2, r24	; 0x02
+     3a6:	9a 81       	ldd	r25, Y+2	; 0x02
+     3a8:	89 81       	ldd	r24, Y+1	; 0x01
+     3aa:	98 17       	cp	r25, r24
+     3ac:	c0 f2       	brcs	.-80     	; 0x35e <i2cRead+0x86>
+			if ( I2C_STATUS != ReceivedDataByteAndACKAtMaster ) goto ERROR;
+			slave->read.buffer[i] = TWDR;
+		}
+			
+	// 最終データ受信，NACK発行
+		TWCR = ContinueI2C;
+     3ae:	ec eb       	ldi	r30, 0xBC	; 188
+     3b0:	f0 e0       	ldi	r31, 0x00	; 0
+     3b2:	84 e8       	ldi	r24, 0x84	; 132
+     3b4:	80 83       	st	Z, r24
+		while ( I2C_DOING );
+     3b6:	ec eb       	ldi	r30, 0xBC	; 188
+     3b8:	f0 e0       	ldi	r31, 0x00	; 0
+     3ba:	80 81       	ld	r24, Z
+     3bc:	88 23       	and	r24, r24
+     3be:	dc f7       	brge	.-10     	; 0x3b6 <i2cRead+0xde>
+		if ( I2C_STATUS != ReceivedDataByteAndNACK ) goto ERROR;
+     3c0:	e9 eb       	ldi	r30, 0xB9	; 185
+     3c2:	f0 e0       	ldi	r31, 0x00	; 0
+     3c4:	80 81       	ld	r24, Z
+     3c6:	88 2f       	mov	r24, r24
+     3c8:	90 e0       	ldi	r25, 0x00	; 0
+     3ca:	88 7f       	andi	r24, 0xF8	; 248
+     3cc:	90 70       	andi	r25, 0x00	; 0
+     3ce:	80 35       	cpi	r24, 0x50	; 80
+     3d0:	91 05       	cpc	r25, r1
+     3d2:	a1 f4       	brne	.+40     	; 0x3fc <i2cRead+0x124>
+		slave->read.buffer[size] = TWDR;
+     3d4:	eb 81       	ldd	r30, Y+3	; 0x03
+     3d6:	fc 81       	ldd	r31, Y+4	; 0x04
+     3d8:	24 81       	ldd	r18, Z+4	; 0x04
+     3da:	35 81       	ldd	r19, Z+5	; 0x05
+     3dc:	89 81       	ldd	r24, Y+1	; 0x01
+     3de:	88 2f       	mov	r24, r24
+     3e0:	90 e0       	ldi	r25, 0x00	; 0
+     3e2:	d9 01       	movw	r26, r18
+     3e4:	a8 0f       	add	r26, r24
+     3e6:	b9 1f       	adc	r27, r25
+     3e8:	eb eb       	ldi	r30, 0xBB	; 187
+     3ea:	f0 e0       	ldi	r31, 0x00	; 0
+     3ec:	80 81       	ld	r24, Z
+     3ee:	8c 93       	st	X, r24
+		
+	// 終了条件の生成
+		TWCR = SendStopConditionBit;
+     3f0:	ec eb       	ldi	r30, 0xBC	; 188
+     3f2:	f0 e0       	ldi	r31, 0x00	; 0
+     3f4:	84 e9       	ldi	r24, 0x94	; 148
+     3f6:	80 83       	st	Z, r24
+		
+	// 正常終了
+		return false;
+     3f8:	1d 82       	std	Y+5, r1	; 0x05
+     3fa:	06 c0       	rjmp	.+12     	; 0x408 <i2cRead+0x130>
+		
+	// エラーケース
+ERROR:
+		TWCR = SendStopConditionBit;
+     3fc:	ec eb       	ldi	r30, 0xBC	; 188
+     3fe:	f0 e0       	ldi	r31, 0x00	; 0
+     400:	84 e9       	ldi	r24, 0x94	; 148
+     402:	80 83       	st	Z, r24
+		return true;
+     404:	81 e0       	ldi	r24, 0x01	; 1
+     406:	8d 83       	std	Y+5, r24	; 0x05
+     408:	8d 81       	ldd	r24, Y+5	; 0x05
+}
+     40a:	0f 90       	pop	r0
+     40c:	0f 90       	pop	r0
+     40e:	0f 90       	pop	r0
+     410:	0f 90       	pop	r0
+     412:	0f 90       	pop	r0
+     414:	cf 91       	pop	r28
+     416:	df 91       	pop	r29
+     418:	08 95       	ret
+
+0000041a <i2cReadWithCommand>:
+ *     };
+ *     i2cReadWithCommand(&slave,cmd);   // アドレスが0x01のスレーブにcommandを送り，つづけて値を1byte読む
+ * @endcode
+ */
+bool i2cReadWithCommand(Slave* slave)
+{
+     41a:	df 93       	push	r29
+     41c:	cf 93       	push	r28
+     41e:	00 d0       	rcall	.+0      	; 0x420 <i2cReadWithCommand+0x6>
+     420:	00 d0       	rcall	.+0      	; 0x422 <i2cReadWithCommand+0x8>
+     422:	0f 92       	push	r0
+     424:	cd b7       	in	r28, 0x3d	; 61
+     426:	de b7       	in	r29, 0x3e	; 62
+     428:	9c 83       	std	Y+4, r25	; 0x04
+     42a:	8b 83       	std	Y+3, r24	; 0x03
+		uint8_t i, size;
+	// 開始条件の生成
+		TWCR = SendStartConditionBit;
+     42c:	ec eb       	ldi	r30, 0xBC	; 188
+     42e:	f0 e0       	ldi	r31, 0x00	; 0
+     430:	84 ea       	ldi	r24, 0xA4	; 164
+     432:	80 83       	st	Z, r24
+		while ( I2C_DOING );
+     434:	ec eb       	ldi	r30, 0xBC	; 188
+     436:	f0 e0       	ldi	r31, 0x00	; 0
+     438:	80 81       	ld	r24, Z
+     43a:	88 23       	and	r24, r24
+     43c:	dc f7       	brge	.-10     	; 0x434 <i2cReadWithCommand+0x1a>
+		if ( I2C_STATUS != SentStartConditionBit ) goto ERROR;
+     43e:	e9 eb       	ldi	r30, 0xB9	; 185
+     440:	f0 e0       	ldi	r31, 0x00	; 0
+     442:	80 81       	ld	r24, Z
+     444:	88 2f       	mov	r24, r24
+     446:	90 e0       	ldi	r25, 0x00	; 0
+     448:	88 7f       	andi	r24, 0xF8	; 248
+     44a:	90 70       	andi	r25, 0x00	; 0
+     44c:	88 30       	cpi	r24, 0x08	; 8
+     44e:	91 05       	cpc	r25, r1
+     450:	09 f0       	breq	.+2      	; 0x454 <i2cReadWithCommand+0x3a>
+     452:	a4 c0       	rjmp	.+328    	; 0x59c <i2cReadWithCommand+0x182>
+    
+	// アドレス転送
+		TWDR = ( slave->address << 1 ) | READ;
+     454:	ab eb       	ldi	r26, 0xBB	; 187
+     456:	b0 e0       	ldi	r27, 0x00	; 0
+     458:	eb 81       	ldd	r30, Y+3	; 0x03
+     45a:	fc 81       	ldd	r31, Y+4	; 0x04
+     45c:	80 81       	ld	r24, Z
+     45e:	88 2f       	mov	r24, r24
+     460:	90 e0       	ldi	r25, 0x00	; 0
+     462:	88 0f       	add	r24, r24
+     464:	99 1f       	adc	r25, r25
+     466:	81 60       	ori	r24, 0x01	; 1
+     468:	8c 93       	st	X, r24
+		TWCR = ContinueI2C;
+     46a:	ec eb       	ldi	r30, 0xBC	; 188
+     46c:	f0 e0       	ldi	r31, 0x00	; 0
+     46e:	84 e8       	ldi	r24, 0x84	; 132
+     470:	80 83       	st	Z, r24
+		while ( I2C_DOING );
+     472:	ec eb       	ldi	r30, 0xBC	; 188
+     474:	f0 e0       	ldi	r31, 0x00	; 0
+     476:	80 81       	ld	r24, Z
+     478:	88 23       	and	r24, r24
+     47a:	dc f7       	brge	.-10     	; 0x472 <i2cReadWithCommand+0x58>
+		if ( I2C_STATUS != SentSlaveAddressWithReadBitAndACK ) goto ERROR;
+     47c:	e9 eb       	ldi	r30, 0xB9	; 185
+     47e:	f0 e0       	ldi	r31, 0x00	; 0
+     480:	80 81       	ld	r24, Z
+     482:	88 2f       	mov	r24, r24
+     484:	90 e0       	ldi	r25, 0x00	; 0
+     486:	88 7f       	andi	r24, 0xF8	; 248
+     488:	90 70       	andi	r25, 0x00	; 0
+     48a:	80 34       	cpi	r24, 0x40	; 64
+     48c:	91 05       	cpc	r25, r1
+     48e:	09 f0       	breq	.+2      	; 0x492 <i2cReadWithCommand+0x78>
+     490:	85 c0       	rjmp	.+266    	; 0x59c <i2cReadWithCommand+0x182>
+    
+	// コマンド転送，ACK確認
+		for ( i = 0, size = slave->write.size; i < size; i++ ) {
+     492:	1a 82       	std	Y+2, r1	; 0x02
+     494:	eb 81       	ldd	r30, Y+3	; 0x03
+     496:	fc 81       	ldd	r31, Y+4	; 0x04
+     498:	83 81       	ldd	r24, Z+3	; 0x03
+     49a:	89 83       	std	Y+1, r24	; 0x01
+     49c:	25 c0       	rjmp	.+74     	; 0x4e8 <i2cReadWithCommand+0xce>
+			TWDR = slave->write.buffer[i];
+     49e:	ab eb       	ldi	r26, 0xBB	; 187
+     4a0:	b0 e0       	ldi	r27, 0x00	; 0
+     4a2:	eb 81       	ldd	r30, Y+3	; 0x03
+     4a4:	fc 81       	ldd	r31, Y+4	; 0x04
+     4a6:	21 81       	ldd	r18, Z+1	; 0x01
+     4a8:	32 81       	ldd	r19, Z+2	; 0x02
+     4aa:	8a 81       	ldd	r24, Y+2	; 0x02
+     4ac:	88 2f       	mov	r24, r24
+     4ae:	90 e0       	ldi	r25, 0x00	; 0
+     4b0:	f9 01       	movw	r30, r18
+     4b2:	e8 0f       	add	r30, r24
+     4b4:	f9 1f       	adc	r31, r25
+     4b6:	80 81       	ld	r24, Z
+     4b8:	8c 93       	st	X, r24
+			TWCR = ContinueI2C;
+     4ba:	ec eb       	ldi	r30, 0xBC	; 188
+     4bc:	f0 e0       	ldi	r31, 0x00	; 0
+     4be:	84 e8       	ldi	r24, 0x84	; 132
+     4c0:	80 83       	st	Z, r24
+			while ( I2C_DOING );
+     4c2:	ec eb       	ldi	r30, 0xBC	; 188
+     4c4:	f0 e0       	ldi	r31, 0x00	; 0
+     4c6:	80 81       	ld	r24, Z
+     4c8:	88 23       	and	r24, r24
+     4ca:	dc f7       	brge	.-10     	; 0x4c2 <i2cReadWithCommand+0xa8>
+			if ( I2C_STATUS != SentDataByteAndACKAtMaster ) goto ERROR;
+     4cc:	e9 eb       	ldi	r30, 0xB9	; 185
+     4ce:	f0 e0       	ldi	r31, 0x00	; 0
+     4d0:	80 81       	ld	r24, Z
+     4d2:	88 2f       	mov	r24, r24
+     4d4:	90 e0       	ldi	r25, 0x00	; 0
+     4d6:	88 7f       	andi	r24, 0xF8	; 248
+     4d8:	90 70       	andi	r25, 0x00	; 0
+     4da:	88 32       	cpi	r24, 0x28	; 40
+     4dc:	91 05       	cpc	r25, r1
+     4de:	09 f0       	breq	.+2      	; 0x4e2 <i2cReadWithCommand+0xc8>
+     4e0:	5d c0       	rjmp	.+186    	; 0x59c <i2cReadWithCommand+0x182>
+		TWCR = ContinueI2C;
+		while ( I2C_DOING );
+		if ( I2C_STATUS != SentSlaveAddressWithReadBitAndACK ) goto ERROR;
+    
+	// コマンド転送，ACK確認
+		for ( i = 0, size = slave->write.size; i < size; i++ ) {
+     4e2:	8a 81       	ldd	r24, Y+2	; 0x02
+     4e4:	8f 5f       	subi	r24, 0xFF	; 255
+     4e6:	8a 83       	std	Y+2, r24	; 0x02
+     4e8:	9a 81       	ldd	r25, Y+2	; 0x02
+     4ea:	89 81       	ldd	r24, Y+1	; 0x01
+     4ec:	98 17       	cp	r25, r24
+     4ee:	b8 f2       	brcs	.-82     	; 0x49e <i2cReadWithCommand+0x84>
+			while ( I2C_DOING );
+			if ( I2C_STATUS != SentDataByteAndACKAtMaster ) goto ERROR;
+		}
+    
+	// データバイト受信，ACK発行の一連をデータサイズ-1分行う
+		for ( i = 0, size = slave->read.size - 1; i < size; i++ ){
+     4f0:	1a 82       	std	Y+2, r1	; 0x02
+     4f2:	eb 81       	ldd	r30, Y+3	; 0x03
+     4f4:	fc 81       	ldd	r31, Y+4	; 0x04
+     4f6:	86 81       	ldd	r24, Z+6	; 0x06
+     4f8:	81 50       	subi	r24, 0x01	; 1
+     4fa:	89 83       	std	Y+1, r24	; 0x01
+     4fc:	24 c0       	rjmp	.+72     	; 0x546 <i2cReadWithCommand+0x12c>
+		    TWCR = ContinueAndResponseI2C;
+     4fe:	ec eb       	ldi	r30, 0xBC	; 188
+     500:	f0 e0       	ldi	r31, 0x00	; 0
+     502:	84 ec       	ldi	r24, 0xC4	; 196
+     504:	80 83       	st	Z, r24
+		    while( I2C_DOING );
+     506:	ec eb       	ldi	r30, 0xBC	; 188
+     508:	f0 e0       	ldi	r31, 0x00	; 0
+     50a:	80 81       	ld	r24, Z
+     50c:	88 23       	and	r24, r24
+     50e:	dc f7       	brge	.-10     	; 0x506 <i2cReadWithCommand+0xec>
+		    if ( I2C_STATUS != ReceivedDataByteAndACKAtMaster ) goto ERROR;
+     510:	e9 eb       	ldi	r30, 0xB9	; 185
+     512:	f0 e0       	ldi	r31, 0x00	; 0
+     514:	80 81       	ld	r24, Z
+     516:	88 2f       	mov	r24, r24
+     518:	90 e0       	ldi	r25, 0x00	; 0
+     51a:	88 7f       	andi	r24, 0xF8	; 248
+     51c:	90 70       	andi	r25, 0x00	; 0
+     51e:	80 35       	cpi	r24, 0x50	; 80
+     520:	91 05       	cpc	r25, r1
+     522:	e1 f5       	brne	.+120    	; 0x59c <i2cReadWithCommand+0x182>
+		    slave->read.buffer[i] = TWDR;
+     524:	eb 81       	ldd	r30, Y+3	; 0x03
+     526:	fc 81       	ldd	r31, Y+4	; 0x04
+     528:	24 81       	ldd	r18, Z+4	; 0x04
+     52a:	35 81       	ldd	r19, Z+5	; 0x05
+     52c:	8a 81       	ldd	r24, Y+2	; 0x02
+     52e:	88 2f       	mov	r24, r24
+     530:	90 e0       	ldi	r25, 0x00	; 0
+     532:	d9 01       	movw	r26, r18
+     534:	a8 0f       	add	r26, r24
+     536:	b9 1f       	adc	r27, r25
+     538:	eb eb       	ldi	r30, 0xBB	; 187
+     53a:	f0 e0       	ldi	r31, 0x00	; 0
+     53c:	80 81       	ld	r24, Z
+     53e:	8c 93       	st	X, r24
+			while ( I2C_DOING );
+			if ( I2C_STATUS != SentDataByteAndACKAtMaster ) goto ERROR;
+		}
+    
+	// データバイト受信，ACK発行の一連をデータサイズ-1分行う
+		for ( i = 0, size = slave->read.size - 1; i < size; i++ ){
+     540:	8a 81       	ldd	r24, Y+2	; 0x02
+     542:	8f 5f       	subi	r24, 0xFF	; 255
+     544:	8a 83       	std	Y+2, r24	; 0x02
+     546:	9a 81       	ldd	r25, Y+2	; 0x02
+     548:	89 81       	ldd	r24, Y+1	; 0x01
+     54a:	98 17       	cp	r25, r24
+     54c:	c0 f2       	brcs	.-80     	; 0x4fe <i2cReadWithCommand+0xe4>
+		    if ( I2C_STATUS != ReceivedDataByteAndACKAtMaster ) goto ERROR;
+		    slave->read.buffer[i] = TWDR;
+		}
+    
+	// 最終データバイト受信，NACK発行
+		TWCR = ContinueI2C;
+     54e:	ec eb       	ldi	r30, 0xBC	; 188
+     550:	f0 e0       	ldi	r31, 0x00	; 0
+     552:	84 e8       	ldi	r24, 0x84	; 132
+     554:	80 83       	st	Z, r24
+		while ( I2C_DOING );
+     556:	ec eb       	ldi	r30, 0xBC	; 188
+     558:	f0 e0       	ldi	r31, 0x00	; 0
+     55a:	80 81       	ld	r24, Z
+     55c:	88 23       	and	r24, r24
+     55e:	dc f7       	brge	.-10     	; 0x556 <i2cReadWithCommand+0x13c>
+		if ( I2C_STATUS != ReceivedDataByteAndNACK ) goto ERROR;
+     560:	e9 eb       	ldi	r30, 0xB9	; 185
+     562:	f0 e0       	ldi	r31, 0x00	; 0
+     564:	80 81       	ld	r24, Z
+     566:	88 2f       	mov	r24, r24
+     568:	90 e0       	ldi	r25, 0x00	; 0
+     56a:	88 7f       	andi	r24, 0xF8	; 248
+     56c:	90 70       	andi	r25, 0x00	; 0
+     56e:	80 35       	cpi	r24, 0x50	; 80
+     570:	91 05       	cpc	r25, r1
+     572:	a1 f4       	brne	.+40     	; 0x59c <i2cReadWithCommand+0x182>
+		slave->read.buffer[size] = TWDR;
+     574:	eb 81       	ldd	r30, Y+3	; 0x03
+     576:	fc 81       	ldd	r31, Y+4	; 0x04
+     578:	24 81       	ldd	r18, Z+4	; 0x04
+     57a:	35 81       	ldd	r19, Z+5	; 0x05
+     57c:	89 81       	ldd	r24, Y+1	; 0x01
+     57e:	88 2f       	mov	r24, r24
+     580:	90 e0       	ldi	r25, 0x00	; 0
+     582:	d9 01       	movw	r26, r18
+     584:	a8 0f       	add	r26, r24
+     586:	b9 1f       	adc	r27, r25
+     588:	eb eb       	ldi	r30, 0xBB	; 187
+     58a:	f0 e0       	ldi	r31, 0x00	; 0
+     58c:	80 81       	ld	r24, Z
+     58e:	8c 93       	st	X, r24
+    
+	// 終了条件の生成
+		TWCR = SendStopConditionBit;
+     590:	ec eb       	ldi	r30, 0xBC	; 188
+     592:	f0 e0       	ldi	r31, 0x00	; 0
+     594:	84 e9       	ldi	r24, 0x94	; 148
+     596:	80 83       	st	Z, r24
+    
+	// 正常終了
+		return false;
+     598:	1d 82       	std	Y+5, r1	; 0x05
+     59a:	06 c0       	rjmp	.+12     	; 0x5a8 <i2cReadWithCommand+0x18e>
+    
+	// エラーケース
+ERROR:
+		TWCR = SendStopConditionBit;
+     59c:	ec eb       	ldi	r30, 0xBC	; 188
+     59e:	f0 e0       	ldi	r31, 0x00	; 0
+     5a0:	84 e9       	ldi	r24, 0x94	; 148
+     5a2:	80 83       	st	Z, r24
+		return true;
+     5a4:	81 e0       	ldi	r24, 0x01	; 1
+     5a6:	8d 83       	std	Y+5, r24	; 0x05
+     5a8:	8d 81       	ldd	r24, Y+5	; 0x05
+}
+     5aa:	0f 90       	pop	r0
+     5ac:	0f 90       	pop	r0
+     5ae:	0f 90       	pop	r0
+     5b0:	0f 90       	pop	r0
+     5b2:	0f 90       	pop	r0
+     5b4:	cf 91       	pop	r28
+     5b6:	df 91       	pop	r29
+     5b8:	08 95       	ret
+
+000005ba <setMU2PutFunc>:
+/**
+ * シリアル送信関数用ポインタセッター関数
+ * @param[in] f {void(*)(void)}
+ */
+void setMU2PutFunc(void(*f)(uint8_t))
+{
+     5ba:	df 93       	push	r29
+     5bc:	cf 93       	push	r28
+     5be:	00 d0       	rcall	.+0      	; 0x5c0 <setMU2PutFunc+0x6>
+     5c0:	cd b7       	in	r28, 0x3d	; 61
+     5c2:	de b7       	in	r29, 0x3e	; 62
+     5c4:	9a 83       	std	Y+2, r25	; 0x02
+     5c6:	89 83       	std	Y+1, r24	; 0x01
+	put = f;
+     5c8:	89 81       	ldd	r24, Y+1	; 0x01
+     5ca:	9a 81       	ldd	r25, Y+2	; 0x02
+     5cc:	90 93 98 01 	sts	0x0198, r25
+     5d0:	80 93 97 01 	sts	0x0197, r24
+}
+     5d4:	0f 90       	pop	r0
+     5d6:	0f 90       	pop	r0
+     5d8:	cf 91       	pop	r28
+     5da:	df 91       	pop	r29
+     5dc:	08 95       	ret
+
+000005de <setMU2GetFunc>:
+/**
+ * シリアル受信関数用ポインタセッター関数
+ * @param[in] f {uint8_t(*)(void)}
+ */
+void setMU2GetFunc(uint8_t(*f)(void))
+{
+     5de:	df 93       	push	r29
+     5e0:	cf 93       	push	r28
+     5e2:	00 d0       	rcall	.+0      	; 0x5e4 <setMU2GetFunc+0x6>
+     5e4:	cd b7       	in	r28, 0x3d	; 61
+     5e6:	de b7       	in	r29, 0x3e	; 62
+     5e8:	9a 83       	std	Y+2, r25	; 0x02
+     5ea:	89 83       	std	Y+1, r24	; 0x01
+	get = f;
+     5ec:	89 81       	ldd	r24, Y+1	; 0x01
+     5ee:	9a 81       	ldd	r25, Y+2	; 0x02
+     5f0:	90 93 9a 01 	sts	0x019A, r25
+     5f4:	80 93 99 01 	sts	0x0199, r24
+}
+     5f8:	0f 90       	pop	r0
+     5fa:	0f 90       	pop	r0
+     5fc:	cf 91       	pop	r28
+     5fe:	df 91       	pop	r29
+     600:	08 95       	ret
+
+00000602 <byteToString>:
+ * 1Byte->16進文字列変換関数
+ * @param[in] byte {uint8_t} 変換対象データ
+ * @param[out] string {char*} 変換後文字列格納先ポインタ
+ */
+void byteToString(uint8_t byte, char* string)
+{
+     602:	df 93       	push	r29
+     604:	cf 93       	push	r28
+     606:	00 d0       	rcall	.+0      	; 0x608 <byteToString+0x6>
+     608:	0f 92       	push	r0
+     60a:	cd b7       	in	r28, 0x3d	; 61
+     60c:	de b7       	in	r29, 0x3e	; 62
+     60e:	89 83       	std	Y+1, r24	; 0x01
+     610:	7b 83       	std	Y+3, r23	; 0x03
+     612:	6a 83       	std	Y+2, r22	; 0x02
+	string[0] = ascii[ ( byte >> 4 ) & 0x0F ];
+     614:	89 81       	ldd	r24, Y+1	; 0x01
+     616:	82 95       	swap	r24
+     618:	8f 70       	andi	r24, 0x0F	; 15
+     61a:	88 2f       	mov	r24, r24
+     61c:	90 e0       	ldi	r25, 0x00	; 0
+     61e:	fc 01       	movw	r30, r24
+     620:	e3 59       	subi	r30, 0x93	; 147
+     622:	fe 4f       	sbci	r31, 0xFE	; 254
+     624:	80 81       	ld	r24, Z
+     626:	ea 81       	ldd	r30, Y+2	; 0x02
+     628:	fb 81       	ldd	r31, Y+3	; 0x03
+     62a:	80 83       	st	Z, r24
+	string[1] = ascii[ byte & 0x0F ];
+     62c:	8a 81       	ldd	r24, Y+2	; 0x02
+     62e:	9b 81       	ldd	r25, Y+3	; 0x03
+     630:	dc 01       	movw	r26, r24
+     632:	11 96       	adiw	r26, 0x01	; 1
+     634:	89 81       	ldd	r24, Y+1	; 0x01
+     636:	88 2f       	mov	r24, r24
+     638:	90 e0       	ldi	r25, 0x00	; 0
+     63a:	8f 70       	andi	r24, 0x0F	; 15
+     63c:	90 70       	andi	r25, 0x00	; 0
+     63e:	fc 01       	movw	r30, r24
+     640:	e3 59       	subi	r30, 0x93	; 147
+     642:	fe 4f       	sbci	r31, 0xFE	; 254
+     644:	80 81       	ld	r24, Z
+     646:	8c 93       	st	X, r24
+	string[2] = '\0';
+     648:	8a 81       	ldd	r24, Y+2	; 0x02
+     64a:	9b 81       	ldd	r25, Y+3	; 0x03
+     64c:	fc 01       	movw	r30, r24
+     64e:	32 96       	adiw	r30, 0x02	; 2
+     650:	10 82       	st	Z, r1
+}
+     652:	0f 90       	pop	r0
+     654:	0f 90       	pop	r0
+     656:	0f 90       	pop	r0
+     658:	cf 91       	pop	r28
+     65a:	df 91       	pop	r29
+     65c:	08 95       	ret
+
+0000065e <mu2Command>:
+ * MU2にコマンドを送信する関数
+ * @param[in] command {const char*} MU2に送信するコマンド
+ * @param[in] values {uint8_t*} コマンドに付加するデータ
+ */
+bool mu2Command(const char* command, char* values)
+{
+     65e:	0f 93       	push	r16
+     660:	1f 93       	push	r17
+     662:	df 93       	push	r29
+     664:	cf 93       	push	r28
+     666:	cd b7       	in	r28, 0x3d	; 61
+     668:	de b7       	in	r29, 0x3e	; 62
+     66a:	60 97       	sbiw	r28, 0x10	; 16
+     66c:	0f b6       	in	r0, 0x3f	; 63
+     66e:	f8 94       	cli
+     670:	de bf       	out	0x3e, r29	; 62
+     672:	0f be       	out	0x3f, r0	; 63
+     674:	cd bf       	out	0x3d, r28	; 61
+     676:	9d 87       	std	Y+13, r25	; 0x0d
+     678:	8c 87       	std	Y+12, r24	; 0x0c
+     67a:	7f 87       	std	Y+15, r23	; 0x0f
+     67c:	6e 87       	std	Y+14, r22	; 0x0e
+	uint8_t i, recv[10];
+	
+	put('@');
+     67e:	e0 91 97 01 	lds	r30, 0x0197
+     682:	f0 91 98 01 	lds	r31, 0x0198
+     686:	80 e4       	ldi	r24, 0x40	; 64
+     688:	09 95       	icall
+	put(command[0]);
+     68a:	20 91 97 01 	lds	r18, 0x0197
+     68e:	30 91 98 01 	lds	r19, 0x0198
+     692:	ec 85       	ldd	r30, Y+12	; 0x0c
+     694:	fd 85       	ldd	r31, Y+13	; 0x0d
+     696:	80 81       	ld	r24, Z
+     698:	f9 01       	movw	r30, r18
+     69a:	09 95       	icall
+	put(command[1]);
+     69c:	20 91 97 01 	lds	r18, 0x0197
+     6a0:	30 91 98 01 	lds	r19, 0x0198
+     6a4:	8c 85       	ldd	r24, Y+12	; 0x0c
+     6a6:	9d 85       	ldd	r25, Y+13	; 0x0d
+     6a8:	fc 01       	movw	r30, r24
+     6aa:	31 96       	adiw	r30, 0x01	; 1
+     6ac:	80 81       	ld	r24, Z
+     6ae:	f9 01       	movw	r30, r18
+     6b0:	09 95       	icall
+     6b2:	0e c0       	rjmp	.+28     	; 0x6d0 <mu2Command+0x72>
+	for ( ; *values != '\0'; values++ ) {
+		put(*values);
+     6b4:	20 91 97 01 	lds	r18, 0x0197
+     6b8:	30 91 98 01 	lds	r19, 0x0198
+     6bc:	ee 85       	ldd	r30, Y+14	; 0x0e
+     6be:	ff 85       	ldd	r31, Y+15	; 0x0f
+     6c0:	80 81       	ld	r24, Z
+     6c2:	f9 01       	movw	r30, r18
+     6c4:	09 95       	icall
+	uint8_t i, recv[10];
+	
+	put('@');
+	put(command[0]);
+	put(command[1]);
+	for ( ; *values != '\0'; values++ ) {
+     6c6:	8e 85       	ldd	r24, Y+14	; 0x0e
+     6c8:	9f 85       	ldd	r25, Y+15	; 0x0f
+     6ca:	01 96       	adiw	r24, 0x01	; 1
+     6cc:	9f 87       	std	Y+15, r25	; 0x0f
+     6ce:	8e 87       	std	Y+14, r24	; 0x0e
+     6d0:	ee 85       	ldd	r30, Y+14	; 0x0e
+     6d2:	ff 85       	ldd	r31, Y+15	; 0x0f
+     6d4:	80 81       	ld	r24, Z
+     6d6:	88 23       	and	r24, r24
+     6d8:	69 f7       	brne	.-38     	; 0x6b4 <mu2Command+0x56>
+		put(*values);
+	}
+	put(0x0d);
+     6da:	e0 91 97 01 	lds	r30, 0x0197
+     6de:	f0 91 98 01 	lds	r31, 0x0198
+     6e2:	8d e0       	ldi	r24, 0x0D	; 13
+     6e4:	09 95       	icall
+	put(0x0a);
+     6e6:	e0 91 97 01 	lds	r30, 0x0197
+     6ea:	f0 91 98 01 	lds	r31, 0x0198
+     6ee:	8a e0       	ldi	r24, 0x0A	; 10
+     6f0:	09 95       	icall
+	
+	for ( i = 0; i < 10; i++ ){
+     6f2:	19 82       	std	Y+1, r1	; 0x01
+     6f4:	2e c0       	rjmp	.+92     	; 0x752 <mu2Command+0xf4>
+		recv[i] = get();
+     6f6:	89 81       	ldd	r24, Y+1	; 0x01
+     6f8:	08 2f       	mov	r16, r24
+     6fa:	10 e0       	ldi	r17, 0x00	; 0
+     6fc:	e0 91 99 01 	lds	r30, 0x0199
+     700:	f0 91 9a 01 	lds	r31, 0x019A
+     704:	09 95       	icall
+     706:	28 2f       	mov	r18, r24
+     708:	ce 01       	movw	r24, r28
+     70a:	02 96       	adiw	r24, 0x02	; 2
+     70c:	fc 01       	movw	r30, r24
+     70e:	e0 0f       	add	r30, r16
+     710:	f1 1f       	adc	r31, r17
+     712:	20 83       	st	Z, r18
+		if( i > 0 && recv[i-1] == 0x0d && recv[i] == 0x0a ) {
+     714:	89 81       	ldd	r24, Y+1	; 0x01
+     716:	88 23       	and	r24, r24
+     718:	c9 f0       	breq	.+50     	; 0x74c <mu2Command+0xee>
+     71a:	89 81       	ldd	r24, Y+1	; 0x01
+     71c:	88 2f       	mov	r24, r24
+     71e:	90 e0       	ldi	r25, 0x00	; 0
+     720:	9c 01       	movw	r18, r24
+     722:	21 50       	subi	r18, 0x01	; 1
+     724:	30 40       	sbci	r19, 0x00	; 0
+     726:	ce 01       	movw	r24, r28
+     728:	02 96       	adiw	r24, 0x02	; 2
+     72a:	fc 01       	movw	r30, r24
+     72c:	e2 0f       	add	r30, r18
+     72e:	f3 1f       	adc	r31, r19
+     730:	80 81       	ld	r24, Z
+     732:	8d 30       	cpi	r24, 0x0D	; 13
+     734:	59 f4       	brne	.+22     	; 0x74c <mu2Command+0xee>
+     736:	89 81       	ldd	r24, Y+1	; 0x01
+     738:	28 2f       	mov	r18, r24
+     73a:	30 e0       	ldi	r19, 0x00	; 0
+     73c:	ce 01       	movw	r24, r28
+     73e:	02 96       	adiw	r24, 0x02	; 2
+     740:	fc 01       	movw	r30, r24
+     742:	e2 0f       	add	r30, r18
+     744:	f3 1f       	adc	r31, r19
+     746:	80 81       	ld	r24, Z
+     748:	8a 30       	cpi	r24, 0x0A	; 10
+     74a:	31 f0       	breq	.+12     	; 0x758 <mu2Command+0xfa>
+		put(*values);
+	}
+	put(0x0d);
+	put(0x0a);
+	
+	for ( i = 0; i < 10; i++ ){
+     74c:	89 81       	ldd	r24, Y+1	; 0x01
+     74e:	8f 5f       	subi	r24, 0xFF	; 255
+     750:	89 83       	std	Y+1, r24	; 0x01
+     752:	89 81       	ldd	r24, Y+1	; 0x01
+     754:	8a 30       	cpi	r24, 0x0A	; 10
+     756:	78 f2       	brcs	.-98     	; 0x6f6 <mu2Command+0x98>
+		recv[i] = get();
+		if( i > 0 && recv[i-1] == 0x0d && recv[i] == 0x0a ) {
+			break;
+		}
+	}
+	if ( recv[1] == 'E' && recv[2] == 'R' ) {
+     758:	8b 81       	ldd	r24, Y+3	; 0x03
+     75a:	85 34       	cpi	r24, 0x45	; 69
+     75c:	31 f4       	brne	.+12     	; 0x76a <mu2Command+0x10c>
+     75e:	8c 81       	ldd	r24, Y+4	; 0x04
+     760:	82 35       	cpi	r24, 0x52	; 82
+     762:	19 f4       	brne	.+6      	; 0x76a <mu2Command+0x10c>
+		return true;
+     764:	81 e0       	ldi	r24, 0x01	; 1
+     766:	88 8b       	std	Y+16, r24	; 0x10
+     768:	01 c0       	rjmp	.+2      	; 0x76c <mu2Command+0x10e>
+	}
+	
+	return false;
+     76a:	18 8a       	std	Y+16, r1	; 0x10
+     76c:	88 89       	ldd	r24, Y+16	; 0x10
+}
+     76e:	60 96       	adiw	r28, 0x10	; 16
+     770:	0f b6       	in	r0, 0x3f	; 63
+     772:	f8 94       	cli
+     774:	de bf       	out	0x3e, r29	; 62
+     776:	0f be       	out	0x3f, r0	; 63
+     778:	cd bf       	out	0x3d, r28	; 61
+     77a:	cf 91       	pop	r28
+     77c:	df 91       	pop	r29
+     77e:	1f 91       	pop	r17
+     780:	0f 91       	pop	r16
+     782:	08 95       	ret
+
+00000784 <mu2CommandToEEPROM>:
+ * MU2にコマンドを送信し，MU2のEEPROMに書きこむ関数
+ * @param[in] command {const char*} MU2に送信するコマンド
+ * @param[in] values {uint8_t*} コマンドに付加するデータ
+ */
+bool mu2CommandToEEPROM(const char *command, uint8_t* values)
+{
+     784:	0f 93       	push	r16
+     786:	1f 93       	push	r17
+     788:	df 93       	push	r29
+     78a:	cf 93       	push	r28
+     78c:	cd b7       	in	r28, 0x3d	; 61
+     78e:	de b7       	in	r29, 0x3e	; 62
+     790:	60 97       	sbiw	r28, 0x10	; 16
+     792:	0f b6       	in	r0, 0x3f	; 63
+     794:	f8 94       	cli
+     796:	de bf       	out	0x3e, r29	; 62
+     798:	0f be       	out	0x3f, r0	; 63
+     79a:	cd bf       	out	0x3d, r28	; 61
+     79c:	9d 87       	std	Y+13, r25	; 0x0d
+     79e:	8c 87       	std	Y+12, r24	; 0x0c
+     7a0:	7f 87       	std	Y+15, r23	; 0x0f
+     7a2:	6e 87       	std	Y+14, r22	; 0x0e
+	uint8_t i, recv[10];
+	
+	put('@');
+     7a4:	e0 91 97 01 	lds	r30, 0x0197
+     7a8:	f0 91 98 01 	lds	r31, 0x0198
+     7ac:	80 e4       	ldi	r24, 0x40	; 64
+     7ae:	09 95       	icall
+	put(command[0]);
+     7b0:	20 91 97 01 	lds	r18, 0x0197
+     7b4:	30 91 98 01 	lds	r19, 0x0198
+     7b8:	ec 85       	ldd	r30, Y+12	; 0x0c
+     7ba:	fd 85       	ldd	r31, Y+13	; 0x0d
+     7bc:	80 81       	ld	r24, Z
+     7be:	f9 01       	movw	r30, r18
+     7c0:	09 95       	icall
+	put(command[1]);
+     7c2:	20 91 97 01 	lds	r18, 0x0197
+     7c6:	30 91 98 01 	lds	r19, 0x0198
+     7ca:	8c 85       	ldd	r24, Y+12	; 0x0c
+     7cc:	9d 85       	ldd	r25, Y+13	; 0x0d
+     7ce:	fc 01       	movw	r30, r24
+     7d0:	31 96       	adiw	r30, 0x01	; 1
+     7d2:	80 81       	ld	r24, Z
+     7d4:	f9 01       	movw	r30, r18
+     7d6:	09 95       	icall
+     7d8:	0e c0       	rjmp	.+28     	; 0x7f6 <mu2CommandToEEPROM+0x72>
+	for ( ; *values != '\0'; values++ ) {
+		put(*values);
+     7da:	20 91 97 01 	lds	r18, 0x0197
+     7de:	30 91 98 01 	lds	r19, 0x0198
+     7e2:	ee 85       	ldd	r30, Y+14	; 0x0e
+     7e4:	ff 85       	ldd	r31, Y+15	; 0x0f
+     7e6:	80 81       	ld	r24, Z
+     7e8:	f9 01       	movw	r30, r18
+     7ea:	09 95       	icall
+	uint8_t i, recv[10];
+	
+	put('@');
+	put(command[0]);
+	put(command[1]);
+	for ( ; *values != '\0'; values++ ) {
+     7ec:	8e 85       	ldd	r24, Y+14	; 0x0e
+     7ee:	9f 85       	ldd	r25, Y+15	; 0x0f
+     7f0:	01 96       	adiw	r24, 0x01	; 1
+     7f2:	9f 87       	std	Y+15, r25	; 0x0f
+     7f4:	8e 87       	std	Y+14, r24	; 0x0e
+     7f6:	ee 85       	ldd	r30, Y+14	; 0x0e
+     7f8:	ff 85       	ldd	r31, Y+15	; 0x0f
+     7fa:	80 81       	ld	r24, Z
+     7fc:	88 23       	and	r24, r24
+     7fe:	69 f7       	brne	.-38     	; 0x7da <mu2CommandToEEPROM+0x56>
+		put(*values);
+	}
+	put('/');
+     800:	e0 91 97 01 	lds	r30, 0x0197
+     804:	f0 91 98 01 	lds	r31, 0x0198
+     808:	8f e2       	ldi	r24, 0x2F	; 47
+     80a:	09 95       	icall
+	put('W');
+     80c:	e0 91 97 01 	lds	r30, 0x0197
+     810:	f0 91 98 01 	lds	r31, 0x0198
+     814:	87 e5       	ldi	r24, 0x57	; 87
+     816:	09 95       	icall
+	put(0x0d);
+     818:	e0 91 97 01 	lds	r30, 0x0197
+     81c:	f0 91 98 01 	lds	r31, 0x0198
+     820:	8d e0       	ldi	r24, 0x0D	; 13
+     822:	09 95       	icall
+	put(0x0a);
+     824:	e0 91 97 01 	lds	r30, 0x0197
+     828:	f0 91 98 01 	lds	r31, 0x0198
+     82c:	8a e0       	ldi	r24, 0x0A	; 10
+     82e:	09 95       	icall
+	
+	for ( i = 0; i < 10; i++ ){
+     830:	19 82       	std	Y+1, r1	; 0x01
+     832:	2e c0       	rjmp	.+92     	; 0x890 <mu2CommandToEEPROM+0x10c>
+		recv[i] = get();
+     834:	89 81       	ldd	r24, Y+1	; 0x01
+     836:	08 2f       	mov	r16, r24
+     838:	10 e0       	ldi	r17, 0x00	; 0
+     83a:	e0 91 99 01 	lds	r30, 0x0199
+     83e:	f0 91 9a 01 	lds	r31, 0x019A
+     842:	09 95       	icall
+     844:	28 2f       	mov	r18, r24
+     846:	ce 01       	movw	r24, r28
+     848:	02 96       	adiw	r24, 0x02	; 2
+     84a:	fc 01       	movw	r30, r24
+     84c:	e0 0f       	add	r30, r16
+     84e:	f1 1f       	adc	r31, r17
+     850:	20 83       	st	Z, r18
+		if( i > 0 && recv[i-1] == 0x0d && recv[i] == 0x0a ) {
+     852:	89 81       	ldd	r24, Y+1	; 0x01
+     854:	88 23       	and	r24, r24
+     856:	c9 f0       	breq	.+50     	; 0x88a <mu2CommandToEEPROM+0x106>
+     858:	89 81       	ldd	r24, Y+1	; 0x01
+     85a:	88 2f       	mov	r24, r24
+     85c:	90 e0       	ldi	r25, 0x00	; 0
+     85e:	9c 01       	movw	r18, r24
+     860:	21 50       	subi	r18, 0x01	; 1
+     862:	30 40       	sbci	r19, 0x00	; 0
+     864:	ce 01       	movw	r24, r28
+     866:	02 96       	adiw	r24, 0x02	; 2
+     868:	fc 01       	movw	r30, r24
+     86a:	e2 0f       	add	r30, r18
+     86c:	f3 1f       	adc	r31, r19
+     86e:	80 81       	ld	r24, Z
+     870:	8d 30       	cpi	r24, 0x0D	; 13
+     872:	59 f4       	brne	.+22     	; 0x88a <mu2CommandToEEPROM+0x106>
+     874:	89 81       	ldd	r24, Y+1	; 0x01
+     876:	28 2f       	mov	r18, r24
+     878:	30 e0       	ldi	r19, 0x00	; 0
+     87a:	ce 01       	movw	r24, r28
+     87c:	02 96       	adiw	r24, 0x02	; 2
+     87e:	fc 01       	movw	r30, r24
+     880:	e2 0f       	add	r30, r18
+     882:	f3 1f       	adc	r31, r19
+     884:	80 81       	ld	r24, Z
+     886:	8a 30       	cpi	r24, 0x0A	; 10
+     888:	31 f0       	breq	.+12     	; 0x896 <mu2CommandToEEPROM+0x112>
+	put('/');
+	put('W');
+	put(0x0d);
+	put(0x0a);
+	
+	for ( i = 0; i < 10; i++ ){
+     88a:	89 81       	ldd	r24, Y+1	; 0x01
+     88c:	8f 5f       	subi	r24, 0xFF	; 255
+     88e:	89 83       	std	Y+1, r24	; 0x01
+     890:	89 81       	ldd	r24, Y+1	; 0x01
+     892:	8a 30       	cpi	r24, 0x0A	; 10
+     894:	78 f2       	brcs	.-98     	; 0x834 <mu2CommandToEEPROM+0xb0>
+		recv[i] = get();
+		if( i > 0 && recv[i-1] == 0x0d && recv[i] == 0x0a ) {
+			break;
+		}
+	}
+	if ( recv[1] == 'E' && recv[2] == 'R' ) {
+     896:	8b 81       	ldd	r24, Y+3	; 0x03
+     898:	85 34       	cpi	r24, 0x45	; 69
+     89a:	31 f4       	brne	.+12     	; 0x8a8 <mu2CommandToEEPROM+0x124>
+     89c:	8c 81       	ldd	r24, Y+4	; 0x04
+     89e:	82 35       	cpi	r24, 0x52	; 82
+     8a0:	19 f4       	brne	.+6      	; 0x8a8 <mu2CommandToEEPROM+0x124>
+		return true;
+     8a2:	81 e0       	ldi	r24, 0x01	; 1
+     8a4:	88 8b       	std	Y+16, r24	; 0x10
+     8a6:	01 c0       	rjmp	.+2      	; 0x8aa <mu2CommandToEEPROM+0x126>
+	}
+	
+	return false;
+     8a8:	18 8a       	std	Y+16, r1	; 0x10
+     8aa:	88 89       	ldd	r24, Y+16	; 0x10
+}
+     8ac:	60 96       	adiw	r28, 0x10	; 16
+     8ae:	0f b6       	in	r0, 0x3f	; 63
+     8b0:	f8 94       	cli
+     8b2:	de bf       	out	0x3e, r29	; 62
+     8b4:	0f be       	out	0x3f, r0	; 63
+     8b6:	cd bf       	out	0x3d, r28	; 61
+     8b8:	cf 91       	pop	r28
+     8ba:	df 91       	pop	r29
+     8bc:	1f 91       	pop	r17
+     8be:	0f 91       	pop	r16
+     8c0:	08 95       	ret
+
+000008c2 <mu2TransmitData>:
+ * MU2でデータを送信する関数
+ * @param[in] command {const char*} MU2に送信するコマンド
+ * @param[in] values {uint8_t*} コマンドに付加するデータ
+ */
+bool mu2TransmitData(uint8_t* values, uint8_t size)
+{
+     8c2:	0f 93       	push	r16
+     8c4:	1f 93       	push	r17
+     8c6:	df 93       	push	r29
+     8c8:	cf 93       	push	r28
+     8ca:	cd b7       	in	r28, 0x3d	; 61
+     8cc:	de b7       	in	r29, 0x3e	; 62
+     8ce:	62 97       	sbiw	r28, 0x12	; 18
+     8d0:	0f b6       	in	r0, 0x3f	; 63
+     8d2:	f8 94       	cli
+     8d4:	de bf       	out	0x3e, r29	; 62
+     8d6:	0f be       	out	0x3f, r0	; 63
+     8d8:	cd bf       	out	0x3d, r28	; 61
+     8da:	98 8b       	std	Y+16, r25	; 0x10
+     8dc:	8f 87       	std	Y+15, r24	; 0x0f
+     8de:	69 8b       	std	Y+17, r22	; 0x11
+	uint8_t i,recv[10];
+	char strSize[3];
+	byteToString(size,strSize);
+     8e0:	9e 01       	movw	r18, r28
+     8e2:	24 5f       	subi	r18, 0xF4	; 244
+     8e4:	3f 4f       	sbci	r19, 0xFF	; 255
+     8e6:	89 89       	ldd	r24, Y+17	; 0x11
+     8e8:	b9 01       	movw	r22, r18
+     8ea:	0e 94 01 03 	call	0x602	; 0x602 <byteToString>
+	put('@');
+     8ee:	e0 91 97 01 	lds	r30, 0x0197
+     8f2:	f0 91 98 01 	lds	r31, 0x0198
+     8f6:	80 e4       	ldi	r24, 0x40	; 64
+     8f8:	09 95       	icall
+	put('D');
+     8fa:	e0 91 97 01 	lds	r30, 0x0197
+     8fe:	f0 91 98 01 	lds	r31, 0x0198
+     902:	84 e4       	ldi	r24, 0x44	; 68
+     904:	09 95       	icall
+	put('T');
+     906:	e0 91 97 01 	lds	r30, 0x0197
+     90a:	f0 91 98 01 	lds	r31, 0x0198
+     90e:	84 e5       	ldi	r24, 0x54	; 84
+     910:	09 95       	icall
+	put(strSize[0]);
+     912:	e0 91 97 01 	lds	r30, 0x0197
+     916:	f0 91 98 01 	lds	r31, 0x0198
+     91a:	8c 85       	ldd	r24, Y+12	; 0x0c
+     91c:	09 95       	icall
+	put(strSize[1]);
+     91e:	e0 91 97 01 	lds	r30, 0x0197
+     922:	f0 91 98 01 	lds	r31, 0x0198
+     926:	8d 85       	ldd	r24, Y+13	; 0x0d
+     928:	09 95       	icall
+	for ( i = 0; i < size; i++ ) {
+     92a:	19 82       	std	Y+1, r1	; 0x01
+     92c:	12 c0       	rjmp	.+36     	; 0x952 <mu2TransmitData+0x90>
+		put(values[i]);
+     92e:	40 91 97 01 	lds	r20, 0x0197
+     932:	50 91 98 01 	lds	r21, 0x0198
+     936:	89 81       	ldd	r24, Y+1	; 0x01
+     938:	28 2f       	mov	r18, r24
+     93a:	30 e0       	ldi	r19, 0x00	; 0
+     93c:	8f 85       	ldd	r24, Y+15	; 0x0f
+     93e:	98 89       	ldd	r25, Y+16	; 0x10
+     940:	fc 01       	movw	r30, r24
+     942:	e2 0f       	add	r30, r18
+     944:	f3 1f       	adc	r31, r19
+     946:	80 81       	ld	r24, Z
+     948:	fa 01       	movw	r30, r20
+     94a:	09 95       	icall
+	put('@');
+	put('D');
+	put('T');
+	put(strSize[0]);
+	put(strSize[1]);
+	for ( i = 0; i < size; i++ ) {
+     94c:	89 81       	ldd	r24, Y+1	; 0x01
+     94e:	8f 5f       	subi	r24, 0xFF	; 255
+     950:	89 83       	std	Y+1, r24	; 0x01
+     952:	99 81       	ldd	r25, Y+1	; 0x01
+     954:	89 89       	ldd	r24, Y+17	; 0x11
+     956:	98 17       	cp	r25, r24
+     958:	50 f3       	brcs	.-44     	; 0x92e <mu2TransmitData+0x6c>
+		put(values[i]);
+	}
+	put(0x0d);
+     95a:	e0 91 97 01 	lds	r30, 0x0197
+     95e:	f0 91 98 01 	lds	r31, 0x0198
+     962:	8d e0       	ldi	r24, 0x0D	; 13
+     964:	09 95       	icall
+	put(0x0a);
+     966:	e0 91 97 01 	lds	r30, 0x0197
+     96a:	f0 91 98 01 	lds	r31, 0x0198
+     96e:	8a e0       	ldi	r24, 0x0A	; 10
+     970:	09 95       	icall
+
+	for ( i = 0; i < 10; i++ ){
+     972:	19 82       	std	Y+1, r1	; 0x01
+     974:	2e c0       	rjmp	.+92     	; 0x9d2 <mu2TransmitData+0x110>
+		recv[i] = get();
+     976:	89 81       	ldd	r24, Y+1	; 0x01
+     978:	08 2f       	mov	r16, r24
+     97a:	10 e0       	ldi	r17, 0x00	; 0
+     97c:	e0 91 99 01 	lds	r30, 0x0199
+     980:	f0 91 9a 01 	lds	r31, 0x019A
+     984:	09 95       	icall
+     986:	28 2f       	mov	r18, r24
+     988:	ce 01       	movw	r24, r28
+     98a:	02 96       	adiw	r24, 0x02	; 2
+     98c:	fc 01       	movw	r30, r24
+     98e:	e0 0f       	add	r30, r16
+     990:	f1 1f       	adc	r31, r17
+     992:	20 83       	st	Z, r18
+		if( i > 0 && recv[i-1] == 0x0d && recv[i] == 0x0a ) {
+     994:	89 81       	ldd	r24, Y+1	; 0x01
+     996:	88 23       	and	r24, r24
+     998:	c9 f0       	breq	.+50     	; 0x9cc <mu2TransmitData+0x10a>
+     99a:	89 81       	ldd	r24, Y+1	; 0x01
+     99c:	88 2f       	mov	r24, r24
+     99e:	90 e0       	ldi	r25, 0x00	; 0
+     9a0:	9c 01       	movw	r18, r24
+     9a2:	21 50       	subi	r18, 0x01	; 1
+     9a4:	30 40       	sbci	r19, 0x00	; 0
+     9a6:	ce 01       	movw	r24, r28
+     9a8:	02 96       	adiw	r24, 0x02	; 2
+     9aa:	fc 01       	movw	r30, r24
+     9ac:	e2 0f       	add	r30, r18
+     9ae:	f3 1f       	adc	r31, r19
+     9b0:	80 81       	ld	r24, Z
+     9b2:	8d 30       	cpi	r24, 0x0D	; 13
+     9b4:	59 f4       	brne	.+22     	; 0x9cc <mu2TransmitData+0x10a>
+     9b6:	89 81       	ldd	r24, Y+1	; 0x01
+     9b8:	28 2f       	mov	r18, r24
+     9ba:	30 e0       	ldi	r19, 0x00	; 0
+     9bc:	ce 01       	movw	r24, r28
+     9be:	02 96       	adiw	r24, 0x02	; 2
+     9c0:	fc 01       	movw	r30, r24
+     9c2:	e2 0f       	add	r30, r18
+     9c4:	f3 1f       	adc	r31, r19
+     9c6:	80 81       	ld	r24, Z
+     9c8:	8a 30       	cpi	r24, 0x0A	; 10
+     9ca:	31 f0       	breq	.+12     	; 0x9d8 <mu2TransmitData+0x116>
+		put(values[i]);
+	}
+	put(0x0d);
+	put(0x0a);
+
+	for ( i = 0; i < 10; i++ ){
+     9cc:	89 81       	ldd	r24, Y+1	; 0x01
+     9ce:	8f 5f       	subi	r24, 0xFF	; 255
+     9d0:	89 83       	std	Y+1, r24	; 0x01
+     9d2:	89 81       	ldd	r24, Y+1	; 0x01
+     9d4:	8a 30       	cpi	r24, 0x0A	; 10
+     9d6:	78 f2       	brcs	.-98     	; 0x976 <mu2TransmitData+0xb4>
+		recv[i] = get();
+		if( i > 0 && recv[i-1] == 0x0d && recv[i] == 0x0a ) {
+			break;
+		}
+	}
+	if ( recv[1] == 'E' && recv[2] == 'R' ) {
+     9d8:	8b 81       	ldd	r24, Y+3	; 0x03
+     9da:	85 34       	cpi	r24, 0x45	; 69
+     9dc:	31 f4       	brne	.+12     	; 0x9ea <mu2TransmitData+0x128>
+     9de:	8c 81       	ldd	r24, Y+4	; 0x04
+     9e0:	82 35       	cpi	r24, 0x52	; 82
+     9e2:	19 f4       	brne	.+6      	; 0x9ea <mu2TransmitData+0x128>
+		return true;
+     9e4:	81 e0       	ldi	r24, 0x01	; 1
+     9e6:	8a 8b       	std	Y+18, r24	; 0x12
+     9e8:	01 c0       	rjmp	.+2      	; 0x9ec <mu2TransmitData+0x12a>
+	}
+	
+	return false;
+     9ea:	1a 8a       	std	Y+18, r1	; 0x12
+     9ec:	8a 89       	ldd	r24, Y+18	; 0x12
+}
+     9ee:	62 96       	adiw	r28, 0x12	; 18
+     9f0:	0f b6       	in	r0, 0x3f	; 63
+     9f2:	f8 94       	cli
+     9f4:	de bf       	out	0x3e, r29	; 62
+     9f6:	0f be       	out	0x3f, r0	; 63
+     9f8:	cd bf       	out	0x3d, r28	; 61
+     9fa:	cf 91       	pop	r28
+     9fc:	df 91       	pop	r29
+     9fe:	1f 91       	pop	r17
+     a00:	0f 91       	pop	r16
+     a02:	08 95       	ret
+
+00000a04 <initLED>:
+#include <avr/io.h>
+#include <stdbool.h>
+#include "led.h"
+
+void initLED(void)
+{
+     a04:	df 93       	push	r29
+     a06:	cf 93       	push	r28
+     a08:	cd b7       	in	r28, 0x3d	; 61
+     a0a:	de b7       	in	r29, 0x3e	; 62
+	DDRA |= 0x07;
+     a0c:	a1 e2       	ldi	r26, 0x21	; 33
+     a0e:	b0 e0       	ldi	r27, 0x00	; 0
+     a10:	e1 e2       	ldi	r30, 0x21	; 33
+     a12:	f0 e0       	ldi	r31, 0x00	; 0
+     a14:	80 81       	ld	r24, Z
+     a16:	87 60       	ori	r24, 0x07	; 7
+     a18:	8c 93       	st	X, r24
+	PORTA |= 0x07;
+     a1a:	a2 e2       	ldi	r26, 0x22	; 34
+     a1c:	b0 e0       	ldi	r27, 0x00	; 0
+     a1e:	e2 e2       	ldi	r30, 0x22	; 34
+     a20:	f0 e0       	ldi	r31, 0x00	; 0
+     a22:	80 81       	ld	r24, Z
+     a24:	87 60       	ori	r24, 0x07	; 7
+     a26:	8c 93       	st	X, r24
+}
+     a28:	cf 91       	pop	r28
+     a2a:	df 91       	pop	r29
+     a2c:	08 95       	ret
+
+00000a2e <LED>:
+
+void LED(enum LEDNumber target, bool status)
+{
+     a2e:	df 93       	push	r29
+     a30:	cf 93       	push	r28
+     a32:	00 d0       	rcall	.+0      	; 0xa34 <LED+0x6>
+     a34:	cd b7       	in	r28, 0x3d	; 61
+     a36:	de b7       	in	r29, 0x3e	; 62
+     a38:	89 83       	std	Y+1, r24	; 0x01
+     a3a:	6a 83       	std	Y+2, r22	; 0x02
+	if(status)	PORTA &= ~_BV(target);
+     a3c:	8a 81       	ldd	r24, Y+2	; 0x02
+     a3e:	88 23       	and	r24, r24
+     a40:	a9 f0       	breq	.+42     	; 0xa6c <LED+0x3e>
+     a42:	a2 e2       	ldi	r26, 0x22	; 34
+     a44:	b0 e0       	ldi	r27, 0x00	; 0
+     a46:	e2 e2       	ldi	r30, 0x22	; 34
+     a48:	f0 e0       	ldi	r31, 0x00	; 0
+     a4a:	80 81       	ld	r24, Z
+     a4c:	48 2f       	mov	r20, r24
+     a4e:	89 81       	ldd	r24, Y+1	; 0x01
+     a50:	28 2f       	mov	r18, r24
+     a52:	30 e0       	ldi	r19, 0x00	; 0
+     a54:	81 e0       	ldi	r24, 0x01	; 1
+     a56:	90 e0       	ldi	r25, 0x00	; 0
+     a58:	02 2e       	mov	r0, r18
+     a5a:	02 c0       	rjmp	.+4      	; 0xa60 <LED+0x32>
+     a5c:	88 0f       	add	r24, r24
+     a5e:	99 1f       	adc	r25, r25
+     a60:	0a 94       	dec	r0
+     a62:	e2 f7       	brpl	.-8      	; 0xa5c <LED+0x2e>
+     a64:	80 95       	com	r24
+     a66:	84 23       	and	r24, r20
+     a68:	8c 93       	st	X, r24
+     a6a:	13 c0       	rjmp	.+38     	; 0xa92 <LED+0x64>
+	else		PORTA |= _BV(target);
+     a6c:	a2 e2       	ldi	r26, 0x22	; 34
+     a6e:	b0 e0       	ldi	r27, 0x00	; 0
+     a70:	e2 e2       	ldi	r30, 0x22	; 34
+     a72:	f0 e0       	ldi	r31, 0x00	; 0
+     a74:	80 81       	ld	r24, Z
+     a76:	48 2f       	mov	r20, r24
+     a78:	89 81       	ldd	r24, Y+1	; 0x01
+     a7a:	28 2f       	mov	r18, r24
+     a7c:	30 e0       	ldi	r19, 0x00	; 0
+     a7e:	81 e0       	ldi	r24, 0x01	; 1
+     a80:	90 e0       	ldi	r25, 0x00	; 0
+     a82:	02 2e       	mov	r0, r18
+     a84:	02 c0       	rjmp	.+4      	; 0xa8a <LED+0x5c>
+     a86:	88 0f       	add	r24, r24
+     a88:	99 1f       	adc	r25, r25
+     a8a:	0a 94       	dec	r0
+     a8c:	e2 f7       	brpl	.-8      	; 0xa86 <LED+0x58>
+     a8e:	84 2b       	or	r24, r20
+     a90:	8c 93       	st	X, r24
+}
+     a92:	0f 90       	pop	r0
+     a94:	0f 90       	pop	r0
+     a96:	cf 91       	pop	r28
+     a98:	df 91       	pop	r29
+     a9a:	08 95       	ret
+
+00000a9c <initSwitch>:
+#include "switch.h"
+
+void initSwitch(void)
+{
+     a9c:	df 93       	push	r29
+     a9e:	cf 93       	push	r28
+     aa0:	cd b7       	in	r28, 0x3d	; 61
+     aa2:	de b7       	in	r29, 0x3e	; 62
+	DDRB &= 0xf0;
+     aa4:	a4 e2       	ldi	r26, 0x24	; 36
+     aa6:	b0 e0       	ldi	r27, 0x00	; 0
+     aa8:	e4 e2       	ldi	r30, 0x24	; 36
+     aaa:	f0 e0       	ldi	r31, 0x00	; 0
+     aac:	80 81       	ld	r24, Z
+     aae:	80 7f       	andi	r24, 0xF0	; 240
+     ab0:	8c 93       	st	X, r24
+	PORTB |= 0x0f;
+     ab2:	a5 e2       	ldi	r26, 0x25	; 37
+     ab4:	b0 e0       	ldi	r27, 0x00	; 0
+     ab6:	e5 e2       	ldi	r30, 0x25	; 37
+     ab8:	f0 e0       	ldi	r31, 0x00	; 0
+     aba:	80 81       	ld	r24, Z
+     abc:	8f 60       	ori	r24, 0x0F	; 15
+     abe:	8c 93       	st	X, r24
+}
+     ac0:	cf 91       	pop	r28
+     ac2:	df 91       	pop	r29
+     ac4:	08 95       	ret
+
+00000ac6 <isSwitch>:
+
+bool isSwitch(unsigned char target)
+{
+     ac6:	df 93       	push	r29
+     ac8:	cf 93       	push	r28
+     aca:	00 d0       	rcall	.+0      	; 0xacc <isSwitch+0x6>
+     acc:	cd b7       	in	r28, 0x3d	; 61
+     ace:	de b7       	in	r29, 0x3e	; 62
+     ad0:	8a 83       	std	Y+2, r24	; 0x02
+	unsigned char status;
+	
+	status = PINB ^ 0xff;
+     ad2:	e3 e2       	ldi	r30, 0x23	; 35
+     ad4:	f0 e0       	ldi	r31, 0x00	; 0
+     ad6:	80 81       	ld	r24, Z
+     ad8:	80 95       	com	r24
+     ada:	89 83       	std	Y+1, r24	; 0x01
+	status >>= (target-1); 
+     adc:	89 81       	ldd	r24, Y+1	; 0x01
+     ade:	28 2f       	mov	r18, r24
+     ae0:	30 e0       	ldi	r19, 0x00	; 0
+     ae2:	8a 81       	ldd	r24, Y+2	; 0x02
+     ae4:	88 2f       	mov	r24, r24
+     ae6:	90 e0       	ldi	r25, 0x00	; 0
+     ae8:	01 97       	sbiw	r24, 0x01	; 1
+     aea:	a9 01       	movw	r20, r18
+     aec:	02 c0       	rjmp	.+4      	; 0xaf2 <isSwitch+0x2c>
+     aee:	55 95       	asr	r21
+     af0:	47 95       	ror	r20
+     af2:	8a 95       	dec	r24
+     af4:	e2 f7       	brpl	.-8      	; 0xaee <isSwitch+0x28>
+     af6:	ca 01       	movw	r24, r20
+     af8:	89 83       	std	Y+1, r24	; 0x01
+
+	return (bool)(status & 0x01);
+     afa:	89 81       	ldd	r24, Y+1	; 0x01
+     afc:	88 2f       	mov	r24, r24
+     afe:	90 e0       	ldi	r25, 0x00	; 0
+     b00:	81 70       	andi	r24, 0x01	; 1
+     b02:	90 70       	andi	r25, 0x00	; 0
+}
+     b04:	0f 90       	pop	r0
+     b06:	0f 90       	pop	r0
+     b08:	cf 91       	pop	r28
+     b0a:	df 91       	pop	r29
+     b0c:	08 95       	ret
+
+00000b0e <Switch>:
+uint8_t Switch(void)
+{
+     b0e:	df 93       	push	r29
+     b10:	cf 93       	push	r28
+     b12:	cd b7       	in	r28, 0x3d	; 61
+     b14:	de b7       	in	r29, 0x3e	; 62
+	return ( PINB ^ 0xff ) & 0x0f;
+     b16:	e3 e2       	ldi	r30, 0x23	; 35
+     b18:	f0 e0       	ldi	r31, 0x00	; 0
+     b1a:	80 81       	ld	r24, Z
+     b1c:	80 95       	com	r24
+     b1e:	8f 70       	andi	r24, 0x0F	; 15
+}
+     b20:	cf 91       	pop	r28
+     b22:	df 91       	pop	r29
+     b24:	08 95       	ret
+
+00000b26 <initRCRx>:
+{
+	ovfCnt = 0; TCNT1 = 0;	
+}
+*/
+
+void initRCRx(void){
+     b26:	df 93       	push	r29
+     b28:	cf 93       	push	r28
+     b2a:	cd b7       	in	r28, 0x3d	; 61
+     b2c:	de b7       	in	r29, 0x3e	; 62
+	ctrlData = defaultCtrlData;
+     b2e:	81 e8       	ldi	r24, 0x81	; 129
+     b30:	91 e0       	ldi	r25, 0x01	; 1
+     b32:	90 93 86 01 	sts	0x0186, r25
+     b36:	80 93 85 01 	sts	0x0185, r24
+	phase = SerchHead;
+     b3a:	10 92 9e 01 	sts	0x019E, r1
+//	initIntervalTimer();
+//	intervalTimerReset();
+}
+     b3e:	cf 91       	pop	r28
+     b40:	df 91       	pop	r29
+     b42:	08 95       	ret
+
+00000b44 <ToggleRCRxBuffer>:
+
+union controller_data *ToggleRCRxBuffer(void)
+{
+     b44:	df 93       	push	r29
+     b46:	cf 93       	push	r28
+     b48:	cd b7       	in	r28, 0x3d	; 61
+     b4a:	de b7       	in	r29, 0x3e	; 62
+	return (union controller_data *)ctrlData;
+     b4c:	80 91 85 01 	lds	r24, 0x0185
+     b50:	90 91 86 01 	lds	r25, 0x0186
+}
+     b54:	cf 91       	pop	r28
+     b56:	df 91       	pop	r29
+     b58:	08 95       	ret
+
+00000b5a <__vector_20>:
+
+ISR(USART0_RX_vect)
+{
+     b5a:	1f 92       	push	r1
+     b5c:	0f 92       	push	r0
+     b5e:	0f b6       	in	r0, 0x3f	; 63
+     b60:	0f 92       	push	r0
+     b62:	00 90 5b 00 	lds	r0, 0x005B
+     b66:	0f 92       	push	r0
+     b68:	11 24       	eor	r1, r1
+     b6a:	2f 93       	push	r18
+     b6c:	3f 93       	push	r19
+     b6e:	4f 93       	push	r20
+     b70:	5f 93       	push	r21
+     b72:	6f 93       	push	r22
+     b74:	7f 93       	push	r23
+     b76:	8f 93       	push	r24
+     b78:	9f 93       	push	r25
+     b7a:	af 93       	push	r26
+     b7c:	bf 93       	push	r27
+     b7e:	ef 93       	push	r30
+     b80:	ff 93       	push	r31
+     b82:	df 93       	push	r29
+     b84:	cf 93       	push	r28
+     b86:	0f 92       	push	r0
+     b88:	cd b7       	in	r28, 0x3d	; 61
+     b8a:	de b7       	in	r29, 0x3e	; 62
+	val = UDR0;
+     b8c:	e6 ec       	ldi	r30, 0xC6	; 198
+     b8e:	f0 e0       	ldi	r31, 0x00	; 0
+     b90:	80 81       	ld	r24, Z
+     b92:	80 93 b3 01 	sts	0x01B3, r24
+
+	if ( phase == AnalysisPacket ) {
+     b96:	80 91 9e 01 	lds	r24, 0x019E
+     b9a:	81 30       	cpi	r24, 0x01	; 1
+     b9c:	09 f0       	breq	.+2      	; 0xba0 <__vector_20+0x46>
+     b9e:	76 c0       	rjmp	.+236    	; 0xc8c <__vector_20+0x132>
+		packet[cnt] = val;
+     ba0:	80 91 9d 01 	lds	r24, 0x019D
+     ba4:	88 2f       	mov	r24, r24
+     ba6:	90 e0       	ldi	r25, 0x00	; 0
+     ba8:	20 91 b3 01 	lds	r18, 0x01B3
+     bac:	fc 01       	movw	r30, r24
+     bae:	e9 55       	subi	r30, 0x59	; 89
+     bb0:	fe 4f       	sbci	r31, 0xFE	; 254
+     bb2:	20 83       	st	Z, r18
+		if ( cnt < CHECK_STR_LENGTH-1 ) {
+     bb4:	80 91 9d 01 	lds	r24, 0x019D
+     bb8:	82 30       	cpi	r24, 0x02	; 2
+     bba:	a0 f4       	brcc	.+40     	; 0xbe4 <__vector_20+0x8a>
+			if ( val != check[cnt] ) {
+     bbc:	80 91 9d 01 	lds	r24, 0x019D
+     bc0:	88 2f       	mov	r24, r24
+     bc2:	90 e0       	ldi	r25, 0x00	; 0
+     bc4:	fc 01       	movw	r30, r24
+     bc6:	e3 58       	subi	r30, 0x83	; 131
+     bc8:	fe 4f       	sbci	r31, 0xFE	; 254
+     bca:	90 81       	ld	r25, Z
+     bcc:	80 91 b3 01 	lds	r24, 0x01B3
+     bd0:	98 17       	cp	r25, r24
+     bd2:	09 f4       	brne	.+2      	; 0xbd6 <__vector_20+0x7c>
+     bd4:	55 c0       	rjmp	.+170    	; 0xc80 <__vector_20+0x126>
+				phase = SerchHead;
+     bd6:	10 92 9e 01 	sts	0x019E, r1
+				LED(0,false);
+     bda:	80 e0       	ldi	r24, 0x00	; 0
+     bdc:	60 e0       	ldi	r22, 0x00	; 0
+     bde:	0e 94 17 05 	call	0xa2e	; 0xa2e <LED>
+     be2:	4e c0       	rjmp	.+156    	; 0xc80 <__vector_20+0x126>
+			}
+		} else if ( cnt==8 ) {
+     be4:	80 91 9d 01 	lds	r24, 0x019D
+     be8:	88 30       	cpi	r24, 0x08	; 8
+     bea:	09 f0       	breq	.+2      	; 0xbee <__vector_20+0x94>
+     bec:	49 c0       	rjmp	.+146    	; 0xc80 <__vector_20+0x126>
+			p = ctrlDatas[ctrlDataSelecter].buf;
+     bee:	80 91 9c 01 	lds	r24, 0x019C
+     bf2:	88 2f       	mov	r24, r24
+     bf4:	90 e0       	ldi	r25, 0x00	; 0
+     bf6:	88 0f       	add	r24, r24
+     bf8:	99 1f       	adc	r25, r25
+     bfa:	88 0f       	add	r24, r24
+     bfc:	99 1f       	adc	r25, r25
+     bfe:	81 56       	subi	r24, 0x61	; 97
+     c00:	9e 4f       	sbci	r25, 0xFE	; 254
+     c02:	90 93 b5 01 	sts	0x01B5, r25
+     c06:	80 93 b4 01 	sts	0x01B4, r24
+			p[0] = packet[5];
+     c0a:	e0 91 b4 01 	lds	r30, 0x01B4
+     c0e:	f0 91 b5 01 	lds	r31, 0x01B5
+     c12:	80 91 ac 01 	lds	r24, 0x01AC
+     c16:	80 83       	st	Z, r24
+			p[1] = packet[6];
+     c18:	80 91 b4 01 	lds	r24, 0x01B4
+     c1c:	90 91 b5 01 	lds	r25, 0x01B5
+     c20:	fc 01       	movw	r30, r24
+     c22:	31 96       	adiw	r30, 0x01	; 1
+     c24:	80 91 ad 01 	lds	r24, 0x01AD
+     c28:	80 83       	st	Z, r24
+			p[2] = packet[7];
+     c2a:	80 91 b4 01 	lds	r24, 0x01B4
+     c2e:	90 91 b5 01 	lds	r25, 0x01B5
+     c32:	fc 01       	movw	r30, r24
+     c34:	32 96       	adiw	r30, 0x02	; 2
+     c36:	80 91 ae 01 	lds	r24, 0x01AE
+     c3a:	80 83       	st	Z, r24
+			p[3] = packet[8];
+     c3c:	80 91 b4 01 	lds	r24, 0x01B4
+     c40:	90 91 b5 01 	lds	r25, 0x01B5
+     c44:	fc 01       	movw	r30, r24
+     c46:	33 96       	adiw	r30, 0x03	; 3
+     c48:	80 91 af 01 	lds	r24, 0x01AF
+     c4c:	80 83       	st	Z, r24
+			ctrlData = p;
+     c4e:	80 91 b4 01 	lds	r24, 0x01B4
+     c52:	90 91 b5 01 	lds	r25, 0x01B5
+     c56:	90 93 86 01 	sts	0x0186, r25
+     c5a:	80 93 85 01 	sts	0x0185, r24
+			ctrlDataSelecter = ( ctrlDataSelecter == CtrlDataSelect0 )? CtrlDataSelect1:CtrlDataSelect0;
+     c5e:	80 91 9c 01 	lds	r24, 0x019C
+     c62:	19 82       	std	Y+1, r1	; 0x01
+     c64:	88 23       	and	r24, r24
+     c66:	11 f4       	brne	.+4      	; 0xc6c <__vector_20+0x112>
+     c68:	81 e0       	ldi	r24, 0x01	; 1
+     c6a:	89 83       	std	Y+1, r24	; 0x01
+     c6c:	89 81       	ldd	r24, Y+1	; 0x01
+     c6e:	80 93 9c 01 	sts	0x019C, r24
+			phase = SerchHead;
+     c72:	10 92 9e 01 	sts	0x019E, r1
+			wdt_reset();
+     c76:	a8 95       	wdr
+			LED(0,true);
+     c78:	80 e0       	ldi	r24, 0x00	; 0
+     c7a:	61 e0       	ldi	r22, 0x01	; 1
+     c7c:	0e 94 17 05 	call	0xa2e	; 0xa2e <LED>
+//			intervalTimerReset();
+		}
+		cnt++;
+     c80:	80 91 9d 01 	lds	r24, 0x019D
+     c84:	8f 5f       	subi	r24, 0xFF	; 255
+     c86:	80 93 9d 01 	sts	0x019D, r24
+     c8a:	09 c0       	rjmp	.+18     	; 0xc9e <__vector_20+0x144>
+	} else {
+		if ( val == '*' ) {
+     c8c:	80 91 b3 01 	lds	r24, 0x01B3
+     c90:	8a 32       	cpi	r24, 0x2A	; 42
+     c92:	29 f4       	brne	.+10     	; 0xc9e <__vector_20+0x144>
+			cnt = 0;
+     c94:	10 92 9d 01 	sts	0x019D, r1
+			phase = AnalysisPacket;
+     c98:	81 e0       	ldi	r24, 0x01	; 1
+     c9a:	80 93 9e 01 	sts	0x019E, r24
+		}
+	}
+
+}
+     c9e:	0f 90       	pop	r0
+     ca0:	cf 91       	pop	r28
+     ca2:	df 91       	pop	r29
+     ca4:	ff 91       	pop	r31
+     ca6:	ef 91       	pop	r30
+     ca8:	bf 91       	pop	r27
+     caa:	af 91       	pop	r26
+     cac:	9f 91       	pop	r25
+     cae:	8f 91       	pop	r24
+     cb0:	7f 91       	pop	r23
+     cb2:	6f 91       	pop	r22
+     cb4:	5f 91       	pop	r21
+     cb6:	4f 91       	pop	r20
+     cb8:	3f 91       	pop	r19
+     cba:	2f 91       	pop	r18
+     cbc:	0f 90       	pop	r0
+     cbe:	00 92 5b 00 	sts	0x005B, r0
+     cc2:	0f 90       	pop	r0
+     cc4:	0f be       	out	0x3f, r0	; 63
+     cc6:	0f 90       	pop	r0
+     cc8:	1f 90       	pop	r1
+     cca:	18 95       	reti
+
+00000ccc <initUART>:
+ * @param[in] mode {UARTMode} UARTのモード設定値（ストップビット，パリティビット）
+ * @param[in] act {UARTAction} UARTの動作の設定値（送信，受信，割り込みなど）
+ * @param[in] speed {uint32} UARTの通信速度
+ */
+void initUART(enum UARTNumber no, enum UARTMode mode, enum UARTAction act,uint16_t baud)
+{	
+     ccc:	df 93       	push	r29
+     cce:	cf 93       	push	r28
+     cd0:	cd b7       	in	r28, 0x3d	; 61
+     cd2:	de b7       	in	r29, 0x3e	; 62
+     cd4:	27 97       	sbiw	r28, 0x07	; 7
+     cd6:	0f b6       	in	r0, 0x3f	; 63
+     cd8:	f8 94       	cli
+     cda:	de bf       	out	0x3e, r29	; 62
+     cdc:	0f be       	out	0x3f, r0	; 63
+     cde:	cd bf       	out	0x3d, r28	; 61
+     ce0:	89 83       	std	Y+1, r24	; 0x01
+     ce2:	6a 83       	std	Y+2, r22	; 0x02
+     ce4:	4b 83       	std	Y+3, r20	; 0x03
+     ce6:	3d 83       	std	Y+5, r19	; 0x05
+     ce8:	2c 83       	std	Y+4, r18	; 0x04
+	switch ( no ){
+     cea:	89 81       	ldd	r24, Y+1	; 0x01
+     cec:	28 2f       	mov	r18, r24
+     cee:	30 e0       	ldi	r19, 0x00	; 0
+     cf0:	3f 83       	std	Y+7, r19	; 0x07
+     cf2:	2e 83       	std	Y+6, r18	; 0x06
+     cf4:	8e 81       	ldd	r24, Y+6	; 0x06
+     cf6:	9f 81       	ldd	r25, Y+7	; 0x07
+     cf8:	00 97       	sbiw	r24, 0x00	; 0
+     cfa:	31 f0       	breq	.+12     	; 0xd08 <initUART+0x3c>
+     cfc:	2e 81       	ldd	r18, Y+6	; 0x06
+     cfe:	3f 81       	ldd	r19, Y+7	; 0x07
+     d00:	21 30       	cpi	r18, 0x01	; 1
+     d02:	31 05       	cpc	r19, r1
+     d04:	b1 f0       	breq	.+44     	; 0xd32 <initUART+0x66>
+     d06:	29 c0       	rjmp	.+82     	; 0xd5a <initUART+0x8e>
+		case UART0:
+			UCSR0C = mode | OneFrameIs8Bit;
+     d08:	e2 ec       	ldi	r30, 0xC2	; 194
+     d0a:	f0 e0       	ldi	r31, 0x00	; 0
+     d0c:	8a 81       	ldd	r24, Y+2	; 0x02
+     d0e:	86 60       	ori	r24, 0x06	; 6
+     d10:	80 83       	st	Z, r24
+			UCSR0B = act;
+     d12:	e1 ec       	ldi	r30, 0xC1	; 193
+     d14:	f0 e0       	ldi	r31, 0x00	; 0
+     d16:	8b 81       	ldd	r24, Y+3	; 0x03
+     d18:	80 83       	st	Z, r24
+			UBRR0H = (uint8_t)(baud>>8);
+     d1a:	e5 ec       	ldi	r30, 0xC5	; 197
+     d1c:	f0 e0       	ldi	r31, 0x00	; 0
+     d1e:	8c 81       	ldd	r24, Y+4	; 0x04
+     d20:	9d 81       	ldd	r25, Y+5	; 0x05
+     d22:	89 2f       	mov	r24, r25
+     d24:	99 27       	eor	r25, r25
+     d26:	80 83       	st	Z, r24
+	 		UBRR0L = (uint8_t)baud;
+     d28:	e4 ec       	ldi	r30, 0xC4	; 196
+     d2a:	f0 e0       	ldi	r31, 0x00	; 0
+     d2c:	8c 81       	ldd	r24, Y+4	; 0x04
+     d2e:	80 83       	st	Z, r24
+     d30:	14 c0       	rjmp	.+40     	; 0xd5a <initUART+0x8e>
+			break;
+		case UART1:
+			UCSR1C = mode | OneFrameIs8Bit;
+     d32:	ea ec       	ldi	r30, 0xCA	; 202
+     d34:	f0 e0       	ldi	r31, 0x00	; 0
+     d36:	8a 81       	ldd	r24, Y+2	; 0x02
+     d38:	86 60       	ori	r24, 0x06	; 6
+     d3a:	80 83       	st	Z, r24
+			UCSR1B = act;
+     d3c:	e9 ec       	ldi	r30, 0xC9	; 201
+     d3e:	f0 e0       	ldi	r31, 0x00	; 0
+     d40:	8b 81       	ldd	r24, Y+3	; 0x03
+     d42:	80 83       	st	Z, r24
+			UBRR1H = (uint8_t)(baud>>8);
+     d44:	ed ec       	ldi	r30, 0xCD	; 205
+     d46:	f0 e0       	ldi	r31, 0x00	; 0
+     d48:	8c 81       	ldd	r24, Y+4	; 0x04
+     d4a:	9d 81       	ldd	r25, Y+5	; 0x05
+     d4c:	89 2f       	mov	r24, r25
+     d4e:	99 27       	eor	r25, r25
+     d50:	80 83       	st	Z, r24
+	 		UBRR1L = (uint8_t)baud;
+     d52:	ec ec       	ldi	r30, 0xCC	; 204
+     d54:	f0 e0       	ldi	r31, 0x00	; 0
+     d56:	8c 81       	ldd	r24, Y+4	; 0x04
+     d58:	80 83       	st	Z, r24
+			break;
+		default:
+			break;
+	}
+}
+     d5a:	27 96       	adiw	r28, 0x07	; 7
+     d5c:	0f b6       	in	r0, 0x3f	; 63
+     d5e:	f8 94       	cli
+     d60:	de bf       	out	0x3e, r29	; 62
+     d62:	0f be       	out	0x3f, r0	; 63
+     d64:	cd bf       	out	0x3d, r28	; 61
+     d66:	cf 91       	pop	r28
+     d68:	df 91       	pop	r29
+     d6a:	08 95       	ret
+
+00000d6c <uart0Put>:
+/**
+ * 1Byte送信する
+ * @param[in] value {uint8_t} 送信するデータ
+ */
+void uart0Put(uint8_t value)
+{
+     d6c:	df 93       	push	r29
+     d6e:	cf 93       	push	r28
+     d70:	0f 92       	push	r0
+     d72:	cd b7       	in	r28, 0x3d	; 61
+     d74:	de b7       	in	r29, 0x3e	; 62
+     d76:	89 83       	std	Y+1, r24	; 0x01
+	while ( UART0_TRANSMITTING );
+     d78:	e0 ec       	ldi	r30, 0xC0	; 192
+     d7a:	f0 e0       	ldi	r31, 0x00	; 0
+     d7c:	80 81       	ld	r24, Z
+     d7e:	88 2f       	mov	r24, r24
+     d80:	90 e0       	ldi	r25, 0x00	; 0
+     d82:	80 72       	andi	r24, 0x20	; 32
+     d84:	90 70       	andi	r25, 0x00	; 0
+     d86:	00 97       	sbiw	r24, 0x00	; 0
+     d88:	b9 f3       	breq	.-18     	; 0xd78 <uart0Put+0xc>
+	UDR0 = value;
+     d8a:	e6 ec       	ldi	r30, 0xC6	; 198
+     d8c:	f0 e0       	ldi	r31, 0x00	; 0
+     d8e:	89 81       	ldd	r24, Y+1	; 0x01
+     d90:	80 83       	st	Z, r24
+}
+     d92:	0f 90       	pop	r0
+     d94:	cf 91       	pop	r28
+     d96:	df 91       	pop	r29
+     d98:	08 95       	ret
+
+00000d9a <uart1Put>:
+/**
+ * 1Byte送信する
+ * @param[in] value {uint8_t} 送信するデータ
+ */
+void uart1Put(uint8_t value)
+{
+     d9a:	df 93       	push	r29
+     d9c:	cf 93       	push	r28
+     d9e:	0f 92       	push	r0
+     da0:	cd b7       	in	r28, 0x3d	; 61
+     da2:	de b7       	in	r29, 0x3e	; 62
+     da4:	89 83       	std	Y+1, r24	; 0x01
+	while ( UART1_TRANSMITTING );
+     da6:	e8 ec       	ldi	r30, 0xC8	; 200
+     da8:	f0 e0       	ldi	r31, 0x00	; 0
+     daa:	80 81       	ld	r24, Z
+     dac:	88 2f       	mov	r24, r24
+     dae:	90 e0       	ldi	r25, 0x00	; 0
+     db0:	80 72       	andi	r24, 0x20	; 32
+     db2:	90 70       	andi	r25, 0x00	; 0
+     db4:	00 97       	sbiw	r24, 0x00	; 0
+     db6:	b9 f3       	breq	.-18     	; 0xda6 <uart1Put+0xc>
+	UDR1 = value;
+     db8:	ee ec       	ldi	r30, 0xCE	; 206
+     dba:	f0 e0       	ldi	r31, 0x00	; 0
+     dbc:	89 81       	ldd	r24, Y+1	; 0x01
+     dbe:	80 83       	st	Z, r24
+} 
+     dc0:	0f 90       	pop	r0
+     dc2:	cf 91       	pop	r28
+     dc4:	df 91       	pop	r29
+     dc6:	08 95       	ret
+
+00000dc8 <uart0Get>:
+/**
+ * 1Byte受信する
+ * @return {uint8_t} 受信したデータ
+ */
+uint8_t uart0Get(void)
+{
+     dc8:	df 93       	push	r29
+     dca:	cf 93       	push	r28
+     dcc:	cd b7       	in	r28, 0x3d	; 61
+     dce:	de b7       	in	r29, 0x3e	; 62
+	while ( UART0_RECEIVING );
+     dd0:	e0 ec       	ldi	r30, 0xC0	; 192
+     dd2:	f0 e0       	ldi	r31, 0x00	; 0
+     dd4:	80 81       	ld	r24, Z
+     dd6:	88 23       	and	r24, r24
+     dd8:	dc f7       	brge	.-10     	; 0xdd0 <uart0Get+0x8>
+	return UDR0;
+     dda:	e6 ec       	ldi	r30, 0xC6	; 198
+     ddc:	f0 e0       	ldi	r31, 0x00	; 0
+     dde:	80 81       	ld	r24, Z
+}
+     de0:	cf 91       	pop	r28
+     de2:	df 91       	pop	r29
+     de4:	08 95       	ret
+
+00000de6 <uart1Get>:
+/**
+ * 1Byte受信する
+ * @return {uint8_t} 受信したデータ
+ */
+uint8_t uart1Get(void)
+{
+     de6:	df 93       	push	r29
+     de8:	cf 93       	push	r28
+     dea:	cd b7       	in	r28, 0x3d	; 61
+     dec:	de b7       	in	r29, 0x3e	; 62
+	while ( UART1_RECEIVING );
+     dee:	e8 ec       	ldi	r30, 0xC8	; 200
+     df0:	f0 e0       	ldi	r31, 0x00	; 0
+     df2:	80 81       	ld	r24, Z
+     df4:	88 23       	and	r24, r24
+     df6:	dc f7       	brge	.-10     	; 0xdee <uart1Get+0x8>
+	return UDR1;
+     df8:	ee ec       	ldi	r30, 0xCE	; 206
+     dfa:	f0 e0       	ldi	r31, 0x00	; 0
+     dfc:	80 81       	ld	r24, Z
+}
+     dfe:	cf 91       	pop	r28
+     e00:	df 91       	pop	r29
+     e02:	08 95       	ret
+
+00000e04 <uart0Puts>:
+/**
+ * 複数Byte送信する
+ * @param[in] values {char*} 送るデータ群
+ */
+void uart0Puts(char* values)
+{
+     e04:	df 93       	push	r29
+     e06:	cf 93       	push	r28
+     e08:	00 d0       	rcall	.+0      	; 0xe0a <uart0Puts+0x6>
+     e0a:	cd b7       	in	r28, 0x3d	; 61
+     e0c:	de b7       	in	r29, 0x3e	; 62
+     e0e:	9a 83       	std	Y+2, r25	; 0x02
+     e10:	89 83       	std	Y+1, r24	; 0x01
+     e12:	0b c0       	rjmp	.+22     	; 0xe2a <uart0Puts+0x26>
+	while ( *values != '\0' ) {
+		uart0Put(*values++);
+     e14:	e9 81       	ldd	r30, Y+1	; 0x01
+     e16:	fa 81       	ldd	r31, Y+2	; 0x02
+     e18:	20 81       	ld	r18, Z
+     e1a:	89 81       	ldd	r24, Y+1	; 0x01
+     e1c:	9a 81       	ldd	r25, Y+2	; 0x02
+     e1e:	01 96       	adiw	r24, 0x01	; 1
+     e20:	9a 83       	std	Y+2, r25	; 0x02
+     e22:	89 83       	std	Y+1, r24	; 0x01
+     e24:	82 2f       	mov	r24, r18
+     e26:	0e 94 b6 06 	call	0xd6c	; 0xd6c <uart0Put>
+ * 複数Byte送信する
+ * @param[in] values {char*} 送るデータ群
+ */
+void uart0Puts(char* values)
+{
+	while ( *values != '\0' ) {
+     e2a:	e9 81       	ldd	r30, Y+1	; 0x01
+     e2c:	fa 81       	ldd	r31, Y+2	; 0x02
+     e2e:	80 81       	ld	r24, Z
+     e30:	88 23       	and	r24, r24
+     e32:	81 f7       	brne	.-32     	; 0xe14 <uart0Puts+0x10>
+		uart0Put(*values++);
+	}
+}
+     e34:	0f 90       	pop	r0
+     e36:	0f 90       	pop	r0
+     e38:	cf 91       	pop	r28
+     e3a:	df 91       	pop	r29
+     e3c:	08 95       	ret
+
+00000e3e <uart1Puts>:
+/**
+ * 複数Byte送信する
+ * @param[in] values {char*} 送るデータ群
+ */
+void uart1Puts(char* values)
+{
+     e3e:	df 93       	push	r29
+     e40:	cf 93       	push	r28
+     e42:	00 d0       	rcall	.+0      	; 0xe44 <uart1Puts+0x6>
+     e44:	cd b7       	in	r28, 0x3d	; 61
+     e46:	de b7       	in	r29, 0x3e	; 62
+     e48:	9a 83       	std	Y+2, r25	; 0x02
+     e4a:	89 83       	std	Y+1, r24	; 0x01
+     e4c:	0b c0       	rjmp	.+22     	; 0xe64 <uart1Puts+0x26>
+	while ( *values != '\0' ) {
+		uart1Put(*values++);
+     e4e:	e9 81       	ldd	r30, Y+1	; 0x01
+     e50:	fa 81       	ldd	r31, Y+2	; 0x02
+     e52:	20 81       	ld	r18, Z
+     e54:	89 81       	ldd	r24, Y+1	; 0x01
+     e56:	9a 81       	ldd	r25, Y+2	; 0x02
+     e58:	01 96       	adiw	r24, 0x01	; 1
+     e5a:	9a 83       	std	Y+2, r25	; 0x02
+     e5c:	89 83       	std	Y+1, r24	; 0x01
+     e5e:	82 2f       	mov	r24, r18
+     e60:	0e 94 cd 06 	call	0xd9a	; 0xd9a <uart1Put>
+ * 複数Byte送信する
+ * @param[in] values {char*} 送るデータ群
+ */
+void uart1Puts(char* values)
+{
+	while ( *values != '\0' ) {
+     e64:	e9 81       	ldd	r30, Y+1	; 0x01
+     e66:	fa 81       	ldd	r31, Y+2	; 0x02
+     e68:	80 81       	ld	r24, Z
+     e6a:	88 23       	and	r24, r24
+     e6c:	81 f7       	brne	.-32     	; 0xe4e <uart1Puts+0x10>
+		uart1Put(*values++);
+	}
+}
+     e6e:	0f 90       	pop	r0
+     e70:	0f 90       	pop	r0
+     e72:	cf 91       	pop	r28
+     e74:	df 91       	pop	r29
+     e76:	08 95       	ret
+
+00000e78 <uartSetBuffer>:
+
+/**
+ * リングバッファの参照先を設定する
+ */
+void uartSetBuffer(enum UARTNumber no, uint8_t *buffer, uint8_t size)
+{
+     e78:	df 93       	push	r29
+     e7a:	cf 93       	push	r28
+     e7c:	00 d0       	rcall	.+0      	; 0xe7e <uartSetBuffer+0x6>
+     e7e:	00 d0       	rcall	.+0      	; 0xe80 <uartSetBuffer+0x8>
+     e80:	cd b7       	in	r28, 0x3d	; 61
+     e82:	de b7       	in	r29, 0x3e	; 62
+     e84:	89 83       	std	Y+1, r24	; 0x01
+     e86:	7b 83       	std	Y+3, r23	; 0x03
+     e88:	6a 83       	std	Y+2, r22	; 0x02
+     e8a:	4c 83       	std	Y+4, r20	; 0x04
+	ringBuffers[no].buffer = buffer;
+     e8c:	89 81       	ldd	r24, Y+1	; 0x01
+     e8e:	28 2f       	mov	r18, r24
+     e90:	30 e0       	ldi	r19, 0x00	; 0
+     e92:	c9 01       	movw	r24, r18
+     e94:	88 0f       	add	r24, r24
+     e96:	99 1f       	adc	r25, r25
+     e98:	82 0f       	add	r24, r18
+     e9a:	93 1f       	adc	r25, r19
+     e9c:	01 96       	adiw	r24, 0x01	; 1
+     e9e:	88 0f       	add	r24, r24
+     ea0:	99 1f       	adc	r25, r25
+     ea2:	fc 01       	movw	r30, r24
+     ea4:	e9 57       	subi	r30, 0x79	; 121
+     ea6:	fe 4f       	sbci	r31, 0xFE	; 254
+     ea8:	8a 81       	ldd	r24, Y+2	; 0x02
+     eaa:	9b 81       	ldd	r25, Y+3	; 0x03
+     eac:	91 83       	std	Z+1, r25	; 0x01
+     eae:	80 83       	st	Z, r24
+	ringBuffers[no].size = size;
+     eb0:	89 81       	ldd	r24, Y+1	; 0x01
+     eb2:	28 2f       	mov	r18, r24
+     eb4:	30 e0       	ldi	r19, 0x00	; 0
+     eb6:	c9 01       	movw	r24, r18
+     eb8:	88 0f       	add	r24, r24
+     eba:	99 1f       	adc	r25, r25
+     ebc:	82 0f       	add	r24, r18
+     ebe:	93 1f       	adc	r25, r19
+     ec0:	88 0f       	add	r24, r24
+     ec2:	99 1f       	adc	r25, r25
+     ec4:	fc 01       	movw	r30, r24
+     ec6:	e5 57       	subi	r30, 0x75	; 117
+     ec8:	fe 4f       	sbci	r31, 0xFE	; 254
+     eca:	8c 81       	ldd	r24, Y+4	; 0x04
+     ecc:	80 83       	st	Z, r24
+}
+     ece:	0f 90       	pop	r0
+     ed0:	0f 90       	pop	r0
+     ed2:	0f 90       	pop	r0
+     ed4:	0f 90       	pop	r0
+     ed6:	cf 91       	pop	r28
+     ed8:	df 91       	pop	r29
+     eda:	08 95       	ret
+
+00000edc <uart0PutsBuffer>:
+/**
+ * 複数Byte送信する（非同期）
+ * @param[in] values {char*} 送るデータ群
+ */
+void uart0PutsBuffer(char* values)
+{
+     edc:	df 93       	push	r29
+     ede:	cf 93       	push	r28
+     ee0:	00 d0       	rcall	.+0      	; 0xee2 <uart0PutsBuffer+0x6>
+     ee2:	cd b7       	in	r28, 0x3d	; 61
+     ee4:	de b7       	in	r29, 0x3e	; 62
+     ee6:	9a 83       	std	Y+2, r25	; 0x02
+     ee8:	89 83       	std	Y+1, r24	; 0x01
+	pRing = &ringBuffers[0];
+     eea:	87 e8       	ldi	r24, 0x87	; 135
+     eec:	91 e0       	ldi	r25, 0x01	; 1
+     eee:	90 93 b7 01 	sts	0x01B7, r25
+     ef2:	80 93 b6 01 	sts	0x01B6, r24
+     ef6:	49 c0       	rjmp	.+146    	; 0xf8a <uart0PutsBuffer+0xae>
+	while ( *values != '\0' ) {
+		if ( !pRing->empty && pRing->rp == pRing->wp ) return;
+     ef8:	e0 91 b6 01 	lds	r30, 0x01B6
+     efc:	f0 91 b7 01 	lds	r31, 0x01B7
+     f00:	95 81       	ldd	r25, Z+5	; 0x05
+     f02:	81 e0       	ldi	r24, 0x01	; 1
+     f04:	89 27       	eor	r24, r25
+     f06:	88 23       	and	r24, r24
+     f08:	61 f0       	breq	.+24     	; 0xf22 <uart0PutsBuffer+0x46>
+     f0a:	e0 91 b6 01 	lds	r30, 0x01B6
+     f0e:	f0 91 b7 01 	lds	r31, 0x01B7
+     f12:	90 81       	ld	r25, Z
+     f14:	e0 91 b6 01 	lds	r30, 0x01B6
+     f18:	f0 91 b7 01 	lds	r31, 0x01B7
+     f1c:	81 81       	ldd	r24, Z+1	; 0x01
+     f1e:	98 17       	cp	r25, r24
+     f20:	d1 f1       	breq	.+116    	; 0xf96 <uart0PutsBuffer+0xba>
+		pRing->buffer[pRing->wp++] = *values++;
+     f22:	e0 91 b6 01 	lds	r30, 0x01B6
+     f26:	f0 91 b7 01 	lds	r31, 0x01B7
+     f2a:	22 81       	ldd	r18, Z+2	; 0x02
+     f2c:	33 81       	ldd	r19, Z+3	; 0x03
+     f2e:	40 91 b6 01 	lds	r20, 0x01B6
+     f32:	50 91 b7 01 	lds	r21, 0x01B7
+     f36:	fa 01       	movw	r30, r20
+     f38:	61 81       	ldd	r22, Z+1	; 0x01
+     f3a:	86 2f       	mov	r24, r22
+     f3c:	90 e0       	ldi	r25, 0x00	; 0
+     f3e:	d9 01       	movw	r26, r18
+     f40:	a8 0f       	add	r26, r24
+     f42:	b9 1f       	adc	r27, r25
+     f44:	e9 81       	ldd	r30, Y+1	; 0x01
+     f46:	fa 81       	ldd	r31, Y+2	; 0x02
+     f48:	80 81       	ld	r24, Z
+     f4a:	8c 93       	st	X, r24
+     f4c:	86 2f       	mov	r24, r22
+     f4e:	8f 5f       	subi	r24, 0xFF	; 255
+     f50:	fa 01       	movw	r30, r20
+     f52:	81 83       	std	Z+1, r24	; 0x01
+     f54:	89 81       	ldd	r24, Y+1	; 0x01
+     f56:	9a 81       	ldd	r25, Y+2	; 0x02
+     f58:	01 96       	adiw	r24, 0x01	; 1
+     f5a:	9a 83       	std	Y+2, r25	; 0x02
+     f5c:	89 83       	std	Y+1, r24	; 0x01
+		if ( pRing->wp == pRing->size ) pRing->wp = 0;
+     f5e:	e0 91 b6 01 	lds	r30, 0x01B6
+     f62:	f0 91 b7 01 	lds	r31, 0x01B7
+     f66:	91 81       	ldd	r25, Z+1	; 0x01
+     f68:	e0 91 b6 01 	lds	r30, 0x01B6
+     f6c:	f0 91 b7 01 	lds	r31, 0x01B7
+     f70:	84 81       	ldd	r24, Z+4	; 0x04
+     f72:	98 17       	cp	r25, r24
+     f74:	29 f4       	brne	.+10     	; 0xf80 <uart0PutsBuffer+0xa4>
+     f76:	e0 91 b6 01 	lds	r30, 0x01B6
+     f7a:	f0 91 b7 01 	lds	r31, 0x01B7
+     f7e:	11 82       	std	Z+1, r1	; 0x01
+		pRing->empty = false;
+     f80:	e0 91 b6 01 	lds	r30, 0x01B6
+     f84:	f0 91 b7 01 	lds	r31, 0x01B7
+     f88:	15 82       	std	Z+5, r1	; 0x05
+ * @param[in] values {char*} 送るデータ群
+ */
+void uart0PutsBuffer(char* values)
+{
+	pRing = &ringBuffers[0];
+	while ( *values != '\0' ) {
+     f8a:	e9 81       	ldd	r30, Y+1	; 0x01
+     f8c:	fa 81       	ldd	r31, Y+2	; 0x02
+     f8e:	80 81       	ld	r24, Z
+     f90:	88 23       	and	r24, r24
+     f92:	09 f0       	breq	.+2      	; 0xf96 <uart0PutsBuffer+0xba>
+     f94:	b1 cf       	rjmp	.-158    	; 0xef8 <uart0PutsBuffer+0x1c>
+		if ( !pRing->empty && pRing->rp == pRing->wp ) return;
+		pRing->buffer[pRing->wp++] = *values++;
+		if ( pRing->wp == pRing->size ) pRing->wp = 0;
+		pRing->empty = false;
+	}
+}
+     f96:	0f 90       	pop	r0
+     f98:	0f 90       	pop	r0
+     f9a:	cf 91       	pop	r28
+     f9c:	df 91       	pop	r29
+     f9e:	08 95       	ret
+
+00000fa0 <uart1PutsBuffer>:
+/**
+ * 複数Byte送信する（非同期）
+ * @param[in] values {char*} 送るデータ群
+ */
+void uart1PutsBuffer(char* values)
+{
+     fa0:	df 93       	push	r29
+     fa2:	cf 93       	push	r28
+     fa4:	00 d0       	rcall	.+0      	; 0xfa6 <uart1PutsBuffer+0x6>
+     fa6:	cd b7       	in	r28, 0x3d	; 61
+     fa8:	de b7       	in	r29, 0x3e	; 62
+     faa:	9a 83       	std	Y+2, r25	; 0x02
+     fac:	89 83       	std	Y+1, r24	; 0x01
+	pRing = &ringBuffers[1];
+     fae:	8d e8       	ldi	r24, 0x8D	; 141
+     fb0:	91 e0       	ldi	r25, 0x01	; 1
+     fb2:	90 93 b7 01 	sts	0x01B7, r25
+     fb6:	80 93 b6 01 	sts	0x01B6, r24
+     fba:	49 c0       	rjmp	.+146    	; 0x104e <uart1PutsBuffer+0xae>
+	while ( *values != '\0' ) {
+		if ( !pRing->empty && pRing->rp == pRing->wp ) return;
+     fbc:	e0 91 b6 01 	lds	r30, 0x01B6
+     fc0:	f0 91 b7 01 	lds	r31, 0x01B7
+     fc4:	95 81       	ldd	r25, Z+5	; 0x05
+     fc6:	81 e0       	ldi	r24, 0x01	; 1
+     fc8:	89 27       	eor	r24, r25
+     fca:	88 23       	and	r24, r24
+     fcc:	61 f0       	breq	.+24     	; 0xfe6 <uart1PutsBuffer+0x46>
+     fce:	e0 91 b6 01 	lds	r30, 0x01B6
+     fd2:	f0 91 b7 01 	lds	r31, 0x01B7
+     fd6:	90 81       	ld	r25, Z
+     fd8:	e0 91 b6 01 	lds	r30, 0x01B6
+     fdc:	f0 91 b7 01 	lds	r31, 0x01B7
+     fe0:	81 81       	ldd	r24, Z+1	; 0x01
+     fe2:	98 17       	cp	r25, r24
+     fe4:	d1 f1       	breq	.+116    	; 0x105a <uart1PutsBuffer+0xba>
+		pRing->buffer[pRing->wp++] = *values++;
+     fe6:	e0 91 b6 01 	lds	r30, 0x01B6
+     fea:	f0 91 b7 01 	lds	r31, 0x01B7
+     fee:	22 81       	ldd	r18, Z+2	; 0x02
+     ff0:	33 81       	ldd	r19, Z+3	; 0x03
+     ff2:	40 91 b6 01 	lds	r20, 0x01B6
+     ff6:	50 91 b7 01 	lds	r21, 0x01B7
+     ffa:	fa 01       	movw	r30, r20
+     ffc:	61 81       	ldd	r22, Z+1	; 0x01
+     ffe:	86 2f       	mov	r24, r22
+    1000:	90 e0       	ldi	r25, 0x00	; 0
+    1002:	d9 01       	movw	r26, r18
+    1004:	a8 0f       	add	r26, r24
+    1006:	b9 1f       	adc	r27, r25
+    1008:	e9 81       	ldd	r30, Y+1	; 0x01
+    100a:	fa 81       	ldd	r31, Y+2	; 0x02
+    100c:	80 81       	ld	r24, Z
+    100e:	8c 93       	st	X, r24
+    1010:	86 2f       	mov	r24, r22
+    1012:	8f 5f       	subi	r24, 0xFF	; 255
+    1014:	fa 01       	movw	r30, r20
+    1016:	81 83       	std	Z+1, r24	; 0x01
+    1018:	89 81       	ldd	r24, Y+1	; 0x01
+    101a:	9a 81       	ldd	r25, Y+2	; 0x02
+    101c:	01 96       	adiw	r24, 0x01	; 1
+    101e:	9a 83       	std	Y+2, r25	; 0x02
+    1020:	89 83       	std	Y+1, r24	; 0x01
+		if ( pRing->wp == pRing->size ) pRing->wp = 0;
+    1022:	e0 91 b6 01 	lds	r30, 0x01B6
+    1026:	f0 91 b7 01 	lds	r31, 0x01B7
+    102a:	91 81       	ldd	r25, Z+1	; 0x01
+    102c:	e0 91 b6 01 	lds	r30, 0x01B6
+    1030:	f0 91 b7 01 	lds	r31, 0x01B7
+    1034:	84 81       	ldd	r24, Z+4	; 0x04
+    1036:	98 17       	cp	r25, r24
+    1038:	29 f4       	brne	.+10     	; 0x1044 <uart1PutsBuffer+0xa4>
+    103a:	e0 91 b6 01 	lds	r30, 0x01B6
+    103e:	f0 91 b7 01 	lds	r31, 0x01B7
+    1042:	11 82       	std	Z+1, r1	; 0x01
+		pRing->empty = false;
+    1044:	e0 91 b6 01 	lds	r30, 0x01B6
+    1048:	f0 91 b7 01 	lds	r31, 0x01B7
+    104c:	15 82       	std	Z+5, r1	; 0x05
+ * @param[in] values {char*} 送るデータ群
+ */
+void uart1PutsBuffer(char* values)
+{
+	pRing = &ringBuffers[1];
+	while ( *values != '\0' ) {
+    104e:	e9 81       	ldd	r30, Y+1	; 0x01
+    1050:	fa 81       	ldd	r31, Y+2	; 0x02
+    1052:	80 81       	ld	r24, Z
+    1054:	88 23       	and	r24, r24
+    1056:	09 f0       	breq	.+2      	; 0x105a <uart1PutsBuffer+0xba>
+    1058:	b1 cf       	rjmp	.-158    	; 0xfbc <uart1PutsBuffer+0x1c>
+		if ( !pRing->empty && pRing->rp == pRing->wp ) return;
+		pRing->buffer[pRing->wp++] = *values++;
+		if ( pRing->wp == pRing->size ) pRing->wp = 0;
+		pRing->empty = false;
+	}
+}
+    105a:	0f 90       	pop	r0
+    105c:	0f 90       	pop	r0
+    105e:	cf 91       	pop	r28
+    1060:	df 91       	pop	r29
+    1062:	08 95       	ret
+
+00001064 <__vector_21>:
+
+/**
+ * 送信データレジスタ空き割り込み
+ */
+ISR (USART0_UDRE_vect)
+{
+    1064:	1f 92       	push	r1
+    1066:	0f 92       	push	r0
+    1068:	0f b6       	in	r0, 0x3f	; 63
+    106a:	0f 92       	push	r0
+    106c:	00 90 5b 00 	lds	r0, 0x005B
+    1070:	0f 92       	push	r0
+    1072:	11 24       	eor	r1, r1
+    1074:	2f 93       	push	r18
+    1076:	3f 93       	push	r19
+    1078:	4f 93       	push	r20
+    107a:	6f 93       	push	r22
+    107c:	7f 93       	push	r23
+    107e:	8f 93       	push	r24
+    1080:	9f 93       	push	r25
+    1082:	af 93       	push	r26
+    1084:	bf 93       	push	r27
+    1086:	ef 93       	push	r30
+    1088:	ff 93       	push	r31
+    108a:	df 93       	push	r29
+    108c:	cf 93       	push	r28
+    108e:	cd b7       	in	r28, 0x3d	; 61
+    1090:	de b7       	in	r29, 0x3e	; 62
+	pRing = &ringBuffers[0];
+    1092:	87 e8       	ldi	r24, 0x87	; 135
+    1094:	91 e0       	ldi	r25, 0x01	; 1
+    1096:	90 93 b7 01 	sts	0x01B7, r25
+    109a:	80 93 b6 01 	sts	0x01B6, r24
+	if ( !pRing->empty ) {
+    109e:	e0 91 b6 01 	lds	r30, 0x01B6
+    10a2:	f0 91 b7 01 	lds	r31, 0x01B7
+    10a6:	95 81       	ldd	r25, Z+5	; 0x05
+    10a8:	81 e0       	ldi	r24, 0x01	; 1
+    10aa:	89 27       	eor	r24, r25
+    10ac:	88 23       	and	r24, r24
+    10ae:	d9 f1       	breq	.+118    	; 0x1126 <__vector_21+0xc2>
+		UDR0 = pRing->buffer[pRing->rp++];
+    10b0:	66 ec       	ldi	r22, 0xC6	; 198
+    10b2:	70 e0       	ldi	r23, 0x00	; 0
+    10b4:	e0 91 b6 01 	lds	r30, 0x01B6
+    10b8:	f0 91 b7 01 	lds	r31, 0x01B7
+    10bc:	22 81       	ldd	r18, Z+2	; 0x02
+    10be:	33 81       	ldd	r19, Z+3	; 0x03
+    10c0:	a0 91 b6 01 	lds	r26, 0x01B6
+    10c4:	b0 91 b7 01 	lds	r27, 0x01B7
+    10c8:	4c 91       	ld	r20, X
+    10ca:	84 2f       	mov	r24, r20
+    10cc:	90 e0       	ldi	r25, 0x00	; 0
+    10ce:	f9 01       	movw	r30, r18
+    10d0:	e8 0f       	add	r30, r24
+    10d2:	f9 1f       	adc	r31, r25
+    10d4:	80 81       	ld	r24, Z
+    10d6:	fb 01       	movw	r30, r22
+    10d8:	80 83       	st	Z, r24
+    10da:	84 2f       	mov	r24, r20
+    10dc:	8f 5f       	subi	r24, 0xFF	; 255
+    10de:	8c 93       	st	X, r24
+		if ( pRing->rp == pRing->size ) pRing->rp = 0;
+    10e0:	e0 91 b6 01 	lds	r30, 0x01B6
+    10e4:	f0 91 b7 01 	lds	r31, 0x01B7
+    10e8:	90 81       	ld	r25, Z
+    10ea:	e0 91 b6 01 	lds	r30, 0x01B6
+    10ee:	f0 91 b7 01 	lds	r31, 0x01B7
+    10f2:	84 81       	ldd	r24, Z+4	; 0x04
+    10f4:	98 17       	cp	r25, r24
+    10f6:	29 f4       	brne	.+10     	; 0x1102 <__vector_21+0x9e>
+    10f8:	e0 91 b6 01 	lds	r30, 0x01B6
+    10fc:	f0 91 b7 01 	lds	r31, 0x01B7
+    1100:	10 82       	st	Z, r1
+		if ( pRing->rp == pRing->wp ) pRing->empty = true;
+    1102:	e0 91 b6 01 	lds	r30, 0x01B6
+    1106:	f0 91 b7 01 	lds	r31, 0x01B7
+    110a:	90 81       	ld	r25, Z
+    110c:	e0 91 b6 01 	lds	r30, 0x01B6
+    1110:	f0 91 b7 01 	lds	r31, 0x01B7
+    1114:	81 81       	ldd	r24, Z+1	; 0x01
+    1116:	98 17       	cp	r25, r24
+    1118:	31 f4       	brne	.+12     	; 0x1126 <__vector_21+0xc2>
+    111a:	e0 91 b6 01 	lds	r30, 0x01B6
+    111e:	f0 91 b7 01 	lds	r31, 0x01B7
+    1122:	81 e0       	ldi	r24, 0x01	; 1
+    1124:	85 83       	std	Z+5, r24	; 0x05
+	}
+}
+    1126:	cf 91       	pop	r28
+    1128:	df 91       	pop	r29
+    112a:	ff 91       	pop	r31
+    112c:	ef 91       	pop	r30
+    112e:	bf 91       	pop	r27
+    1130:	af 91       	pop	r26
+    1132:	9f 91       	pop	r25
+    1134:	8f 91       	pop	r24
+    1136:	7f 91       	pop	r23
+    1138:	6f 91       	pop	r22
+    113a:	4f 91       	pop	r20
+    113c:	3f 91       	pop	r19
+    113e:	2f 91       	pop	r18
+    1140:	0f 90       	pop	r0
+    1142:	00 92 5b 00 	sts	0x005B, r0
+    1146:	0f 90       	pop	r0
+    1148:	0f be       	out	0x3f, r0	; 63
+    114a:	0f 90       	pop	r0
+    114c:	1f 90       	pop	r1
+    114e:	18 95       	reti
+
+00001150 <__vector_29>:
+/**
+ * 送信データレジスタ空き割り込み
+ */
+ISR (USART1_UDRE_vect)
+{
+    1150:	1f 92       	push	r1
+    1152:	0f 92       	push	r0
+    1154:	0f b6       	in	r0, 0x3f	; 63
+    1156:	0f 92       	push	r0
+    1158:	00 90 5b 00 	lds	r0, 0x005B
+    115c:	0f 92       	push	r0
+    115e:	11 24       	eor	r1, r1
+    1160:	2f 93       	push	r18
+    1162:	3f 93       	push	r19
+    1164:	4f 93       	push	r20
+    1166:	6f 93       	push	r22
+    1168:	7f 93       	push	r23
+    116a:	8f 93       	push	r24
+    116c:	9f 93       	push	r25
+    116e:	af 93       	push	r26
+    1170:	bf 93       	push	r27
+    1172:	ef 93       	push	r30
+    1174:	ff 93       	push	r31
+    1176:	df 93       	push	r29
+    1178:	cf 93       	push	r28
+    117a:	cd b7       	in	r28, 0x3d	; 61
+    117c:	de b7       	in	r29, 0x3e	; 62
+	pRing = &ringBuffers[1];
+    117e:	8d e8       	ldi	r24, 0x8D	; 141
+    1180:	91 e0       	ldi	r25, 0x01	; 1
+    1182:	90 93 b7 01 	sts	0x01B7, r25
+    1186:	80 93 b6 01 	sts	0x01B6, r24
+	if ( !pRing->empty ) {
+    118a:	e0 91 b6 01 	lds	r30, 0x01B6
+    118e:	f0 91 b7 01 	lds	r31, 0x01B7
+    1192:	95 81       	ldd	r25, Z+5	; 0x05
+    1194:	81 e0       	ldi	r24, 0x01	; 1
+    1196:	89 27       	eor	r24, r25
+    1198:	88 23       	and	r24, r24
+    119a:	d9 f1       	breq	.+118    	; 0x1212 <__vector_29+0xc2>
+		UDR1 = pRing->buffer[pRing->rp++];
+    119c:	6e ec       	ldi	r22, 0xCE	; 206
+    119e:	70 e0       	ldi	r23, 0x00	; 0
+    11a0:	e0 91 b6 01 	lds	r30, 0x01B6
+    11a4:	f0 91 b7 01 	lds	r31, 0x01B7
+    11a8:	22 81       	ldd	r18, Z+2	; 0x02
+    11aa:	33 81       	ldd	r19, Z+3	; 0x03
+    11ac:	a0 91 b6 01 	lds	r26, 0x01B6
+    11b0:	b0 91 b7 01 	lds	r27, 0x01B7
+    11b4:	4c 91       	ld	r20, X
+    11b6:	84 2f       	mov	r24, r20
+    11b8:	90 e0       	ldi	r25, 0x00	; 0
+    11ba:	f9 01       	movw	r30, r18
+    11bc:	e8 0f       	add	r30, r24
+    11be:	f9 1f       	adc	r31, r25
+    11c0:	80 81       	ld	r24, Z
+    11c2:	fb 01       	movw	r30, r22
+    11c4:	80 83       	st	Z, r24
+    11c6:	84 2f       	mov	r24, r20
+    11c8:	8f 5f       	subi	r24, 0xFF	; 255
+    11ca:	8c 93       	st	X, r24
+		if ( pRing->rp == pRing->size ) pRing->rp = 0;
+    11cc:	e0 91 b6 01 	lds	r30, 0x01B6
+    11d0:	f0 91 b7 01 	lds	r31, 0x01B7
+    11d4:	90 81       	ld	r25, Z
+    11d6:	e0 91 b6 01 	lds	r30, 0x01B6
+    11da:	f0 91 b7 01 	lds	r31, 0x01B7
+    11de:	84 81       	ldd	r24, Z+4	; 0x04
+    11e0:	98 17       	cp	r25, r24
+    11e2:	29 f4       	brne	.+10     	; 0x11ee <__vector_29+0x9e>
+    11e4:	e0 91 b6 01 	lds	r30, 0x01B6
+    11e8:	f0 91 b7 01 	lds	r31, 0x01B7
+    11ec:	10 82       	st	Z, r1
+		if ( pRing->rp == pRing->wp ) pRing->empty = true;
+    11ee:	e0 91 b6 01 	lds	r30, 0x01B6
+    11f2:	f0 91 b7 01 	lds	r31, 0x01B7
+    11f6:	90 81       	ld	r25, Z
+    11f8:	e0 91 b6 01 	lds	r30, 0x01B6
+    11fc:	f0 91 b7 01 	lds	r31, 0x01B7
+    1200:	81 81       	ldd	r24, Z+1	; 0x01
+    1202:	98 17       	cp	r25, r24
+    1204:	31 f4       	brne	.+12     	; 0x1212 <__vector_29+0xc2>
+    1206:	e0 91 b6 01 	lds	r30, 0x01B6
+    120a:	f0 91 b7 01 	lds	r31, 0x01B7
+    120e:	81 e0       	ldi	r24, 0x01	; 1
+    1210:	85 83       	std	Z+5, r24	; 0x05
+	}
+}
+    1212:	cf 91       	pop	r28
+    1214:	df 91       	pop	r29
+    1216:	ff 91       	pop	r31
+    1218:	ef 91       	pop	r30
+    121a:	bf 91       	pop	r27
+    121c:	af 91       	pop	r26
+    121e:	9f 91       	pop	r25
+    1220:	8f 91       	pop	r24
+    1222:	7f 91       	pop	r23
+    1224:	6f 91       	pop	r22
+    1226:	4f 91       	pop	r20
+    1228:	3f 91       	pop	r19
+    122a:	2f 91       	pop	r18
+    122c:	0f 90       	pop	r0
+    122e:	00 92 5b 00 	sts	0x005B, r0
+    1232:	0f 90       	pop	r0
+    1234:	0f be       	out	0x3f, r0	; 63
+    1236:	0f 90       	pop	r0
+    1238:	1f 90       	pop	r1
+    123a:	18 95       	reti
+
+0000123c <wait_us>:
+#include <avr/io.h>
+void wait_us(uint16_t t){
+    123c:	df 93       	push	r29
+    123e:	cf 93       	push	r28
+    1240:	00 d0       	rcall	.+0      	; 0x1242 <wait_us+0x6>
+    1242:	cd b7       	in	r28, 0x3d	; 61
+    1244:	de b7       	in	r29, 0x3e	; 62
+    1246:	9a 83       	std	Y+2, r25	; 0x02
+    1248:	89 83       	std	Y+1, r24	; 0x01
+  static unsigned char lpcnt;
+  __asm__ __volatile__("\n"
+    124a:	89 81       	ldd	r24, Y+1	; 0x01
+    124c:	9a 81       	ldd	r25, Y+2	; 0x02
+
+0000124e <CPU_wait_entry10>:
+    124e:	24 e0       	ldi	r18, 0x04	; 4
+
+00001250 <CPU_wait_lp10>:
+    1250:	00 00       	nop
+    1252:	2a 95       	dec	r18
+    1254:	e9 f7       	brne	.-6      	; 0x1250 <CPU_wait_lp10>
+    1256:	01 97       	sbiw	r24, 0x01	; 1
+    1258:	d1 f7       	brne	.-12     	; 0x124e <CPU_wait_entry10>
+    125a:	20 93 b8 01 	sts	0x01B8, r18
+    "sbiw %1,1\n\t"
+    "brne CPU_wait_entry%=\n\t"
+    :"=&a"(lpcnt)
+    :"w"(t)
+  );
+}
+    125e:	0f 90       	pop	r0
+    1260:	0f 90       	pop	r0
+    1262:	cf 91       	pop	r28
+    1264:	df 91       	pop	r29
+    1266:	08 95       	ret
+
+00001268 <wait_ms>:
+void wait_ms(uint16_t t){
+    1268:	df 93       	push	r29
+    126a:	cf 93       	push	r28
+    126c:	00 d0       	rcall	.+0      	; 0x126e <wait_ms+0x6>
+    126e:	0f 92       	push	r0
+    1270:	cd b7       	in	r28, 0x3d	; 61
+    1272:	de b7       	in	r29, 0x3e	; 62
+    1274:	9a 83       	std	Y+2, r25	; 0x02
+    1276:	89 83       	std	Y+1, r24	; 0x01
+    1278:	04 c0       	rjmp	.+8      	; 0x1282 <wait_ms+0x1a>
+	while(t--) wait_us(1000);
+    127a:	88 ee       	ldi	r24, 0xE8	; 232
+    127c:	93 e0       	ldi	r25, 0x03	; 3
+    127e:	0e 94 1e 09 	call	0x123c	; 0x123c <wait_us>
+    1282:	1b 82       	std	Y+3, r1	; 0x03
+    1284:	89 81       	ldd	r24, Y+1	; 0x01
+    1286:	9a 81       	ldd	r25, Y+2	; 0x02
+    1288:	00 97       	sbiw	r24, 0x00	; 0
+    128a:	11 f0       	breq	.+4      	; 0x1290 <wait_ms+0x28>
+    128c:	81 e0       	ldi	r24, 0x01	; 1
+    128e:	8b 83       	std	Y+3, r24	; 0x03
+    1290:	89 81       	ldd	r24, Y+1	; 0x01
+    1292:	9a 81       	ldd	r25, Y+2	; 0x02
+    1294:	01 97       	sbiw	r24, 0x01	; 1
+    1296:	9a 83       	std	Y+2, r25	; 0x02
+    1298:	89 83       	std	Y+1, r24	; 0x01
+    129a:	8b 81       	ldd	r24, Y+3	; 0x03
+    129c:	88 23       	and	r24, r24
+    129e:	69 f7       	brne	.-38     	; 0x127a <wait_ms+0x12>
+	
+}
+    12a0:	0f 90       	pop	r0
+    12a2:	0f 90       	pop	r0
+    12a4:	0f 90       	pop	r0
+    12a6:	cf 91       	pop	r28
+    12a8:	df 91       	pop	r29
+    12aa:	08 95       	ret
+
+000012ac <_exit>:
+    12ac:	f8 94       	cli
+
+000012ae <__stop_program>:
+    12ae:	ff cf       	rjmp	.-2      	; 0x12ae <__stop_program>

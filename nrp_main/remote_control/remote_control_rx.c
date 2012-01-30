@@ -10,6 +10,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
+#include <stdbool.h>
+#include <led.h>
 
 #define PACKET_LENGTH (12)
 #define CHECK_STR_LENGTH (3)
@@ -19,49 +21,49 @@ enum CtrlDataSelects {
 	CtrlDataSelect1 = 1	
 };
 enum RecievePhases {
-	SerchHead = 0;
-	AnalysisPacket,
+	SerchHead = 0,
+	AnalysisPacket
 };
 
 static volatile const char check[] = "DR=";
 static uint8_t defaultCtrlData[RC_DATA_LENGTH] = RC_DEFAULT_DATA;
 
 static union controller_data ctrlDatas[2];
-static CtrlDataSelects ctrlDataSelecter = 0;
+static enum CtrlDataSelects ctrlDataSelecter = 0;
 
-static uint8_t *ctrlData = defaultCtrlData;
+static volatile uint8_t *ctrlData = defaultCtrlData;
 
 static volatile uint8_t packet[PACKET_LENGTH];
 static volatile uint8_t val,*p,cnt = 0;
 static volatile enum RecievePhases phase = SerchHead;
 
-static volatile uint8_t ovfCnt = 0;
+volatile uint8_t ovfCnt = 0;
 
-
-inline initIntervalTimer(void)
+/*
+inline void initIntervalTimer(void)
 {
 	TCCR1A = 0;
 	TCCR1B = 5;
 	TIMSK1 = 1;
 	TCNT1 = 0;
 }
-inline intervalTimerReset(void)
+inline void intervalTimerReset(void)
 {
 	ovfCnt = 0; TCNT1 = 0;	
 }
+*/
 
 void initRCRx(void){
 	ctrlData = defaultCtrlData;
 	phase = SerchHead;
-	initIntervalTimer();
-	intervalTimerReset();
+//	initIntervalTimer();
+//	intervalTimerReset();
 }
 
-union controller_data *Toggle_RC_Rx_Buffer(void)
+union controller_data *ToggleRCRxBuffer(void)
 {
-	return (controller_data *)ctrlData;
+	return (union controller_data *)ctrlData;
 }
-
 
 ISR(USART0_RX_vect)
 {
@@ -85,7 +87,7 @@ ISR(USART0_RX_vect)
 			phase = SerchHead;
 			wdt_reset();
 			LED(0,true);
-			intervalTimerReset();
+//			intervalTimerReset();
 		}
 		cnt++;
 	} else {
@@ -96,10 +98,11 @@ ISR(USART0_RX_vect)
 	}
 
 }
-
+/*
 ISR (TIMER1_OVF_vect){
 	ovfCnt++;
 	if(ovfCnt>150){
 		ctrlData = defaultCtrlData;
 	}
 }
+*/

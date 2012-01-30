@@ -1,5 +1,6 @@
 #include <avr/io.h>
-
+#include <stdbool.h>
+#include "led.h"
 
 void initLED(void)
 {

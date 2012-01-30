@@ -4,6 +4,6 @@
 void wait_ms(uint16_t t);
 void wait_us(uint16_t t);
 
-#define wait(x) wati_ms(x)
+#define wait(x) wait_ms(x)
 
 #endif

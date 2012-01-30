@@ -42,7 +42,7 @@ enum UARTAction {
 		TransmiterEnable = 0x08
 };
 
-extern void initUART(enum UARTNumber no, enum UARTMode mode, enum UARTAction act,uint32_t speed);
+extern void initUART(enum UARTNumber no, enum UARTMode mode, enum UARTAction act,uint16_t baud);
 extern void uart0Put(uint8_t value);
 extern void uart1Put(uint8_t value);
 extern uint8_t uart0Get(void);

@@ -94,7 +94,7 @@ static volatile struct RingBuffer{
 	uint8_t rp,wp;
 	uint8_t *buffer;
 	uint8_t size;
-	bool *empty
+	bool empty;
 } ringBuffers[2] = {
 	{
 		.rp = 0,
@@ -127,13 +127,12 @@ void uartSetBuffer(enum UARTNumber no, uint8_t *buffer, uint8_t size)
  */
 void uart0PutsBuffer(char* values)
 {
-	uint8_t i;
-	pRing = ringBuffers[0];
+	pRing = &ringBuffers[0];
 	while ( *values != '\0' ) {
-		if ( !pRing.empty && pRing.rp == pRing.wp ) return;
-		pRing.buffer[pRing.wp++] = *values++;
-		if ( pRing.wp == pRing.size ) pRing.wp = 0;
-		pRing.empty = false;
+		if ( !pRing->empty && pRing->rp == pRing->wp ) return;
+		pRing->buffer[pRing->wp++] = *values++;
+		if ( pRing->wp == pRing->size ) pRing->wp = 0;
+		pRing->empty = false;
 	}
 }
 /**
@@ -142,13 +141,12 @@ void uart0PutsBuffer(char* values)
  */
 void uart1PutsBuffer(char* values)
 {
-	uint8_t i;
-	pRing = ringBuffers[1];
+	pRing = &ringBuffers[1];
 	while ( *values != '\0' ) {
-		if ( !pRing.empty && pRing.rp == pRing.wp ) return;
-		pRing.buffer[pRing.wp++] = *values++;
-		if ( pRing.wp == pRing.size ) pRing.wp = 0;
-		pRing.empty = false;
+		if ( !pRing->empty && pRing->rp == pRing->wp ) return;
+		pRing->buffer[pRing->wp++] = *values++;
+		if ( pRing->wp == pRing->size ) pRing->wp = 0;
+		pRing->empty = false;
 	}
 }
 
@@ -157,11 +155,11 @@ void uart1PutsBuffer(char* values)
  */
 ISR (USART0_UDRE_vect)
 {
-	pRing = ringBuffers[0];
-	if ( !pRing.empty ) {
-		UDR = pRing.buffer[pRing.rp++];
-		if ( pRing.rp == pRing.size ) pRing.rp = 0;
-		if ( pRing.rp == pRing.wp ) pRing.empty = true;
+	pRing = &ringBuffers[0];
+	if ( !pRing->empty ) {
+		UDR0 = pRing->buffer[pRing->rp++];
+		if ( pRing->rp == pRing->size ) pRing->rp = 0;
+		if ( pRing->rp == pRing->wp ) pRing->empty = true;
 	}
 }
 /**
@@ -169,10 +167,10 @@ ISR (USART0_UDRE_vect)
  */
 ISR (USART1_UDRE_vect)
 {
-	pRing = ringBuffers[1];
-	if ( !pRing.empty ) {
-		UDR = pRing.buffer[pRing.rp++];
-		if ( pRing.rp == pRing.size ) pRing.rp = 0;
-		if ( pRing.rp == pRing.wp ) pRing.empty = true;
+	pRing = &ringBuffers[1];
+	if ( !pRing->empty ) {
+		UDR1 = pRing->buffer[pRing->rp++];
+		if ( pRing->rp == pRing->size ) pRing->rp = 0;
+		if ( pRing->rp == pRing->wp ) pRing->empty = true;
 	}
 }

@@ -9,8 +9,15 @@ main.o: ../main.c c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/fuse.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/lock.h \
   c:\winavr-20100110\bin\../lib/gcc/avr/4.3.3/include/stdbool.h \
-  C:\Users\iwate\Desktop\github\2012\mudule_test\i2c/i2c.h \
-  C:\Users\iwate\Desktop\github\2012\mudule_test\wait/wait.h
+  C:\Users\iwate\Desktop\github\2012\nrp_main\wait/wait.h \
+  C:\Users\iwate\Desktop\github\2012\nrp_main\i2c/i2c.h \
+  C:\Users\iwate\Desktop\github\2012\nrp_main\uart/uart.h \
+  C:\Users\iwate\Desktop\github\2012\nrp_main\mu2/mu2.h \
+  C:\Users\iwate\Desktop\github\2012\nrp_main\remote_control/remote_control_rx.h \
+  C:\Users\iwate\Desktop\github\2012\nrp_main\remote_control/rc_classic.h \
+  C:\Users\iwate\Desktop\github\2012\nrp_main\peripheral/led.h \
+  C:\Users\iwate\Desktop\github\2012\nrp_main\peripheral/switch.h \
+  C:\Users\iwate\Desktop\github\2012\nrp_main\./user_main.h
 
 c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h:
 
@@ -34,6 +41,20 @@ c:/winavr-20100110/lib/gcc/../../avr/include/avr/lock.h:
 
 c:\winavr-20100110\bin\../lib/gcc/avr/4.3.3/include/stdbool.h:
 
-C:\Users\iwate\Desktop\github\2012\mudule_test\i2c/i2c.h:
+C:\Users\iwate\Desktop\github\2012\nrp_main\wait/wait.h:
 
-C:\Users\iwate\Desktop\github\2012\mudule_test\wait/wait.h:
+C:\Users\iwate\Desktop\github\2012\nrp_main\i2c/i2c.h:
+
+C:\Users\iwate\Desktop\github\2012\nrp_main\uart/uart.h:
+
+C:\Users\iwate\Desktop\github\2012\nrp_main\mu2/mu2.h:
+
+C:\Users\iwate\Desktop\github\2012\nrp_main\remote_control/remote_control_rx.h:
+
+C:\Users\iwate\Desktop\github\2012\nrp_main\remote_control/rc_classic.h:
+
+C:\Users\iwate\Desktop\github\2012\nrp_main\peripheral/led.h:
+
+C:\Users\iwate\Desktop\github\2012\nrp_main\peripheral/switch.h:
+
+C:\Users\iwate\Desktop\github\2012\nrp_main\./user_main.h:

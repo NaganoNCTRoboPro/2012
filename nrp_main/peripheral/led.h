@@ -1,6 +1,8 @@
 #ifndef LED_H
 #define LED_H
 
+#include <stdbool.h>
+
 enum LEDNumber {
 	LED0 = 0,
 	LED1,

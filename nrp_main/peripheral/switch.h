@@ -2,12 +2,11 @@
 #define __SWITCH_H__
 
 #include <avr/io.h>
-#include "common.h"
 #include <stdbool.h>
 
 enum SWStatus {
-	SW_ON = true;
-	SW_OFF = false;
+	SW_ON = true,
+	SW_OFF = false
 };
 
 extern void initSwitch(void);

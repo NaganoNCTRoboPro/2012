@@ -19,7 +19,7 @@
 void initI2CMaster(uint8_t baud) 
 {
 	// ボーレートを設定し，TWI動作を許可する
-		TWBR = baud
+		TWBR = baud;
 		TWSR = 0;
 		TWCR = EnableI2C;
 }

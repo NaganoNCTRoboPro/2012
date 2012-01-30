@@ -53,7 +53,7 @@ void byteToString(uint8_t byte, char* string)
  * @param[in] command {const char*} MU2に送信するコマンド
  * @param[in] values {uint8_t*} コマンドに付加するデータ
  */
-bool mu2Command(const char* command, uint8_t* values)
+bool mu2Command(const char* command, char* values)
 {
 	uint8_t i, recv[10];
 	
