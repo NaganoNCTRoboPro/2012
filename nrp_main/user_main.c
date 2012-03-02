@@ -56,10 +56,10 @@ void userMain(void)
 {
 	union controller_data *controller;
 
-	Motor * const lTire = getMotor(Motor0);
-	Motor * const rTire = getMotor(Motor1);
-	Motor * const arm = getMotor(Motor2);
-	AirCylinder * const shoulder = getAirCylinder(AirCylinder0); 
+	Motor * const lTire = openMotor(Motor0);
+	Motor * const rTire = openMotor(Motor1);
+	Motor * const arm = openMotor(Motor2);
+	AirCylinder * const shoulder = openAirCylinder(AirCylinder0); 
 
 	uint8_t x,y;
 	int8_t lDuty,rDuty;

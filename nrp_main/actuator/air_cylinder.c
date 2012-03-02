@@ -3,12 +3,12 @@
 #include "air_cylinder.h"
 
 void a0(enum AirCylinderAction act) {
-	PA.Port.Bit.B0 = act;
+	PC.Port.Bit.B6 = act;
 }
 
 
 void a1(enum AirCylinderAction act) {
-	PA.Port.Bit.B0 = act;
+	PC.Port.Bit.B7 = act;
 }
 
 AirCylinder airCylinders[] = {
@@ -16,7 +16,7 @@ AirCylinder airCylinders[] = {
 	{.drive = a1}
 };
 
-AirCylinder *getAirCylinder(enum AirCylinderNumber no)
+AirCylinder *openAirCylinder(enum AirCylinderNumber no)
 {
 	return &airCylinders[no];
 }

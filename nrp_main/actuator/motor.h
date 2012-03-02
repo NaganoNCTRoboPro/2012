@@ -20,6 +20,6 @@ typedef struct st_motor {
 	void (*drive)(enum MotorAction, int8_t speed);
 } Motor;
 
-extern Motor *getMotor(enum MotorNumber no);
+extern Motor *openMotor(enum MotorNumber no);
 
 #endif

@@ -16,5 +16,5 @@ typedef struct st_air_Cylinder {
 } AirCylinder;
 
 
-extern AirCylinder *getAirCylinder(enum AirCylinderNumber no);
+extern AirCylinder *openAirCylinder(enum AirCylinderNumber no);
 #endif
