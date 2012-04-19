@@ -14,7 +14,7 @@
 #include <led.h>
 
 #define PACKET_LENGTH (12)
-#define CHECK_STR_LENGTH (3)
+#define CHECK_STR_LENGTH (2)
 
 enum CtrlDataSelects {
 	CtrlDataSelect0 = 0,
@@ -25,7 +25,7 @@ enum RecievePhases {
 	AnalysisPacket
 };
 
-static volatile const char check[] = "DR=";
+static volatile const char check[] = "DR";
 static uint8_t defaultCtrlData[RC_DATA_LENGTH] = RC_DEFAULT_DATA;
 
 static union controller_data ctrlDatas[2];
@@ -64,7 +64,7 @@ ISR(USART0_RX_vect)
 
 	if ( phase == AnalysisPacket ) {
 		packet[cnt] = val;
-		if ( cnt < CHECK_STR_LENGTH-1 ) {
+		if ( cnt < CHECK_STR_LENGTH ) {
 			if ( val != check[cnt] ) {
 				phase = SerchHead;
 				LED(0,false);

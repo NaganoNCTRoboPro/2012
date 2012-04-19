@@ -1,4 +1,5 @@
- #ifndef __RC_CLASSIC_H__
+
+#ifndef __RC_CLASSIC_H__
 #define __RC_CLASSIC_H__
 
 #define RC_DATA_LENGTH	4
